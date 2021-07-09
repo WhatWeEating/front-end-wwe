@@ -6,14 +6,15 @@ class App extends Component {
   constructor() {
   super()
     this.state = {
-      
-    }
-}
 
-  componentDidMount = () => {
+      }
+    }
+
+    componentDidMount = () => {
   }
 
-  render () {
+    render () {
+  }
 
 }
 
