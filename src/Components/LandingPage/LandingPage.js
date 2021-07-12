@@ -5,8 +5,8 @@ import './LandingPage.css'
 
 export const LandingPage = () => {
 	const [zipCode, setZipCode] = useState('')
-	const [restaurantsData, setRestaurantsData] = useState([])
-	const [error, setError] = useState('')
+	const [, setRestaurantsData] = useState([])
+	const [, setError] = useState('')
 
 	const handleChange = e => {
 		let query = e.target.value.toLowerCase()
