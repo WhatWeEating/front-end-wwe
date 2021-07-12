@@ -14,9 +14,6 @@ export const LandingPage = () => {
 	}
 
 	const assignRestaurantsData = async e => {
-		// console.log(e.key);
-		const num = parseInt(zipCode)
-		console.log(zipCode.length)
 		if (zipCode.length === 5 && e.key === 'Enter') {
 			setError('')
 			try {
