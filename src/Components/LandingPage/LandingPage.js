@@ -22,12 +22,12 @@ export const LandingPage = () => {
 			try {
 				const response = await fetchRestaurantsData()
 				const restaurants = await response.json()
-				setRestaurantsData(restaurants.data)			
+				setRestaurantsData(restaurants.data)		
 			} catch (e) {
 				setError(e.message)
 			}
 		}
-		history.push("/selection");
+		history.push("/selection")	
 	}
 
 	return (
