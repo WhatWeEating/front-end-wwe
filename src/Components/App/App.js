@@ -1,23 +1,14 @@
-import { Component } from 'react';
-import './App.css';
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
 
-class App extends Component {
-
-  constructor() {
-  super()
-    this.state = {
-
-      }
-    }
-
-    componentDidMount = () => {
-  }
-
-    render () {
-      return "What we eating"
-  }
-
+const App = () => {
+	return (
+		<div className='App'>
+			<Switch>
+				<Route exact path='/' component={LandingPage} />
+			</Switch>
+		</div>
+	)
 }
 
-
-export default App;
+export default App
