@@ -7,7 +7,7 @@ const Restaurants = (props) => {
     let restaurantCards = []
     if(restaurants.length){
       restaurantCards = 
-        restaurants.restaurants.map(restaurant => {
+        restaurants.map(restaurant => {
         return (
           <Card
             id={restaurant.id}
