@@ -3,7 +3,8 @@ import Card from '../Card/Card';
 import './Restaurant.css';
 
 const Restaurants = (restaurants) => {
-    const restaurantCards = 
+    if(restaurants.length){
+      const restaurantCards = 
         restaurants.restaurants.map(restaurant => {
         return (
           <Card
@@ -21,10 +22,11 @@ const Restaurants = (restaurants) => {
           />
         )
       })
+    }
 
     return (
         <div className='restaurants-container'>
-            {restaurantCards}
+            <p>Hello</p>
         </div>
     )
 }
