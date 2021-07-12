@@ -56,3 +56,19 @@ svg {
 	}
 }
 
+.burger,
+.chips,
+.eggs,
+.tomatoes,
+.drinks {
+	animation: 3s fadein;
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
