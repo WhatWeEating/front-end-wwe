@@ -21,8 +21,7 @@ export const LandingPage = () => {
 			try {
 				const response = await fetchRestaurantsData()
 				const restaurants = await response.json()
-				setRestaurantsData(restaurants.data)
-				history.push({pathname: '/selection', state:{restaurantsData}})
+				history.push({pathname: '/selection', state:{restaurantsData: restaurants.data}})
 			} catch (e) {
 				setError(e.message)
 				throw e
