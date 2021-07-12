@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Switch, Route } from 'react-router-dom'
 import { LandingPage } from '../LandingPage/LandingPage'
-import { Selection } from '../Selection/Selection'
+import Selection from '../Selection/Selection'
 
 const App = () => {
 	return (
