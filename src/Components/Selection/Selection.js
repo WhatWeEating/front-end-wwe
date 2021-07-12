@@ -3,7 +3,7 @@ import { Component } from 'react';
 import Restaurants from '../Restaurants/Restaurant';
 import './Selection.css';
 
-class Selection extends Component {
+export class Selection extends Component {
 
   constructor() {
   super()
@@ -26,5 +26,3 @@ class Selection extends Component {
 
 }
 
-
-export default Selection;
