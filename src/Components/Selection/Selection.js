@@ -15,7 +15,7 @@ class Selection extends Component {
     }
 
     componentDidMount = () => {
-      this.setState( { data: this.props.location.state.restaurantData } )
+      this.setState( { data: this.props.location.state.restaurantsData } )
   }
 
     render () {
