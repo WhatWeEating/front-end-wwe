@@ -1,9 +1,10 @@
 import { data } from 'browserslist';
 import { Component } from 'react';
 import Restaurants from '../Restaurants/Restaurant';
-import './Selection.css';
+import './Selection.css'
+import { withRouter } from 'react-router';
 
-export class Selection extends Component {
+class Selection extends Component {
 
   constructor(restaurantData) {
   super(restaurantData)
@@ -14,8 +15,7 @@ export class Selection extends Component {
     }
 
     componentDidMount = () => {
-      console.log(this.restaurantData)
-      this.setState( { data: this.restaurantData} )
+      this.setState( { data: this.props.location.state.restaurantData } )
   }
 
     render () {
@@ -29,3 +29,4 @@ export class Selection extends Component {
 
 }
 
+export default withRouter(Selection)

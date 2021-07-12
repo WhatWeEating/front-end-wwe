@@ -2,9 +2,11 @@ import React from 'react';
 import Card from '../Card/Card';
 import './Restaurant.css';
 
-const Restaurants = (restaurants) => {
+const Restaurants = (props) => {
+    const restaurants = props.restaurants
+    let restaurantCards = []
     if(restaurants.length){
-      const restaurantCards = 
+      restaurantCards = 
         restaurants.restaurants.map(restaurant => {
         return (
           <Card
@@ -23,10 +25,10 @@ const Restaurants = (restaurants) => {
         )
       })
     }
-
+    
     return (
         <div className='restaurants-container'>
-            <p>Hello</p>
+            {restaurantCards}
         </div>
     )
 }

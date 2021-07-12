@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { Redirect } from 'react-router-dom'
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom"
 import AnimatedTitle from '../AnimatedTitle/AnimatedTitle'
 import { fetchRestaurantsData } from '../../apiCalls'
 import './LandingPage.css'
@@ -9,7 +8,7 @@ export const LandingPage = () => {
 	const [zipCode, setZipCode] = useState('')
 	const [restaurantsData, setRestaurantsData] = useState([])
 	const [error, setError] = useState('')
-	let history = useHistory();
+	const history = useHistory()
 
 	const handleChange = e => {
 		let query = e.target.value.toLowerCase()
@@ -22,12 +21,13 @@ export const LandingPage = () => {
 			try {
 				const response = await fetchRestaurantsData()
 				const restaurants = await response.json()
-				setRestaurantsData(restaurants.data)		
+				setRestaurantsData(restaurants.data)
+				history.push({pathname: '/selection', state:{restaurantsData}})
 			} catch (e) {
 				setError(e.message)
+				throw e
 			}
-		}
-		history.push("/selection")	
+		}	
 	}
 
 	return (
