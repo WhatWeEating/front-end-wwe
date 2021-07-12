@@ -8,7 +8,8 @@ export class Selection extends Component {
   constructor() {
   super()
     this.state = {
-        data: []
+        data: [],
+        choices: []
       }
     }
 

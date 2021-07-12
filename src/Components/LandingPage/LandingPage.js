@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
+import { Redirect } from 'react-router-dom'
 import AnimatedTitle from '../AnimatedTitle/AnimatedTitle'
 import { fetchRestaurantsData } from '../../apiCalls'
 import './LandingPage.css'
 
 export const LandingPage = () => {
 	const [zipCode, setZipCode] = useState('')
-	const [, setRestaurantsData] = useState([])
-	const [, setError] = useState('')
+	const [restaurantsData, setRestaurantsData] = useState([])
+	const [error, setError] = useState('')
 
 	const handleChange = e => {
 		let query = e.target.value.toLowerCase()
@@ -19,8 +20,8 @@ export const LandingPage = () => {
 			try {
 				const response = await fetchRestaurantsData()
 				const restaurants = await response.json()
-				console.log(restaurants.data)
 				setRestaurantsData(restaurants.data)
+				{<Redirect to="/selection"/>}
 			} catch (e) {
 				setError(e.message)
 			}
