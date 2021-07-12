@@ -5,8 +5,8 @@ import './Selection.css';
 
 export class Selection extends Component {
 
-  constructor() {
-  super()
+  constructor(restaurantData) {
+  super(restaurantData)
     this.state = {
         data: [],
         choices: []
@@ -14,6 +14,8 @@ export class Selection extends Component {
     }
 
     componentDidMount = () => {
+      console.log(this.restaurantData)
+      this.setState( { data: this.restaurantData} )
   }
 
     render () {
