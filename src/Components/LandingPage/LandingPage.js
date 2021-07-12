@@ -1,6 +1,7 @@
-import React from 'react'
-import AnimatedTitle from './components/AnimatedTitle/AnimatedTitle'
-import { fetchRestaurantsData } from './apiCalls'
+import React, { useState } from 'react'
+import AnimatedTitle from '../AnimatedTitle/AnimatedTitle'
+import { fetchRestaurantsData } from '../../apiCalls'
+import './LandingPage.css'
 
 export const LandingPage = () => {
 	const [zipCode, setZipCode] = useState('')
@@ -30,7 +31,7 @@ export const LandingPage = () => {
 	}
 
 	return (
-		<div className='App'>
+		<div className='LandingPage'>
 			<AnimatedTitle />
 			<h1 className='landing-title'>Find a perf place to go eat</h1>
 			<div className='input-container'>
