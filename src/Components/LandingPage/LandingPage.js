@@ -12,6 +12,23 @@ export const LandingPage = () => {
 		setZipCode(query)
 	}
 
+	const assignRestaurantsData = async e => {
+		// console.log(e.key);
+		const num = parseInt(zipCode)
+		console.log(zipCode.length)
+		if (zipCode.length === 5 && e.key === 'Enter') {
+			setError('')
+			try {
+				const response = await fetchRestaurantsData()
+				const restaurants = await response.json()
+				console.log(restaurants.data)
+				setRestaurantsData(restaurants.data)
+			} catch (e) {
+				setError(e.message)
+			}
+		}
+	}
+
 	return (
 		<div className='App'>
 			<AnimatedTitle />
