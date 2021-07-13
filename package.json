@@ -16,7 +16,7 @@
   "scripts": {
     "cypress": "./node_modules/.bin/cypress open",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI=false && react-scripts build",
     "test": "start-server-and-test start http://localhost:3000 cy:run",
     "eject": "react-scripts eject",
     "cy:run": "cypress run"
