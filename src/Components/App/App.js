@@ -1,23 +1,20 @@
-import { Component } from 'react';
-import './App.css';
+import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
+import { LandingPage } from '../LandingPage/LandingPage'
+import Selection from '../Selection/Selection'
 
-class App extends Component {
-
-  constructor() {
-  super()
-    this.state = {
-
-      }
-    }
-
-    componentDidMount = () => {
-  }
-
-    render () {
-      return "What we eating"
-  }
-
+const App = () => {
+	return (
+		<Router>
+			<div className='App'>
+				<Switch>
+					<Route exact path='/' component={LandingPage} />
+					<Route exact path='/selection' component={Selection} />
+				</Switch>
+			</div>
+		</Router>
+	)
 }
 
-
-export default App;
+export default App

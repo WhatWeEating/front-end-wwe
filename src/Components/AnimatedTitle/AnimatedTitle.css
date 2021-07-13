@@ -1,0 +1,74 @@
+svg {
+	width: 100%;
+	height: 400px;
+}
+
+.what {
+	transform: translateX(-100%);
+	animation: 0.8s what-slide forwards;
+}
+
+@keyframes what-slide {
+	to {
+		transform: translateX(0);
+	}
+}
+
+.we {
+	transform: translateX(100%);
+	animation: 0.8s we-slide 0.3s forwards;
+}
+
+@keyframes we-slide {
+	to {
+		transform: translateX(0);
+	}
+}
+
+.eatin {
+	transform: translateX(-100%);
+	animation: 0.8s eatin-slide 0.6s forwards;
+}
+
+@keyframes eatin-slide {
+	to {
+    transform: translateX(0);
+	}
+}
+
+.question {
+  transform: translateX(100%);
+  animation: 1s swing 0.9s 1 forwards;
+}
+
+@keyframes swing {
+	0% {
+		transform: translateX(0);
+	}
+	33% {
+		transform: rotate(8deg);
+	}
+	66% {
+		transform: rotate(-8deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+.burger,
+.chips,
+.eggs,
+.tomatoes,
+.drinks {
+	animation: 3s fadein;
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
