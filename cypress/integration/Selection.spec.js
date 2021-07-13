@@ -1,8 +1,7 @@
 describe('Selection page and navigation to it', () => {
     beforeEach(() => {
-      cy.stub()
       cy.visit('http://localhost:3000')
-      cy.interceptRestaurantsFetch()
+
     })
 
 	it('should be able to see all the landing page contents in preparation to navigate to the selection', () => {
@@ -35,7 +34,7 @@ describe('Selection page and navigation to it', () => {
 	})
 
     it('should navigate to a selection screen after clicking on the zip code input, typing 5 numbers and hitting enter', () => {
-        cy.get('input')
+        cy.get('input').type('11111').type('{enter}')
     })
 
 })
