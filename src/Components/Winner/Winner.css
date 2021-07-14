@@ -1,0 +1,13 @@
+.winner {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 55px;
+}
+
+.winner-ribbon {
+  position: fixed;
+  width: 400px;
+  left: 12px;
+  top: 0px;
+}
