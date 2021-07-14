@@ -1,1 +1,6 @@
-
+Body {
+  margin-inline: auto;
+	height: 100vh;
+  background-color: #17283B;
+  /* background-color: #1D1827; */
+}

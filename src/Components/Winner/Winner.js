@@ -5,7 +5,6 @@ import ribbon from '../../assets/ribbon.png'
 
 const Winner = ({ selections, eventID }) => {
   const [winnerID, setWinnerID] = useState('')
-  const [selections] = useState([])
   const [error, setError] = useState('')
 
   useEffect(() => {
@@ -13,7 +12,7 @@ const Winner = ({ selections, eventID }) => {
       try {
         const response = await fetchWinnerData(eventID);
         const winnerData = await response.json();
-        await setWinnerId(winnerData);
+        await setWinnerID(winnerData);
         console.log(winnerID);
       } catch (error) {
         setError(error.message);
