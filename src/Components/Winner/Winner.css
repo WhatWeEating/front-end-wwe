@@ -4,3 +4,11 @@
   text-align: center;
   margin-top: 55px;
 }
+
+.winner-ribbon {
+  position: fixed;
+  width: 400px;
+  left: 12px;
+  top: 0px;
+  filter: invert(70%) sepia(43%) saturate(763%) hue-rotate(328deg) brightness(97%) contrast(93%);
+}
