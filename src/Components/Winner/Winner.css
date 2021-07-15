@@ -12,3 +12,15 @@
   top: 0px;
   filter: invert(70%) sepia(43%) saturate(763%) hue-rotate(328deg) brightness(97%) contrast(93%);
 }
+
+.link,
+a:visited,
+a:link {
+  color: #FDFFFE;
+  text-decoration: none;
+  transition: 300ms;
+}
+
+a:hover {
+  color: #FF553D;
+}

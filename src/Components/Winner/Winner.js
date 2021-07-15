@@ -27,7 +27,7 @@ const Winner = ({ selections, eventID }) => {
     <main className='winner'>
       <img className='winner-ribbon' src={ribbon} alt='ribbon' />
       <h3 className='winner-name'> WINNER! </h3>
-      <h4 className='winner-phone'> 111-111-1111</h4>
+      <a className='winner-phone' href='tel:1111111111'> 111-111-1111</a>
       <h4 className='winner-address'> 1234 address ave </h4>
     </main>
   ) 
