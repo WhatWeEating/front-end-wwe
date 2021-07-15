@@ -21,8 +21,16 @@ class Selection extends Component {
   }
 
   toggleChoice = (id) => {
+    const currentChoices = Array.from(this.state.choices)
     const chosenRestaurant = this.state.data.find(restaurant => restaurant.id === id)
-    console.log(chosenRestaurant)
+    const index = this.state.choices.findIndex(choice => choice.id === chosenRestaurant.id)
+    if(index > -1){
+      currentChoices.splice(index, 1)
+    } else {
+      currentChoices.push(chosenRestaurant)
+    }
+    this.setState({choices : currentChoices})
+    console.log(index)
   }
 
   render () {
@@ -30,6 +38,7 @@ class Selection extends Component {
       <main className='selection'>
         <h1>What We Eating?</h1>
         <Restaurants toggleChoice={this.toggleChoice} restaurants={this.state.data} />
+        <p>Here is where the choices go {JSON.stringify(this.state.choices)}</p>
       </main>
     )
   }
