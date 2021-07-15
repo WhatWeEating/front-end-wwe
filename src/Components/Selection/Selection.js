@@ -57,13 +57,15 @@ class Selection extends Component {
         )
       })
     }
+    const hasMaxChoices = this.state.choices.length >= 3
+
     return(
       <main className='selection'>
         <h1>What We Eating?</h1>
         <div className='restaurants-container'>
             {restaurantCards}
         </div>
-        <p>This is where the choices go {JSON.stringify(this.state.choices)}</p>
+        <button disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit your choices for voting" : "Please select three restaurants to submit for voting"}</button>
       </main>
     )
   }
