@@ -25,8 +25,10 @@ class Selection extends Component {
     const chosenRestaurant = this.state.data.find(restaurant => restaurant.id === id)
     const index = this.state.choices.findIndex(choice => choice.id === chosenRestaurant.id)
     if(index > -1){
+      currentChoices[index].isSelected = false
       currentChoices.splice(index, 1)
     } else {
+      chosenRestaurant.isSelected = true
       currentChoices.push(chosenRestaurant)
     }
     this.setState({choices : currentChoices})
@@ -52,6 +54,7 @@ class Selection extends Component {
             image_url={restaurant.attributes.image_url}
             full_address={restaurant.attributes.full_address}
             toggleChoice={this.toggleChoice}
+            isSelected={restaurant.isSelected}
           />
         )
       })
