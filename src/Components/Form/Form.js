@@ -8,9 +8,9 @@ let third;
 
 const Form = (props) => {
  const [restaurants, setRestaurants] = useState([])
- const [first, setFirstPlace] = useState('')
- const [second, setSecondPlace] = useState('')
- const [third, setThirdPlace] = useState('')
+ const [firstChoice, setFirstPlace] = useState('')
+ const [secondChoice, setSecondPlace] = useState('')
+ const [thirdChoice, setThirdPlace] = useState('')
 
  useEffect(() => {
    // const restaurantProps = [props.location.state.restaurants[0], props.location.state.restaurants[1], props.location.state.restaurants[2]]
