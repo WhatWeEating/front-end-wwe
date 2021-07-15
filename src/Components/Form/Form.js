@@ -76,7 +76,19 @@ const Form = (props) => {
    }
  })
 
-
+ const dragAndDrop = interact('.drag-drop')
+   .draggable({
+     inertia: true,
+     modifiers: [
+       interact.modifiers.restrictRect({
+         restriction: 'parent',
+         endOnly: true
+       })
+     ],
+     autoScroll: true,
+     listeners: { move: dragMoveListener }
+   })
+    console.log(restaurants)
   return (
     <form className='form'>
       <div id="yes-drop" className="drag-drop"> {
