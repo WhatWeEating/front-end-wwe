@@ -1,0 +1,7 @@
+#outer-first, #outer-second, #outer-third {
+  height: 140px;
+}
+
+#inner-first, #inner-second, #inner-third{
+  height: 80px;
+}
