@@ -62,6 +62,7 @@ class Selection extends Component {
     return(
       <main className='selection'>
         <h1>What We Eating?</h1>
+        <button disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit your choices for voting" : "Please select three restaurants to submit for voting"}</button>
         <div className='restaurants-container'>
             {restaurantCards}
         </div>
