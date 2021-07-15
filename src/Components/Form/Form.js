@@ -13,8 +13,21 @@ const Form = (props) => {
  const [third, setThirdPlace] = useState('')
 
  useEffect(() => {
+   
    console.log(restaurantProps)
  }, [])
+
+ const submitVote = event => {
+    setFirstPlace(first)
+    setSecondPlace(second)
+    setThirdPlace(third)
+   //Calculates score for individual and sends
+   //post request to back end with restaurant and
+   //number of points
+   event.preventDefault();
+   console.log(restaurants, first, second, third)
+ }
+
 
   return (
     <form className='form'>
@@ -50,5 +63,6 @@ const Form = (props) => {
     </form>
   )
 }
+
 
 export default Form;
