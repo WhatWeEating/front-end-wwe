@@ -13,8 +13,12 @@ const Form = (props) => {
  const [third, setThirdPlace] = useState('')
 
  useEffect(() => {
-   
+   // const restaurantProps = [props.location.state.restaurants[0], props.location.state.restaurants[1], props.location.state.restaurants[2]]
    console.log(restaurantProps)
+   // setRestaurants(restaurantProps)
+   // console.log(props, '<< props')
+   // console.log(restaurants, '<< restaurants')
+   // console.log(typeof props.location.state.restaurants)
  }, [])
 
  const submitVote = event => {
@@ -28,6 +32,16 @@ const Form = (props) => {
    console.log(restaurants, first, second, third)
  }
 
+ const dragMoveListener = (event) => {
+   var target = event.target
+   var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
+   var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
+
+   target.style.transform = 'translate(' + x + 'px, ' + y + 'px)'
+
+   target.setAttribute('data-x', x)
+   target.setAttribute('data-y', y)
+ }
 
   return (
     <form className='form'>
