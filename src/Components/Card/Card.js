@@ -12,7 +12,7 @@ const Card = ({id, key, type, rating, price, phone, api_id, open, name, image_ur
         <p>{rating}</p>
         <phone>{phone}</phone>
         <address>{full_address}</address>
-        <button onClick={() => toggleChoice(id)}>{!isSelected ? "Select" : "Unselect"})}</button>
+        <button onClick={() => toggleChoice(id)}>{!isSelected ? "Select" : "Unselect"}</button>
     </div>
   )
 }
