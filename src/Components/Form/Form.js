@@ -13,11 +13,27 @@ const Form = (props) => {
  const [third, setThirdPlace] = useState('')
 
  useEffect(() => {
-  
+   console.log(restaurantProps)
  }, [])
 
   return (
-
+    <form className='form'>
+      <div id="yes-drop" className="drag-drop"> {
+        <Card
+        name={restaurants[0]}
+        />
+      } </div>
+      <div id="yes-drop" className="drag-drop"> {
+        <Card
+          name={restaurants[1]}
+        />
+      } </div>
+      <div id="yes-drop" className="drag-drop"> {
+        <Card
+          name={restaurants[2]}
+        />
+      } </div>
+    </form>
   )
 }
 
