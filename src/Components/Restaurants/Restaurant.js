@@ -1,12 +1,14 @@
-import React from 'react';
-import Card from '../Card/Card';
 import './Restaurant.css';
+
+import React from 'react';
+
+import Card from '../Card/Card';
 
 const Restaurants = (props) => {
     const restaurants = props.restaurants
     let restaurantCards = []
     if(restaurants.length){
-      restaurantCards = 
+      restaurantCards =
         restaurants.map(restaurant => {
         return (
           <Card
@@ -21,11 +23,12 @@ const Restaurants = (props) => {
             name={restaurant.attributes.name}
             image_url={restaurant.attributes.image_url}
             full_address={restaurant.attributes.full_address}
+            toggleChoice={props.toggleChoice}
           />
         )
       })
     }
-    
+
     return (
         <div className='restaurants-container'>
             {restaurantCards}

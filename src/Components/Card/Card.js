@@ -1,7 +1,8 @@
-import React from 'react';
 import './Card.css';
 
-const Card = ({id, key, type, rating, price, phone, api_id, open, name, image_url, full_address}) => {
+import React from 'react';
+
+const Card = ({id, key, type, rating, price, phone, api_id, open, name, image_url, full_address, toggleChoice}) => {
   return (
     <div className='card'>
         <img className='image' src={image_url}/>
@@ -11,6 +12,7 @@ const Card = ({id, key, type, rating, price, phone, api_id, open, name, image_ur
         <p>{rating}</p>
         <phone>{phone}</phone>
         <address>{full_address}</address>
+        <button onClick={() => toggleChoice(id)}>Select</button>
     </div>
   )
 }
