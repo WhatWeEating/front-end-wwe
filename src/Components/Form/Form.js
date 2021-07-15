@@ -14,7 +14,7 @@ const Form = (props) => {
 
  useEffect(() => {
    // const restaurantProps = [props.location.state.restaurants[0], props.location.state.restaurants[1], props.location.state.restaurants[2]]
-   console.log(restaurantProps)
+   console.log(props)
    // setRestaurants(restaurantProps)
    // console.log(props, '<< props')
    // console.log(restaurants, '<< restaurants')
