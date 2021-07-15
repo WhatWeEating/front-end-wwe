@@ -43,6 +43,40 @@ const Form = (props) => {
    target.setAttribute('data-y', y)
  }
 
+ const dropzone = interact('.dropzone').dropzone({
+   accept: '#yes-drop',
+   overlap: 0.75,
+
+   ondragenter: function (event) {
+     let draggableElement = event.relatedTarget
+     let dropzoneElement = event.target
+
+     // feedback the possibility of a drop
+     dropzoneElement.classList.add('drop-target')
+     draggableElement.classList.add('can-drop')
+   },
+   ondragleave: function (event) {
+     // remove the drop feedback style
+     event.target.classList.remove('drop-target')
+     event.relatedTarget.classList.remove('can-drop')
+   },
+   ondrop: function (event) {
+     event.relatedTarget.classList.add('dropped')
+     if (event.target.id === 'inner-first' || event.target.id === 'outer-first') {
+       first = event.relatedTarget.innerHTML
+     } else if (event.target.id === 'inner-second' || event.target.id === 'outer-second') {
+       second = event.relatedTarget.innerText
+     } else {
+       third = event.relatedTarget.innerText
+     }
+   },
+   ondropdeactivate: function (event) {
+     event.target.classList.remove('drop-active')
+     event.target.classList.remove('drop-target')
+   }
+ })
+
+
   return (
     <form className='form'>
       <div id="yes-drop" className="drag-drop"> {
