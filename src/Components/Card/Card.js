@@ -2,7 +2,7 @@ import './Card.css';
 
 import React from 'react';
 
-const Card = ({id, key, type, rating, price, phone, api_id, open, name, image_url, full_address, toggleChoice, isSelected}) => {
+const Card = ({id, key, type, rating, price, phone, api_id, open, name, image_url, full_address, toggleChoice, isSelected, disabled}) => {
   return (
     <div className='card'>
         <img className='image' src={image_url}/>
@@ -12,7 +12,7 @@ const Card = ({id, key, type, rating, price, phone, api_id, open, name, image_ur
         <p>{rating}</p>
         <phone>{phone}</phone>
         <address>{full_address}</address>
-        <button onClick={() => toggleChoice(id)}>{!isSelected ? "Select" : "Unselect"}</button>
+        <button disabled={disabled && !isSelected} onClick={() => toggleChoice(id)}>{!isSelected ? "Select" : "Unselect"}</button>
     </div>
   )
 }

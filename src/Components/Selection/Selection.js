@@ -33,6 +33,7 @@ class Selection extends Component {
   }
 
   render () {
+    const hasMaxChoices = this.state.choices.length >= 3
     const restaurants = this.state.data
     let restaurantCards = []
     if(restaurants.length){
@@ -53,11 +54,11 @@ class Selection extends Component {
             full_address={restaurant.attributes.full_address}
             toggleChoice={this.toggleChoice}
             isSelected={this.state.choices.includes(restaurant)}
+            disabled={hasMaxChoices}
           />
         )
       })
     }
-    const hasMaxChoices = this.state.choices.length >= 3
 
     return(
       <main className='selection'>
