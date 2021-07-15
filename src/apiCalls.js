@@ -3,7 +3,7 @@ export const fetchRestaurantsData = async () => {
 	return await fetch('mock-restaurant-data.json')
 }
 
-export const fetchWinnerData = async () => {
+export const fetchWinnerData = async (eventID) => {
   console.log('triggered fetch winner')
   return await fetch()
 }

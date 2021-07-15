@@ -5,10 +5,24 @@ import ribbon from '../../assets/ribbon.png'
 
 const Winner = ({ selections, eventID }) => {
   const [winnerID, setWinnerID] = useState('')
+  const [selections] = useState([])
+  const [error, setError] = useState('')
 
-  // useEffect(async () => {
-  //   const winner = await fetchWinnerData()
-  // }, [])
+  useEffect(() => {
+    const fetchWinner = async () => {
+      try {
+        const response = await fetchWinnerData(eventID);
+        const winnerData = await response.json();
+        await setWinnerId(winnerData);
+        console.log(winnerID);
+      } catch (error) {
+        setError(error.message);
+				throw error;
+      }
+    }
+  }, [])
+
+   
 
   return(
     <main className='winner'>
