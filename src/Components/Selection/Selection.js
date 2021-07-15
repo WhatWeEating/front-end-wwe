@@ -4,7 +4,7 @@ import { Component } from 'react';
 
 import { withRouter } from 'react-router';
 
-import Restaurants from '../Restaurants/Restaurant';
+import Card from '../Card/Card';
 
 class Selection extends Component {
 
@@ -30,15 +30,39 @@ class Selection extends Component {
       currentChoices.push(chosenRestaurant)
     }
     this.setState({choices : currentChoices})
-    console.log(index)
   }
 
   render () {
+    const restaurants = this.state.data
+    let restaurantCards = []
+    if(restaurants.length){
+      restaurantCards =
+        restaurants.map(restaurant => {
+        return (
+          <Card
+            id={restaurant.id}
+            key={restaurant.id}
+            type={restaurant.type}
+            rating={restaurant.attributes.rating}
+            price={restaurant.attributes.price}
+            phone={restaurant.attributes.phone}
+            api_id={restaurant.attributes.api_id}
+            open={restaurant.attributes.open}
+            name={restaurant.attributes.name}
+            image_url={restaurant.attributes.image_url}
+            full_address={restaurant.attributes.full_address}
+            toggleChoice={this.toggleChoice}
+          />
+        )
+      })
+    }
     return(
       <main className='selection'>
         <h1>What We Eating?</h1>
-        <Restaurants toggleChoice={this.toggleChoice} restaurants={this.state.data} />
-        <p>Here is where the choices go {JSON.stringify(this.state.choices)}</p>
+        <div className='restaurants-container'>
+            {restaurantCards}
+        </div>
+        <p>This is where the choices go {JSON.stringify(this.state.choices)}</p>
       </main>
     )
   }
