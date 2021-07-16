@@ -11,6 +11,9 @@ const App = () => {
   const [restaurantsData, setData] = useState([])
   const [restaurantSelections, setRestaurantSelections] = useState([])
 
+  const storeData = async (data) => {
+    setData(data)
+  }
 
 	return (
 		<Router>
