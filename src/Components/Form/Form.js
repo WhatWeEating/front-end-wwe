@@ -2,6 +2,8 @@ import React, { Component, useState, useEffect } from 'react';
 import './Form.css';
 import Card from '../Card/Card';
 import interact from 'interactjs'
+import { useHistory } from "react-router-dom"
+
 let first;
 let second;
 let third;
@@ -10,6 +12,8 @@ const Form = ({ restaurantSelections }) => {
  const [firstChoice, setFirstPlace] = useState('')
  const [secondChoice, setSecondPlace] = useState('')
  const [thirdChoice, setThirdPlace] = useState('')
+ const history = useHistory()
+
 
  const submitVote = event => {
   setFirstPlace(first)
@@ -19,6 +23,7 @@ const Form = ({ restaurantSelections }) => {
  //post request to back end with restaurant and
  //number of points
  event.preventDefault();
+ history.push('/winner')
 }
 
  const dragMoveListener = (event) => {
