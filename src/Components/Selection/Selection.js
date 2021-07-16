@@ -43,17 +43,19 @@ const Selection = ({ restaurantsData, storeSelections }) => {
       })
     }
 
-    return(
+    if (restaurantsData.length > 0) {
+      const hasMaxChoices = choices.length >= 3
+    return (
       <main className='selection'>
         <h1>What We Eating?</h1>
-        <button onClick={this.changeToVotingPage} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit your choices for voting" : "Please select three restaurants to submit for voting"}</button>
+        <Link to='/voting' ><button storeSelections={storeSelections(choices)} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit your choices for voting" : "Please select three restaurants to submit for voting"}</button></Link>
         <div className='restaurants-container'>
-            {restaurantCards}
+            {renderCards(restaurantsData)}
         </div>
-        <button onClick={this.changeToVotingPage} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit your choices for voting" : "Please select three restaurants to submit for voting"}</button>
+        <Link to='/voting' ><button storeSelections={storeSelections(choices)} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit your choices for voting" : "Please select three restaurants to submit for voting"}</button></Link>
       </main>
     )
-
+    }
 }
 
 export default withRouter(Selection)
