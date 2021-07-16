@@ -2,35 +2,21 @@ import React, { Component, useState, useEffect } from 'react';
 import './Form.css';
 import Card from '../Card/Card';
 import interact from 'interactjs'
-let first;
-let second;
-let third;
 
-const Form = (props) => {
- const [restaurants, setRestaurants] = useState([])
+const Form = ({ restaurantSelections }) => {
  const [firstChoice, setFirstPlace] = useState('')
  const [secondChoice, setSecondPlace] = useState('')
  const [thirdChoice, setThirdPlace] = useState('')
 
- useEffect(() => {
-   // const restaurantProps = [props.location.state.restaurants[0], props.location.state.restaurants[1], props.location.state.restaurants[2]]
-   console.log(props)
-   // setRestaurants(restaurantProps)
-   // console.log(props, '<< props')
-   // console.log(restaurants, '<< restaurants')
-   // console.log(typeof props.location.state.restaurants)
- }, [])
-
  const submitVote = event => {
-    setFirstPlace(first)
-    setSecondPlace(second)
-    setThirdPlace(third)
-   //Calculates score for individual and sends
-   //post request to back end with restaurant and
-   //number of points
-   event.preventDefault();
-   console.log(restaurants, first, second, third)
- }
+  setFirstPlace(first)
+  setSecondPlace(second)
+  setThirdPlace(third)
+ //Calculates score for individual and sends
+ //post request to back end with restaurant and
+ //number of points
+ event.preventDefault();
+}
 
  const dragMoveListener = (event) => {
    var target = event.target
