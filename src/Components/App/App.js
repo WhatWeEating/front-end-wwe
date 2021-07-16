@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Switch, Route } from 'react-router-dom'
 import { LandingPage } from '../LandingPage/LandingPage'
@@ -8,6 +8,10 @@ import Winner from '../Winner/Winner'
 import Form from '../Form/Form'
 
 const App = () => {
+
+
+
+
 	return (
 		<Router>
 			<div className='App'>
