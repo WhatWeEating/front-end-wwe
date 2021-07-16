@@ -50,7 +50,16 @@ const App = () => {
               }
               </>
             )}/>
-          <Route exact path='/winner' component={Winner} />
+          <Route exact path='/winner'  
+            render={() => (
+              <>
+              {restaurantSelections.length > 0 && 
+                <Winner
+                restaurantSelections={restaurantSelections}
+                />
+              }
+              </>
+            )}/>
 				</Switch>
 			</div>
 		</Router>
