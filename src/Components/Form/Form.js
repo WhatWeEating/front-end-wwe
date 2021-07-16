@@ -2,6 +2,9 @@ import React, { Component, useState, useEffect } from 'react';
 import './Form.css';
 import Card from '../Card/Card';
 import interact from 'interactjs'
+let first;
+let second;
+let third;
 
 const Form = ({ restaurantSelections }) => {
  const [firstChoice, setFirstPlace] = useState('')
@@ -74,25 +77,26 @@ const Form = ({ restaurantSelections }) => {
      autoScroll: true,
      listeners: { move: dragMoveListener }
    })
-    console.log(restaurants)
-  return (
+
+   console.log(restaurantSelections[0])
+
+   return (
     <form className='form'>
       <div id="yes-drop" className="drag-drop"> {
         <Card
-        name={restaurants[0]}
+        name={restaurantSelections[0].attributes.name}
         />
       } </div>
       <div id="yes-drop" className="drag-drop"> {
         <Card
-          name={restaurants[1]}
+          name={restaurantSelections[1].attributes.name}
         />
       } </div>
       <div id="yes-drop" className="drag-drop"> {
         <Card
-          name={restaurants[2]}
+          name={restaurantSelections[2].attributes.name}
         />
       } </div>
-
       <div id="outer-first" className="dropzone">
         1st
       <div id="inner-first" className="dropzone"></div>
