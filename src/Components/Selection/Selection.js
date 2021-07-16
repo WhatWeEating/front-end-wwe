@@ -1,8 +1,7 @@
 import './Selection.css';
 import React, { useState } from 'react';
-import { useHistory } from "react-router-dom"
-import { Component } from 'react';
 import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom'
 import Card from '../Card/Card';
 
 const Selection = ({ restaurantsData, storeSelections }) => {
