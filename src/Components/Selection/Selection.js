@@ -7,15 +7,6 @@ import Card from '../Card/Card';
 const Selection = ({ restaurantsData, storeSelections }) => {
   const [choices, setChoices] = useState([])
 
-  componentDidMount = () => {
-    this.setState( { data: this.props.location.state.restaurantsData } )
-  }
-
-  changeToVotingPage = () => {
-    this.props.history.push({pathname: '/voting', state:{restaurants: this.state.choices}})
-  	// this.history.push({pathname: '/voting'})
-  }
-
   toggleChoice = (id) => {
     const currentChoices = Array.from(this.state.choices)
     const chosenRestaurant = this.state.data.find(restaurant => restaurant.id === id)
