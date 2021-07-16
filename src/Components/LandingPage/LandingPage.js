@@ -4,7 +4,7 @@ import AnimatedTitle from '../AnimatedTitle/AnimatedTitle'
 import { fetchRestaurantsData } from '../../apiCalls'
 import './LandingPage.css'
 
-export const LandingPage = () => {
+export const LandingPage = ({ storeData }) => {
 	const [zipCode, setZipCode] = useState('')
 	const [restaurantsData, setRestaurantsData] = useState([])
 	const [error, setError] = useState('')
@@ -21,7 +21,8 @@ export const LandingPage = () => {
 			try {
 				const response = await fetchRestaurantsData()
 				const restaurants = await response.json()
-				history.push({pathname: '/selection', state:{restaurantsData: restaurants.data}})
+        storeData(restaurants.data)
+				history.push('/selection')
 			} catch (e) {
 				setError(e.message)
 				throw e
