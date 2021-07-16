@@ -8,8 +8,8 @@ import Winner from '../Winner/Winner'
 import Form from '../Form/Form'
 
 const App = () => {
-
-
+  const [restaurantsData, setData] = useState([])
+  const [restaurantSelections, setRestaurantSelections] = useState([])
 
 
 	return (
