@@ -2,35 +2,29 @@ import React, { Component, useState, useEffect } from 'react';
 import './Form.css';
 import Card from '../Card/Card';
 import interact from 'interactjs'
+import { useHistory } from "react-router-dom"
+
 let first;
 let second;
 let third;
 
-const Form = (props) => {
- const [restaurants, setRestaurants] = useState([])
+const Form = ({ restaurantSelections }) => {
  const [firstChoice, setFirstPlace] = useState('')
  const [secondChoice, setSecondPlace] = useState('')
  const [thirdChoice, setThirdPlace] = useState('')
+ const history = useHistory()
 
- useEffect(() => {
-   // const restaurantProps = [props.location.state.restaurants[0], props.location.state.restaurants[1], props.location.state.restaurants[2]]
-   console.log(props)
-   // setRestaurants(restaurantProps)
-   // console.log(props, '<< props')
-   // console.log(restaurants, '<< restaurants')
-   // console.log(typeof props.location.state.restaurants)
- }, [])
 
  const submitVote = event => {
-    setFirstPlace(first)
-    setSecondPlace(second)
-    setThirdPlace(third)
-   //Calculates score for individual and sends
-   //post request to back end with restaurant and
-   //number of points
-   event.preventDefault();
-   console.log(restaurants, first, second, third)
- }
+  setFirstPlace(first)
+  setSecondPlace(second)
+  setThirdPlace(third)
+ //Calculates score for individual and sends
+ //post request to back end with restaurant and
+ //number of points
+ event.preventDefault();
+ history.push('/winner')
+}
 
  const dragMoveListener = (event) => {
    var target = event.target
@@ -88,25 +82,26 @@ const Form = (props) => {
      autoScroll: true,
      listeners: { move: dragMoveListener }
    })
-    console.log(restaurants)
-  return (
+
+   console.log(restaurantSelections[0])
+
+   return (
     <form className='form'>
       <div id="yes-drop" className="drag-drop"> {
         <Card
-        name={restaurants[0]}
+        name={restaurantSelections[0].attributes.name}
         />
       } </div>
       <div id="yes-drop" className="drag-drop"> {
         <Card
-          name={restaurants[1]}
+          name={restaurantSelections[1].attributes.name}
         />
       } </div>
       <div id="yes-drop" className="drag-drop"> {
         <Card
-          name={restaurants[2]}
+          name={restaurantSelections[2].attributes.name}
         />
       } </div>
-
       <div id="outer-first" className="dropzone">
         1st
       <div id="inner-first" className="dropzone"></div>

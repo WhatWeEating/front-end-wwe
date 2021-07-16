@@ -8,7 +8,7 @@ const Winner = ({ selections, eventID }) => {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    const fetchWinner = async () => {
+    const fetchWinner = async ({ restaurantSelections }) => {
       try {
         const response = await fetchWinnerData(eventID);
         const winnerData = await response.json();
