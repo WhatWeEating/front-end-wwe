@@ -15,6 +15,10 @@ const App = () => {
     setData(data)
   }
 
+  const storeSelections = (selections) => {
+    setRestaurantSelections(selections)
+  }
+
 	return (
 		<Router>
 			<div className='App'>
