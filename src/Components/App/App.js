@@ -40,8 +40,17 @@ const App = () => {
               }
             </>
           )}/>
+          <Route exact path='/voting' 
+            render={() => (
+              <>
+              {restaurantSelections.length > 0 && 
+                <Form 
+                  restaurantSelections={restaurantSelections}
+                />
+              }
+              </>
+            )}/>
           <Route exact path='/winner' component={Winner} />
-          <Route exact path='/voting' component={Form} />
 				</Switch>
 			</div>
 		</Router>
