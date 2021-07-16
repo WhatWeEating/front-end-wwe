@@ -5,6 +5,7 @@ import { LandingPage } from '../LandingPage/LandingPage'
 import './App.css'
 import Selection from '../Selection/Selection'
 import Winner from '../Winner/Winner'
+import Form from '../Form/Form'
 
 const App = () => {
 	return (
@@ -14,6 +15,7 @@ const App = () => {
 					<Route exact path='/' component={LandingPage} />
 					<Route exact path='/selection' component={Selection} />
           <Route exact path='/winner' component={Winner} />
+          <Route exact path='/voting' component={Form} />
 				</Switch>
 			</div>
 		</Router>

@@ -1,10 +1,14 @@
 import './Selection.css';
 
+import { useHistory } from "react-router-dom"
+
 import { Component } from 'react';
 
 import { withRouter } from 'react-router';
 
 import Card from '../Card/Card';
+
+// const history = useHistory()
 
 class Selection extends Component {
 
@@ -12,12 +16,18 @@ class Selection extends Component {
     super(restaurantData)
     this.state = {
         data: [],
-        choices: []
+        choices: [],
+
     }
   }
 
   componentDidMount = () => {
     this.setState( { data: this.props.location.state.restaurantsData } )
+  }
+
+  changeToVotingPage = () => {
+    this.props.history.push({pathname: '/voting', state:{restaurants: this.state.choices}})
+  	// this.history.push({pathname: '/voting'})
   }
 
   toggleChoice = (id) => {
@@ -63,11 +73,11 @@ class Selection extends Component {
     return(
       <main className='selection'>
         <h1>What We Eating?</h1>
-        <button disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit your choices for voting" : "Please select three restaurants to submit for voting"}</button>
+        <button onClick={this.changeToVotingPage} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit your choices for voting" : "Please select three restaurants to submit for voting"}</button>
         <div className='restaurants-container'>
             {restaurantCards}
         </div>
-        <button disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit your choices for voting" : "Please select three restaurants to submit for voting"}</button>
+        <button onClick={this.changeToVotingPage} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit your choices for voting" : "Please select three restaurants to submit for voting"}</button>
       </main>
     )
   }
