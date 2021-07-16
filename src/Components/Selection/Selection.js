@@ -7,16 +7,16 @@ import Card from '../Card/Card';
 const Selection = ({ restaurantsData, storeSelections }) => {
   const [choices, setChoices] = useState([])
 
-  toggleChoice = (id) => {
-    const currentChoices = Array.from(this.state.choices)
-    const chosenRestaurant = this.state.data.find(restaurant => restaurant.id === id)
-    const index = this.state.choices.findIndex(choice => choice.id === chosenRestaurant.id)
+  const toggleChoice = (id) => {
+    const currentChoices = Array.from(choices)
+    const chosenRestaurant = restaurantsData.find(restaurant => restaurant.id === id)
+    const index = choices.findIndex(choice => choice.id === chosenRestaurant.id)
     if(index > -1){
       currentChoices.splice(index, 1)
     } else {
       currentChoices.push(chosenRestaurant)
     }
-    this.setState({choices : currentChoices})
+    setChoices(currentChoices)
   }
 
   function renderCards(restaurantsData) {
