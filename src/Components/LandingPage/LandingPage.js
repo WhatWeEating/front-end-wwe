@@ -38,6 +38,7 @@ export const LandingPage = ({ storeData }) => {
 		<div className='LandingPage'>
 			<AnimatedTitle />
 			<h1 className='landing-title'>Find a perf place to go eat</h1>
+      {error && <h1 className='err-msg'>{error}</h1>}
 			<div className='input-container'>
 				<i className='fas fa-search'></i>
 				<input
