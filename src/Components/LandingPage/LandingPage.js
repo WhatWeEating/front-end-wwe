@@ -15,20 +15,20 @@ export const LandingPage = ({ storeData }) => {
 	// 	setZipCode(query)
 	// }
 
-	const assignRestaurantsData = async e => {
-    const fetchId = new Date().valueOf()
+	const validateRestaurantData = async e => {
+		const fetchId = new Date().valueOf()
 		if (zipCode.length === 5 && e.key === 'Enter') {
 			setError('')
 			try {
 				const response = await fetchRestaurantsData()
 				const restaurants = await response.json()
-        storeData(restaurants.data)
+				storeData(restaurants.data)
 				history.push('/selection')
 			} catch (e) {
 				setError(e.message)
 				throw e
 			}
-		}	
+		}
 	}
 
 	return (
@@ -40,14 +40,14 @@ export const LandingPage = ({ storeData }) => {
 				<input
 					type='text'
 					name='search'
-					minLength='5'
+					// minLength='5'
 					maxLength='5'
 					pattern='[0-9]{5}'
 					autoComplete='off'
 					placeholder='Enter Zip Code...'
-					value={zipCode}
+					// value={zipCode}
 					// onChange={handleChange}
-					onKeyDown={assignRestaurantsData}
+					onKeyUp={validateRestaurantData}
 				/>
 			</div>
 		</div>
