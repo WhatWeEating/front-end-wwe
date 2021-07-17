@@ -1,7 +1,7 @@
 .LandingPage {
 	display: flex;
-	align-items: center;
 	flex-direction: column;
+	align-items: center;
 	text-align: center;
 	margin-top: 5%;
 }
@@ -58,4 +58,31 @@
 .input-container i {
 	font-size: 20px;
 	margin: 5px 0;
+}
+
+/* ------------- responsiveness -------------------- */
+
+@media only screen and (max-width: 500px) {
+	.landing-title {
+		font-size: 35px;
+	}
+
+	.input-container {
+		width: 405px;
+		padding: 8px 0;
+	}
+
+	.input-container input {
+		font-size: 18px;
+		width: 350px;
+	}
+
+	.input-container input:focus {
+		width: 360px;
+	}
+
+	.input-container i {
+		font-size: 18px;
+		margin: 3px 0;
+	}
 }
