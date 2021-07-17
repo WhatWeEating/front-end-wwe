@@ -3,7 +3,8 @@ const restaurantsPath =
 
 export const fetchRestaurantsData = async (zipCode, fetchId) => {
 	console.log(`triggered fetchcall`)
-	return await fetch(`${restaurantsPath}${zipCode}&${fetchId}`)
+  return await fetch('mock-restaurant-data.json')
+	// return await fetch(`${restaurantsPath}${zipCode}&${fetchId}`)
 }
 
 export const fetchWinnerData = async (eventID) => {
