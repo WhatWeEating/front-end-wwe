@@ -31,4 +31,14 @@ describe('LandingPage', () => {
 			.get('.eatin')
 			.should('be.visible')
 	})
+
+	it('should be able to see error for invalid zipcode', () => {
+		cy.get('input[name="search"]')
+			.should('have.value', '')
+			.type('a')
+			.should('have.value', 'a')
+			.type('{enter}')
+			.get('.err-msg')
+			.should('have.text', 'Please enter 5 digit zip code')
+	})
 })
