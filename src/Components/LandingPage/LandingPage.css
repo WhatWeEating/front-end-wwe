@@ -1,6 +1,9 @@
 .LandingPage {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 	text-align: center;
-	margin-top: 5%;
+	margin-top: 5%;  
 }
 
 .landing-title {
@@ -10,3 +13,25 @@
 .err-msg {
 	background: #e53a0f;
 }
+
+.input-container {
+	width: 470px;
+	align-items: center;
+	border-radius: 40px;
+	padding: 10px 0;
+	background-color: #162738;
+}
+
+.input-container input {
+	border-right: none;
+	border-left: none;
+	border-top: none;
+	outline: none;
+	background-color: transparent;
+	color: #d68914;
+	margin-left: 5px;
+	font-size: 20px;
+	width: 400px;
+}
+
+
