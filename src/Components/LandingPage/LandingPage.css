@@ -8,6 +8,7 @@
 
 .landing-title {
 	color: #d68914;
+	font-size: 40px;
 }
 
 .err-msg,
@@ -36,11 +37,21 @@
 	color: #d68914;
 	margin-left: 5px;
 	font-size: 20px;
-	width: 400px;
+	width: 370px;
 	transition: 0.2s ease-in-out;
 }
 
+::placeholder {
+	color: #beb9b9;
+}
+
+.landing-title,
+::placeholder {
+	font-family: 'Risque', cursive;
+}
+
 .input-container input:focus {
+	width: 400px;
 	border-bottom: 2px solid #d68914;
 }
 
