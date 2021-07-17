@@ -17,8 +17,10 @@ export const LandingPage = ({ storeData }) => {
 
 	const validateRestaurantData = async e => {
 		const fetchId = new Date().valueOf()
-		if (zipCode.length === 5 && e.key === 'Enter') {
+    const zipCodeValidation = /[0-9]{5}/.test(e.target.value)
+		if (zipCodeValidation && e.key === 'Enter') {
 			setError('')
+      const query = e.target.value
 			try {
 				const response = await fetchRestaurantsData()
 				const restaurants = await response.json()
