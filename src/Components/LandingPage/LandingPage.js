@@ -6,16 +6,17 @@ import './LandingPage.css'
 
 export const LandingPage = ({ storeData }) => {
 	const [zipCode, setZipCode] = useState('')
-	const [restaurantsData, setRestaurantsData] = useState([])
+	// const [restaurantsData, setRestaurantsData] = useState([])
 	const [error, setError] = useState('')
 	const history = useHistory()
 
-	const handleChange = e => {
-		let query = e.target.value.toLowerCase()
-		setZipCode(query)
-	}
+	// const handleChange = e => {
+	// 	let query = e.target.value.toLowerCase()
+	// 	setZipCode(query)
+	// }
 
 	const assignRestaurantsData = async e => {
+    const fetchId = new Date().valueOf()
 		if (zipCode.length === 5 && e.key === 'Enter') {
 			setError('')
 			try {
@@ -45,7 +46,7 @@ export const LandingPage = ({ storeData }) => {
 					autoComplete='off'
 					placeholder='Enter Zip Code...'
 					value={zipCode}
-					onChange={handleChange}
+					// onChange={handleChange}
 					onKeyDown={assignRestaurantsData}
 				/>
 			</div>
