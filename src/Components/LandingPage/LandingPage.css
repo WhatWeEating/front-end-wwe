@@ -110,3 +110,28 @@
 		font-size: 15px;
 	}
 }
+
+@media only screen and (max-width: 355px) {
+	.landing-title {
+		font-size: 27px;
+	}
+
+	.input-container {
+		width: 315px;
+		padding: 2px 0;
+	}
+
+	.input-container input {
+		font-size: 13px;
+		width: 255px;
+	}
+
+	.input-container input:focus {
+		width: 260px;
+	}
+
+	.input-container i {
+		font-size: 13px;
+		margin: 2px 0;
+	}
+}
