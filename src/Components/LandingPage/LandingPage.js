@@ -5,7 +5,7 @@ import { fetchRestaurantsData } from '../../apiCalls'
 import './LandingPage.css'
 
 export const LandingPage = ({ storeData }) => {
-	const [zipCode, setZipCode] = useState('')
+	// const [zipCode, setZipCode] = useState('')
 	// const [restaurantsData, setRestaurantsData] = useState([])
 	const [error, setError] = useState('')
 	const history = useHistory()
@@ -17,18 +17,17 @@ export const LandingPage = ({ storeData }) => {
 
 	const validateRestaurantData = async e => {
 		const fetchId = new Date().valueOf()
-    const zipCodeValidation = /[0-9]{5}/.test(e.target.value)
+    const zipCode = e.target.value
+    const zipCodeValidation = /[0-9]{5}/.test(zipCode)
 		if (zipCodeValidation && e.key === 'Enter') {
 			setError('')
-      const query = e.target.value
 			try {
-				const response = await fetchRestaurantsData()
+				const response = await fetchRestaurantsData(zipCode, fetchId)
 				const restaurants = await response.json()
 				storeData(restaurants.data)
 				history.push('/selection')
 			} catch (e) {
 				setError(e.message)
-				throw e
 			}
 		}
 	}
@@ -42,13 +41,10 @@ export const LandingPage = ({ storeData }) => {
 				<input
 					type='text'
 					name='search'
-					// minLength='5'
 					maxLength='5'
 					pattern='[0-9]{5}'
 					autoComplete='off'
 					placeholder='Enter Zip Code...'
-					// value={zipCode}
-					// onChange={handleChange}
 					onKeyUp={validateRestaurantData}
 				/>
 			</div>
