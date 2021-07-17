@@ -3,11 +3,16 @@
 	align-items: center;
 	flex-direction: column;
 	text-align: center;
-	margin-top: 5%;  
+	margin-top: 5%;
 }
 
 .landing-title {
 	color: #d68914;
+}
+
+.err-msg,
+.landing-title {
+	cursor: default;
 }
 
 .err-msg {
@@ -32,6 +37,14 @@
 	margin-left: 5px;
 	font-size: 20px;
 	width: 400px;
+	transition: 0.2s ease-in-out;
 }
 
+.input-container input:focus {
+	border-bottom: 2px solid #d68914;
+}
 
+.input-container i {
+	font-size: 20px;
+	margin: 5px 0;
+}
