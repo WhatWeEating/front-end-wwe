@@ -48,7 +48,6 @@ const Selection = ({ restaurantsData, storeSelections }) => {
     return (
       <main className='selection'>
         <h1>What We Eating?</h1>
-        <Link to='/voting' ><button storeSelections={storeSelections(choices)} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit your choices for voting" : "Please select three restaurants to submit for voting"}</button></Link>
         <div className='restaurants-container'>
             {renderCards(restaurantsData)}
         </div>
