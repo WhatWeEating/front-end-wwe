@@ -4,6 +4,7 @@
     margin-right: 20px;
     border-radius: 20px;
 	background-color: #162738;
+    position: relative;
   }
 
   .card:hover {
@@ -15,9 +16,12 @@
     border-radius: 20px;
     display: inline-block;
     padding: 1px 6px;
-    width: 100%;
+    width: 90%;
     margin-top: 10px;
     margin-bottom: 10px;
+    position: absolute;
+    bottom: -3px;
+    right: 16px;
   }
 
 .image{
