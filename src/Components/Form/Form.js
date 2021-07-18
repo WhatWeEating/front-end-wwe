@@ -102,18 +102,9 @@ const Form = ({ restaurantSelections }) => {
           name={restaurantSelections[2].attributes.name}
         />
       } </div>
-      <div id="outer-first" className="dropzone">
-        1st
-      <div id="inner-first" className="dropzone"></div>
-      </div>
-      <div id="outer-second" className="dropzone">
-        2nd
-      <div id="inner-second" className="dropzone"></div>
-      </div>
-      <div id="outer-third" className="dropzone">
-        3rd
-      <div id="inner-third" className="dropzone"></div>
-      </div>
+      <div id="outer-first" className="dropzone"></div>
+      <div id="outer-second" className="dropzone"></div>
+      <div id="outer-third" className="dropzone"></div>
       <button className='submit' onClick={event => submitVote(event)}>SUBMIT</button>
     </form>
   )
