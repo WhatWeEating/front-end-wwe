@@ -14,12 +14,13 @@
 }
 
 .winner-info-container {
+  position: fixed;
   border: 1px solid red;
-  height: 100%;
-  width: 400px;
-  left: 12px;
-  top: 0px;
-  border-radius: 50%;
+  height: 242px;
+  width: 240px;
+  left: 91px;
+  top: 38px;
+  border-radius: 76%;
 }
 
 .link,
