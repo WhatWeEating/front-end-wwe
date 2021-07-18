@@ -1,7 +1,9 @@
 .card {
     box-sizing: border-box;
-    border: 3px solid #FF553D;
-    background-color: #17283B;
+    padding: 10px;
+    margin-right: 20px;
+    border-radius: 20px;
+	background-color: #162738;
   }
 
   .card:hover {
@@ -10,17 +12,17 @@
   }
 
   .select{
+    border-radius: 20px;
     display: inline-block;
-    background-size: cover;
-    border-width: 5px;
     padding: 1px 6px;
-    border-style: outset;
-    color: black;
-    text-shadow: none;
     width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
 .image{
+    border-radius: 40px;
+    margin-top: 10px;
     min-width: 100px;
     max-width: 100px;
 }
