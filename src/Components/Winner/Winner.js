@@ -12,7 +12,7 @@ const Winner = ({ restaurantSelections, eventID }) => {
 
   const fetchWinnerButton = (eventID) => {
     setFetchEngaged(true);
-    setWinnerID('1')
+    setWinnerID('2')
   }
 
   const addressTrim = (address) => {
@@ -40,7 +40,12 @@ const Winner = ({ restaurantSelections, eventID }) => {
     ) 
   } else if (!winnerID.length && fetchEngaged) {
     return (
-      <h1>HI</h1>
+      <>
+      <main className='winner-container'>
+        <h1>TALLYING RESULTS!</h1>
+        <div className='load-ring'></div>
+      </main>
+      </>
     )
   } else if (winnerID.length && fetchEngaged) {
     console.log(winnerID, 'winnerID')
