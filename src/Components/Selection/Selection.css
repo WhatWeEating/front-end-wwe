@@ -1,8 +1,6 @@
 .selection {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  flex-wrap: wrap;
+  margin: 0;
+  background-color: #1D1827;
 }
 
 .restaurants-container {
@@ -13,5 +11,9 @@
 }
 
 h1 {
-  color: #F0995B;
+  padding-left: 20px;
+}
+.selection-submit {
+  padding-left: 20px;
+  padding-bottom: 20px;
 }

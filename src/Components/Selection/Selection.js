@@ -51,7 +51,7 @@ const Selection = ({ restaurantsData, storeSelections }) => {
         <div className='restaurants-container'>
             {renderCards(restaurantsData)}
         </div>
-        <Link to='/voting' ><button storeSelections={storeSelections(choices)} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit your choices for voting" : "Please select three restaurants to submit for voting"}</button></Link>
+        <Link className="selection-submit" to='/voting' ><button storeSelections={storeSelections(choices)} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit" : "Not Enough Selections"}</button></Link>
       </main>
     )
     }
