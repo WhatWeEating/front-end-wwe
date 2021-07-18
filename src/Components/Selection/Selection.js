@@ -26,7 +26,6 @@ const Selection = ({ restaurantsData, storeSelections }) => {
           <Card
             id={restaurant.id}
             key={restaurant.id}
-            type={restaurant.type}
             rating={restaurant.attributes.rating}
             price={restaurant.attributes.price}
             phone={restaurant.attributes.phone}
