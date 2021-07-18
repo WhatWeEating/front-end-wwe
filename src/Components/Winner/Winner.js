@@ -7,9 +7,11 @@ const Winner = ({ restaurantSelections, eventID }) => {
   const [winnerID, setWinnerID] = useState('')
   const [error, setError] = useState('')
   const [voteButtonIsEngaged, setVoteButtonIsEngaged] = useState(false)
+  const [fetchEngaged, setFetchEngaged] = useState(false)
   console.log(restaurantSelections, 'restaurantSelections')
 
   const fetchWinnerButton = (eventID) => {
+    setFetchEngaged(true);
     setWinnerID('1')
   }
 
@@ -18,7 +20,7 @@ const Winner = ({ restaurantSelections, eventID }) => {
     return `${winningRestaurantAddressSplit[0]} ${winningRestaurantAddressSplit[2]} ${winningRestaurantAddressSplit[3]}, ${winningRestaurantAddressSplit[4]} ${winningRestaurantAddressSplit[5]} ${winningRestaurantAddressSplit[6]}`
   }
    
-  if (!winnerID.length) {
+  if (!winnerID.length && !fetchEngaged) {
     return(
       <main className='winner-container'>
         <div className='tally-votes-view'>
@@ -36,7 +38,11 @@ const Winner = ({ restaurantSelections, eventID }) => {
         </div>
       </main>
     ) 
-  } else {
+  } else if (!winnerID.length && fetchEngaged) {
+    return (
+      <h1>HI</h1>
+    )
+  } else if (winnerID.length && fetchEngaged) {
     console.log(winnerID, 'winnerID')
     const winningRestaurant  = restaurantSelections.find(selection => Number(selection.id) === Number(winnerID))
     const winningRestaurantAddress = addressTrim(winningRestaurant)
