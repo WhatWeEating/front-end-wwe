@@ -13,7 +13,7 @@
   filter: invert(70%) sepia(43%) saturate(763%) hue-rotate(328deg) brightness(97%) contrast(93%);
 }
 
-.winner-info-container {
+.winner-info-wrap {
   position: fixed;
   border: 1px solid red;
   height: 242px;
@@ -21,6 +21,22 @@
   left: 91px;
   top: 38px;
   border-radius: 76%;
+  overflow: hidden;
+
+}
+
+.winner-image {
+  position: relative;
+}
+
+.winner-info-container {
+  border: 1px solid blue;
+  position: fixed;
+  width: 210px;
+  left: 106px;
+  top: 76px;
+  border-radius: 0;
+  word-wrap: break-word;
 }
 
 .link,

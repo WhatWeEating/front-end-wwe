@@ -41,10 +41,13 @@ const Winner = ({ restaurantSelections, eventID }) => {
     return (
       <main className='winner'>
         <img className='winner-ribbon' src={ribbon} alt='ribbon' />
-        <div className='winner-info-container'>
-        <h3 className='winner-name'>{winningRestaurant.attributes.name}</h3>
-        <a className='winner-phone' href='tel:1111111111'>{winningRestaurant.attributes.phone}</a>
-        <h4 className='winner-address'>{winningRestaurantAddress}</h4>
+        <div className='winner-info-wrap'>
+        <img className='winner-image' src={winningRestaurant.attributes.image_url} alt='ribbon' />
+          <div className='winner-info-container'>
+          <h3 className='winner-name'>{winningRestaurant.attributes.name}</h3>
+          <a className='winner-phone' href='tel:1111111111'>{winningRestaurant.attributes.phone}</a>
+          <h4 className='winner-address'>{winningRestaurantAddress}</h4>
+          </div>
         </div>
       </main>
     )
