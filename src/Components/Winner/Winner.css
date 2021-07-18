@@ -83,3 +83,17 @@ a:link {
 a:hover {
   color: #FF553D;
 }
+
+@media only screen and (min-width: 768px) {
+  .winner-ribbon {
+    left: 36%;
+  }
+  .winner-info-wrap {
+    left: 41%;
+  }
+  
+  .winner-info-container {
+    left: 42%;
+  }
+
+}
