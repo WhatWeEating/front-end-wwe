@@ -1,9 +1,21 @@
 .winner-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   text-align: center;
   height: 100%;
   /* margin-top: 55px; */
+}
+
+.tally-votes-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+}
+
+.yes-button, .no-button {
+  margin: 10px;
 }
 
 .winner-ribbon {
@@ -38,7 +50,7 @@
   position: fixed;
   width: 210px;
   left: 106px;
-  top: 276px;
+  top: 284px;
   border-radius: 0;
   word-wrap: break-word;
   color: white;

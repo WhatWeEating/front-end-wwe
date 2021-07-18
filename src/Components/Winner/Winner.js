@@ -21,17 +21,19 @@ const Winner = ({ restaurantSelections, eventID }) => {
   if (!winnerID.length) {
     return(
       <main className='winner-container'>
-        <h1>TALLY VIEW</h1>
+        <div className='tally-votes-view'>
         {!voteButtonIsEngaged ? 
-        <button className='tally-votes' onClick={(e) => setVoteButtonIsEngaged(!voteButtonIsEngaged)}> TALLY VOTES</button> : 
+        <>
+        <h1>Ready To View Results?</h1>
+        <button className='tally-votes-button winner-button' onClick={(e) => setVoteButtonIsEngaged(!voteButtonIsEngaged)}> TALLY VOTES!</button>
+        </> : 
         (<>
         <h2>ARE YOU SURE YOU WANT TO CLOSE VOTING? </h2>
-        <button 
-        onClick={(e) => fetchWinnerButton(eventID)} 
-        >YES</button>
-        <button onClick={(e) => setVoteButtonIsEngaged(!voteButtonIsEngaged)} >NO</button>
+        <button className='yes-button winner-button' onClick={(e) => fetchWinnerButton(eventID)} >YES!</button>
+        <button className='no-button winner-button'onClick={(e) => setVoteButtonIsEngaged(!voteButtonIsEngaged)} >NOT YET!</button>
         </>
         )} 
+        </div>
       </main>
     ) 
   } else {
