@@ -4,6 +4,7 @@ import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom'
 import Card from '../Card/Card';
 
+
 const Selection = ({ restaurantsData, storeSelections }) => {
   const [choices, setChoices] = useState([])
 
@@ -19,6 +20,10 @@ const Selection = ({ restaurantsData, storeSelections }) => {
     setChoices(currentChoices)
   }
 
+  // const handlePost = () => {
+
+  // }
+
   function renderCards(restaurantsData) {
     const hasMaxChoices = choices.length >= 3
       return restaurantsData?.map(restaurant => {
@@ -29,11 +34,11 @@ const Selection = ({ restaurantsData, storeSelections }) => {
             rating={restaurant.attributes.rating}
             price={restaurant.attributes.price}
             phone={restaurant.attributes.phone}
-            api_id={restaurant.attributes.api_id}
-            open={restaurant.attributes.open}
+            // api_id={restaurant.attributes.api_id}
+            // open={restaurant.attributes.open}
             name={restaurant.attributes.name}
-            image_url={restaurant.attributes.image_url}
-            full_address={restaurant.attributes.full_address}
+            image_url={restaurant.attributes.image}
+            full_address={restaurant.attributes.address}
             toggleChoice={toggleChoice}
             isSelected={choices.includes(restaurant)}
             disabled={hasMaxChoices}
