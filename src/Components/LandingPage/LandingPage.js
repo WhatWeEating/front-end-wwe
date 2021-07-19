@@ -41,15 +41,11 @@ export const LandingPage = ({ storeData }) => {
 					maxLength='5'
 					pattern='[0-9]{5}'
 					autoComplete='off'
-<<<<<<< HEAD
 					placeholder='Enter 5 digit zip code...'
 					onKeyUp={validateRestaurantData}
-=======
 					placeholder='Enter Zip Code...'
-					value={zipCode}
-					// onChange={handleChange}
 					onKeyDown={assignRestaurantsData}
->>>>>>> eb0162b (Add a fetch id to make each search unique)
+					onKeyUp={validateRestaurantData}
 				/>
 			</div>
 		</div>
