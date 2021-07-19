@@ -1,12 +1,8 @@
 import React, { Component, useState, useEffect } from 'react';
 import './Form.css';
 import Card from '../Card/Card';
-import interact from 'interactjs'
-import { useHistory } from "react-router-dom"
-
-let first;
-let second;
-let third;
+import interact from 'interactjs';
+import { useHistory } from "react-router-dom";
 
 const Form = ({ restaurantSelections }) => {
  const [firstChoice, setFirstPlace] = useState('')
@@ -16,9 +12,6 @@ const Form = ({ restaurantSelections }) => {
 
 
  const submitVote = event => {
-  setFirstPlace(first)
-  setSecondPlace(second)
-  setThirdPlace(third)
  //Calculates score for individual and sends
  //post request to back end with restaurant and
  //number of points
@@ -57,11 +50,11 @@ const Form = ({ restaurantSelections }) => {
    ondrop: function (event) {
      event.relatedTarget.classList.add('dropped')
      if (event.target.id === 'inner-first' || event.target.id === 'outer-first') {
-       first = event.relatedTarget.innerHTML
+       setFirstPlace(event.relatedTarget.innerHTML)
      } else if (event.target.id === 'inner-second' || event.target.id === 'outer-second') {
-       second = event.relatedTarget.innerText
+       setSecondPlace(event.relatedTarget.innerHTML)
      } else {
-       third = event.relatedTarget.innerText
+       setThirdPlace(event.relatedTarget.innerHTML)
      }
    },
    ondropdeactivate: function (event) {
@@ -97,6 +90,7 @@ const Form = ({ restaurantSelections }) => {
       <div id="yes-drop" className="drag-drop">
         <p>{restaurantSelections[2].attributes.name}</p>
       </div>
+    <h1 className='instruction'>Drag and Drop Your Choices</h1>
     <div className='dropzone-container'>
       <div id="outer-second" className="second dropzone"></div>
       <div id="outer-first" className="first dropzone"></div>
