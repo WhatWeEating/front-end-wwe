@@ -16,6 +16,11 @@
 	cursor: default;
 }
 
+.err-msg,
+.landing-title {
+	cursor: default;
+}
+
 .err-msg {
 	background: #e53a0f;
 }

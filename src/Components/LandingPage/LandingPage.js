@@ -10,14 +10,15 @@ export const LandingPage = ({ storeData }) => {
 
 	const validateRestaurantData = async e => {
 		setError('')
-		const fetchId = new Date().valueOf()
 		const zipCode = e.target.value
 		const zipCodeValidation = /[0-9]{5}/.test(zipCode)
 		if (zipCodeValidation && e.key === 'Enter') {
+      const fetchId = new Date().valueOf()
 			try {
 				const response = await fetchRestaurantsData(zipCode, fetchId)
 				const restaurants = await response.json()
-				storeData(restaurants.data)
+        // console.log(restaurants.data);
+				storeData(restaurants.data, fetchId)
 				history.push('/selection')
 			} catch (e) {
 				setError(e.message)
@@ -42,6 +43,9 @@ export const LandingPage = ({ storeData }) => {
 					autoComplete='off'
 					placeholder='Enter 5 digit zip code...'
 					onKeyUp={validateRestaurantData}
+					// placeholder='Enter Zip Code...'
+					// onKeyDown={assignRestaurantsData}
+					// onKeyUp={validateRestaurantData}
 				/>
 			</div>
 		</div>
