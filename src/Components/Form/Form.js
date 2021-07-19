@@ -1,24 +1,18 @@
 import React, { Component, useState, useEffect } from 'react';
 import './Form.css';
 import Card from '../Card/Card';
-import interact from 'interactjs'
-import { useHistory } from "react-router-dom"
-
-let first;
-let second;
-let third;
+import interact from 'interactjs';
+import { useHistory } from "react-router-dom";
 
 const Form = ({ restaurantSelections }) => {
  const [firstChoice, setFirstPlace] = useState('')
  const [secondChoice, setSecondPlace] = useState('')
  const [thirdChoice, setThirdPlace] = useState('')
+ const [dropped, setDropped] = useState(false)
  const history = useHistory()
 
 
  const submitVote = event => {
-  setFirstPlace(first)
-  setSecondPlace(second)
-  setThirdPlace(third)
  //Calculates score for individual and sends
  //post request to back end with restaurant and
  //number of points
@@ -56,13 +50,17 @@ const Form = ({ restaurantSelections }) => {
    },
    ondrop: function (event) {
      event.relatedTarget.classList.add('dropped')
-     if (event.target.id === 'inner-first' || event.target.id === 'outer-first') {
-       first = event.relatedTarget.innerHTML
-     } else if (event.target.id === 'inner-second' || event.target.id === 'outer-second') {
-       second = event.relatedTarget.innerText
+     if (event.target.id === 'outer-first') {
+       setFirstPlace(event.relatedTarget.innerHTML)
+     } else if (event.target.id === 'outer-second') {
+       setSecondPlace(event.relatedTarget.innerHTML)
      } else {
-       third = event.relatedTarget.innerText
+       setThirdPlace(event.relatedTarget.innerHTML)
      }
+
+    if (firstChoice.length && secondChoice.length && thirdChoice.length) {
+      setDropped(true);
+    }
    },
    ondropdeactivate: function (event) {
      event.target.classList.remove('drop-active')
@@ -83,38 +81,35 @@ const Form = ({ restaurantSelections }) => {
      listeners: { move: dragMoveListener }
    })
 
-   console.log(restaurantSelections[0])
-
    return (
     <form className='form'>
-      <div id="yes-drop" className="drag-drop"> {
-        <Card
-        name={restaurantSelections[0].attributes.name}
-        />
-      } </div>
-      <div id="yes-drop" className="drag-drop"> {
-        <Card
-          name={restaurantSelections[1].attributes.name}
-        />
-      } </div>
-      <div id="yes-drop" className="drag-drop"> {
-        <Card
-          name={restaurantSelections[2].attributes.name}
-        />
-      } </div>
-      <div id="outer-first" className="dropzone">
-        1st
-      <div id="inner-first" className="dropzone"></div>
+    <div id="yes-drop" className="drag-drop">
+      <p>{restaurantSelections[0].attributes.name}</p>
+    </div>
+      <div id="yes-drop" className="drag-drop">
+        <p>{restaurantSelections[1].attributes.name}</p>
       </div>
-      <div id="outer-second" className="dropzone">
-        2nd
-      <div id="inner-second" className="dropzone"></div>
+      <div id="yes-drop" className="drag-drop">
+        <p>{restaurantSelections[2].attributes.name}</p>
       </div>
-      <div id="outer-third" className="dropzone">
-        3rd
-      <div id="inner-third" className="dropzone"></div>
+    {!dropped ? <h1 className='instruction'>Drag and Drop Your Choices</h1>
+     : <button className='submit' onClick={event => submitVote(event)}>SUBMIT</button>}
+    <div className='dropzone-container'>
+      <div id="outer-second" className="second dropzone"></div>
+      <div id="outer-first" className="first dropzone"></div>
+      <div id="outer-third" className="third dropzone"></div>
+    </div>
+    <div className='podium-container'>
+      <div className='podium-one'>
+        <h1 className='podium-text'>2nd</h1>
       </div>
-      <button className='submit' onClick={event => submitVote(event)}>SUBMIT</button>
+      <div className='podium-two'>
+        <h1 className='podium-text'>1st</h1>
+      </div>
+      <div className='podium-three'>
+        <h1 className='podium-text'>3rd</h1>
+      </div>
+    </div>
     </form>
   )
 }
