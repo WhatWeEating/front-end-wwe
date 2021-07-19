@@ -27,6 +27,13 @@
   filter: invert(70%) sepia(43%) saturate(763%) hue-rotate(328deg) brightness(97%) contrast(93%);
 }
 
+.winner-text {
+  position: fixed;
+  top: 92px;
+  left: 110px;
+  font-size: 50px;
+}
+
 .winner-info-wrap {
   position: fixed;
   /* border: 1px solid red; */
@@ -36,7 +43,6 @@
   top: 238px;
   border-radius: 76%;
   overflow: hidden;
-
 }
 
 .winner-image {

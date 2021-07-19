@@ -12,7 +12,8 @@ const Winner = ({ restaurantSelections, eventID }) => {
 
   const fetchWinnerButton = (eventID) => {
     setFetchEngaged(true);
-    setWinnerID('2')
+    // setWinnerID('2')
+    setTimeout(function(){ setWinnerID('2'); }, 3000)
   }
 
   const addressTrim = (address) => {
@@ -54,6 +55,7 @@ const Winner = ({ restaurantSelections, eventID }) => {
     return (
       <main className='winner-container'>
         <div className='winner'>
+          <h1 className='winner-text'>WINNER!</h1>
         <img className='winner-ribbon' src={ribbon} alt='ribbon' />
         <div className='winner-info-wrap'>
         <img className='winner-image' src={winningRestaurant.attributes.image_url} alt='ribbon' />
