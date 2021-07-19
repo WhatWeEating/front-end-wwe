@@ -45,7 +45,7 @@ const Winner = ({ restaurantSelections, eventID }) => {
       <>
       <main className='winner-container'>
         <h1>TALLYING RESULTS!</h1>
-        <div className='load-ring'></div>
+        <LoadWheel />
       </main>
       </>
     )

@@ -5,3 +5,5 @@ const LoadWheel = () => {
     <div className='load-ring'></div>
   )
 }
+
+export default LoadWheel;
