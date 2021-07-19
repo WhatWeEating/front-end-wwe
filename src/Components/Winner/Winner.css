@@ -1,26 +1,111 @@
-.winner {
+.winner-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   text-align: center;
-  margin-top: 55px;
+  height: 100%;
+  align-items: center;
+  /* margin-top: 55px; */
+}
+
+.tally-votes-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+}
+
+.yes-button, .no-button {
+  margin: 10px;
 }
 
 .winner-ribbon {
   position: fixed;
   width: 400px;
   left: 12px;
-  top: 0px;
+  top: 200px;
   filter: invert(70%) sepia(43%) saturate(763%) hue-rotate(328deg) brightness(97%) contrast(93%);
+}
+
+.winner-text {
+  position: fixed;
+  top: 92px;
+  left: 110px;
+  font-size: 50px;
+}
+
+.winner-info-wrap {
+  position: fixed;
+  /* border: 1px solid red; */
+  height: 242px;
+  width: 240px;
+  left: 91px;
+  top: 238px;
+  border-radius: 76%;
+  overflow: hidden;
+}
+
+.winner-image {
+  position: relative;
+  object-fit: fill;
+  width: 289px;
+  filter: opacity(0.2) grayscale(75%)
+}
+
+.winner-info-container {
+  /* border: 1px solid blue; */
+  position: fixed;
+  width: 210px;
+  left: 106px;
+  top: 284px;
+  border-radius: 0;
+  word-wrap: break-word;
+  color: white;
+  text-shadow: -1px 1px 8px black;
+}
+
+.load-ring {
+  border: 16px solid white;
+  border-radius: 50%;
+  border-top:16px solid #F0995B;
+  width: 120px;
+  height: 120px;
+  animation: spin 1.90s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .link,
 a:visited,
 a:link {
-  color: #FDFFFE;
+  color: #0190AC;
   text-decoration: none;
   transition: 300ms;
 }
 
 a:hover {
   color: #FF553D;
+}
+
+@media only screen and (min-width: 768px) {
+  .winner-text {
+    top: 8px;
+    left: 36%;
+    font-size: 100px;
+  }
+
+  .winner-ribbon {
+    left: 36%;
+  }
+  .winner-info-wrap {
+    left: 41%;
+  }
+  
+  .winner-info-container {
+    left: 42%;
+  }
+
 }
