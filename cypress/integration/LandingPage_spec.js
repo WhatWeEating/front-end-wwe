@@ -41,4 +41,12 @@ describe('LandingPage', () => {
 			.get('.err-msg')
 			.should('have.text', 'Please enter 5 digit zip code')
 	})
+
+  it('should display selection page after a valid zipcode', () => {
+    	cy.get('input[name="search"]')
+				.type('11111')
+				.type('{enter}')
+				.url()
+				.should('eq', 'http://localhost:3000/selection')
+  })
 })
