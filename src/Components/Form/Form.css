@@ -335,3 +335,52 @@
     width:17vw;
   }
 }
+
+@media screen and (min-width: 400px) and (max-width: 449px) {
+  .podium-container {
+    margin-left: 2vw;
+    margin-top: 26em;
+  }
+
+  .first {
+     right: 36vw;
+     bottom: 29vw;
+  }
+
+  .second {
+     right: 68vw;
+     bottom: 23vw;
+  }
+
+  .third {
+     right: 3vw;
+     bottom: 17vw;
+  }
+
+  .drag-drop {
+    height: 17vw;
+    width: 23vw;
+  }
+
+  .podium-one {
+    height: 27vw;
+    width: 32vw;
+  }
+
+  .podium-two {
+    height: 33vw;
+    width: 32vw;
+  }
+
+  .podium-three {
+    height: 21vw;
+    width: 32vw;
+  }
+
+  .first,
+  .second,
+  .third {
+    height: 20vw;
+    width: 23vw;
+  }
+}
