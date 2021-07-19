@@ -43,9 +43,9 @@ export const LandingPage = ({ storeData }) => {
 					autoComplete='off'
 					placeholder='Enter 5 digit zip code...'
 					onKeyUp={validateRestaurantData}
-					placeholder='Enter Zip Code...'
-					onKeyDown={assignRestaurantsData}
-					onKeyUp={validateRestaurantData}
+					// placeholder='Enter Zip Code...'
+					// onKeyDown={assignRestaurantsData}
+					// onKeyUp={validateRestaurantData}
 				/>
 			</div>
 		</div>
