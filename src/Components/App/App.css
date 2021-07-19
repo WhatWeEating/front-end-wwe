@@ -10,3 +10,7 @@ Body {
   background-attachment: fixed;
 }
 
+.App {
+  height: 99vh;
+}
+
