@@ -91,6 +91,12 @@ a:hover {
 }
 
 @media only screen and (min-width: 768px) {
+  .winner-text {
+    top: 8px;
+    left: 574px;
+    font-size: 100px;
+  }
+
   .winner-ribbon {
     left: 36%;
   }
