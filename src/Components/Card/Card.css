@@ -6,11 +6,13 @@
 	  background-color: #162738;
     position: relative;
     padding-bottom: 40px;
+    transform: translateY(-.5%);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
   }
 
   .card:hover {
-    transform: translateY(-.5%);
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+    transform: translateY(-.10%);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
   }
 
   .select{
