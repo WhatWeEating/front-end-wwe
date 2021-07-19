@@ -20,7 +20,7 @@ const Winner = ({ restaurantSelections, eventID }) => {
    
   if (!winnerID.length) {
     return(
-      <main className='winner'>
+      <main className='winner-container'>
         <h1>TALLY VIEW</h1>
         {!voteButtonIsEngaged ? 
         <button className='tally-votes' onClick={(e) => setVoteButtonIsEngaged(!voteButtonIsEngaged)}> TALLY VOTES</button> : 
@@ -39,7 +39,8 @@ const Winner = ({ restaurantSelections, eventID }) => {
     const winningRestaurant  = restaurantSelections.find(selection => Number(selection.id) === Number(winnerID))
     const winningRestaurantAddress = addressTrim(winningRestaurant)
     return (
-      <main className='winner'>
+      <main className='winner-container'>
+        <div className='winner'>
         <img className='winner-ribbon' src={ribbon} alt='ribbon' />
         <div className='winner-info-wrap'>
         <img className='winner-image' src={winningRestaurant.attributes.image_url} alt='ribbon' />
@@ -48,6 +49,7 @@ const Winner = ({ restaurantSelections, eventID }) => {
           <a className='winner-phone' href='tel:1111111111'>{winningRestaurant.attributes.phone}</a>
           <h4 className='winner-address'>{winningRestaurantAddress}</h4>
           </div>
+        </div>
         </div>
       </main>
     )

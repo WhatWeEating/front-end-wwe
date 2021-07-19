@@ -1,25 +1,26 @@
-.winner {
+.winner-container {
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-top: 55px;
+  height: 100%;
+  /* margin-top: 55px; */
 }
 
 .winner-ribbon {
   position: fixed;
   width: 400px;
   left: 12px;
-  top: 0px;
+  top: 200px;
   filter: invert(70%) sepia(43%) saturate(763%) hue-rotate(328deg) brightness(97%) contrast(93%);
 }
 
 .winner-info-wrap {
   position: fixed;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   height: 242px;
   width: 240px;
   left: 91px;
-  top: 38px;
+  top: 238px;
   border-radius: 76%;
   overflow: hidden;
 
@@ -27,22 +28,27 @@
 
 .winner-image {
   position: relative;
+  object-fit: fill;
+  width: 289px;
+  filter: opacity(0.2) grayscale(75%)
 }
 
 .winner-info-container {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   position: fixed;
   width: 210px;
   left: 106px;
-  top: 76px;
+  top: 276px;
   border-radius: 0;
   word-wrap: break-word;
+  color: white;
+  text-shadow: -1px 1px 8px black;
 }
 
 .link,
 a:visited,
 a:link {
-  color: #FDFFFE;
+  color: #0190AC;
   text-decoration: none;
   transition: 300ms;
 }
