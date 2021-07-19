@@ -46,7 +46,7 @@
    position: absolute;
    z-index: -1;
    right: 62vw;
-   bottom:14vw;
+   bottom:13vw;
 }
 
 .third {
@@ -54,7 +54,7 @@
    position: absolute;
    z-index: -1;
    right: 22vw;
-   bottom: 9vw;
+   bottom: 8vw;
 }
 
 .podium-container {
@@ -64,7 +64,7 @@
   height: 0vw;
   width: 60vw;
   margin-left: 20vw;
-  margin-top: 18em;
+  margin-top: 15em;
   padding-bottom: 0px;
   background-color: #17283B;
 }
@@ -123,7 +123,13 @@
 }
 
 .podium-text{
-  margin-left: 4vw;
+  margin-left: 5vw;
+}
+
+.instruction{
+  position: absolute;
+  top: 11vw;
+  right: 37vw;
 }
 
 
@@ -131,6 +137,11 @@
   .podium-container {
     margin-left: 20vw;
     margin-top: 20em;
+  }
+
+  .instruction{
+    top: 15vw;
+    right: 33vw;
   }
 }
 
@@ -160,6 +171,11 @@
     width: 10vw;
   }
 
+  .instruction{
+    top: 17vw;
+    right: 31vw;
+  }
+
 }
 
 @media screen and (min-width: 751px) and (max-width: 885px) {
@@ -184,9 +200,15 @@
   }
 
   .drag-drop {
-    height: 6vw;
+    height: 8vw;
     width: 13vw;
   }
+
+  .instruction{
+    top: 26vw;
+    right: 27vw;
+  }
+
 }
 
 @media screen and (min-width: 680px) and (max-width: 750px) {
@@ -211,8 +233,8 @@
   }
 
   .drag-drop {
-    height: 8vw;
-    width: 15vw;
+    height: 12vw;
+    width: 16vw;
   }
 
   .podium-one {
@@ -235,6 +257,11 @@
   .third {
     height: 12vw;
     width:17vw;
+  }
+
+  .instruction{
+    top: 35vw;
+    right: 23vw;
   }
 }
 
