@@ -6,13 +6,13 @@
 	  background-color: #162738;
     position: relative;
     padding-bottom: 40px;
-    transform: translateY(-.5%);
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+    transform: translateY(-.15%);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
   }
 
   .card:hover {
-    transform: translateY(-.10%);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+    transform: translateY(-.30%);
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, .2);
   }
 
   .select{
@@ -30,8 +30,9 @@
 .image{
     border-radius: 20px;
     margin-top: 10px;
-    min-width: 100px;
-    max-width: 100px;
+    object-fit: cover;
+    max-height: 200px;
+    width:100%
 }
 
 h3 {
