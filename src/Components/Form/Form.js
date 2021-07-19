@@ -49,9 +49,9 @@ const Form = ({ restaurantSelections }) => {
    },
    ondrop: function (event) {
      event.relatedTarget.classList.add('dropped')
-     if (event.target.id === 'inner-first' || event.target.id === 'outer-first') {
+     if (event.target.id === 'outer-first') {
        setFirstPlace(event.relatedTarget.innerHTML)
-     } else if (event.target.id === 'inner-second' || event.target.id === 'outer-second') {
+     } else if (event.target.id === 'outer-second') {
        setSecondPlace(event.relatedTarget.innerHTML)
      } else {
        setThirdPlace(event.relatedTarget.innerHTML)
