@@ -1,9 +1,40 @@
 .card {
     box-sizing: border-box;
-    border: 3px solid black;
     padding: 10px;
+    margin-right: 20px;
+    border-radius: 20px;
+	  background-color: #162738;
+    position: relative;
+    padding-bottom: 40px;
+    transform: translateY(-.15%);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
   }
 
-  .image{
-      max-width: 100px;
+  .card:hover {
+    transform: translateY(-.30%);
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, .2);
   }
+
+  .select{
+    border-radius: 20px;
+    display: inline-block;
+    padding: 1px 6px;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: absolute;
+    bottom: -3px;
+    right: 16px;
+  }
+
+.image{
+    border-radius: 20px;
+    margin-top: 10px;
+    object-fit: cover;
+    max-height: 200px;
+    width:100%
+}
+
+h3 {
+  color: #d68914;
+}
