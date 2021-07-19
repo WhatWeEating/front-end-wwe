@@ -85,27 +85,34 @@ const Form = ({ restaurantSelections }) => {
 
    console.log(restaurantSelections[0])
 
+   // <button className='submit' onClick={event => submitVote(event)}>SUBMIT</button>
    return (
     <form className='form'>
-      <div id="yes-drop" className="drag-drop"> {
-        <Card
-        name={restaurantSelections[0].attributes.name}
-        />
-      } </div>
-      <div id="yes-drop" className="drag-drop"> {
-        <Card
-          name={restaurantSelections[1].attributes.name}
-        />
-      } </div>
-      <div id="yes-drop" className="drag-drop"> {
-        <Card
-          name={restaurantSelections[2].attributes.name}
-        />
-      } </div>
-      <div id="outer-first" className="dropzone"></div>
-      <div id="outer-second" className="dropzone"></div>
-      <div id="outer-third" className="dropzone"></div>
-      <button className='submit' onClick={event => submitVote(event)}>SUBMIT</button>
+    <div id="yes-drop" className="drag-drop">
+      <p>{restaurantSelections[0].attributes.name}</p>
+    </div>
+      <div id="yes-drop" className="drag-drop">
+        <p>{restaurantSelections[1].attributes.name}</p>
+      </div>
+      <div id="yes-drop" className="drag-drop">
+        <p>{restaurantSelections[2].attributes.name}</p>
+      </div>
+    <div className='dropzone-container'>
+      <div id="outer-second" className="second dropzone"></div>
+      <div id="outer-first" className="first dropzone"></div>
+      <div id="outer-third" className="third dropzone"></div>
+    </div>
+    <div className='podium-container'>
+      <div className='podium-one'>
+        <h1 className='podium-text'>2nd</h1>
+      </div>
+      <div className='podium-two'>
+        <h1 className='podium-text'>1st</h1>
+      </div>
+      <div className='podium-three'>
+        <h1 className='podium-text'>3rd</h1>
+      </div>
+    </div>
     </form>
   )
 }
