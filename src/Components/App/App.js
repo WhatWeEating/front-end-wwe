@@ -6,17 +6,23 @@ import './App.css'
 import Selection from '../Selection/Selection'
 import Winner from '../Winner/Winner'
 import Form from '../Form/Form'
+import { postRestaurantsData } from '../../apiCalls'
 
 const App = () => {
   const [restaurantsData, setData] = useState([])
   const [restaurantSelections, setRestaurantSelections] = useState([])
+  const [eventId, setEventId] = useState('')
 
-  const storeData = async (data) => {
+  const storeData = async (data, eId) => {
     setData(data)
+    setEventId(eId)
   }
 
   const storeSelections = (selections) => {
     setRestaurantSelections(selections)
+    console.log(selections);
+    postRestaurantsData(selections, eventId)
+
   }
 
 	return (
