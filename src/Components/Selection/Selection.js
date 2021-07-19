@@ -7,6 +7,7 @@ import Card from '../Card/Card';
 
 const Selection = ({ restaurantsData, storeSelections }) => {
   const [choices, setChoices] = useState([])
+  const [submitIsClicked, setSubmitIsClicked] = useState(false)
 
   const toggleChoice = (id) => {
     const currentChoices = Array.from(choices)
@@ -19,10 +20,6 @@ const Selection = ({ restaurantsData, storeSelections }) => {
     }
     setChoices(currentChoices)
   }
-
-  // const handlePost = () => {
-
-  // }
 
   function renderCards(restaurantsData) {
     const hasMaxChoices = choices.length >= 3
@@ -47,7 +44,7 @@ const Selection = ({ restaurantsData, storeSelections }) => {
       })
     }
 
-    if (restaurantsData.length > 0) {
+    if (restaurantsData.length > 0 ) {
       const hasMaxChoices = choices.length >= 3
     return (
       <main className='selection'>
