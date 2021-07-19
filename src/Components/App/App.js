@@ -42,6 +42,7 @@ const App = () => {
                 <Selection
                 restaurantsData={restaurantsData}
                 storeSelections={storeSelections} 
+                eventId={eventId}
                 /> 
               }
             </>
