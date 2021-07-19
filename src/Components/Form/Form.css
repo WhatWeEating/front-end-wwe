@@ -133,3 +133,31 @@
     margin-top: 20em;
   }
 }
+
+@media screen and (min-width: 886px) and (max-width: 1139px) {
+  .podium-container {
+    margin-left: 20vw;
+    margin-top: 23em;
+  }
+
+  .first {
+     right: 41vw;
+     bottom: 16vw;
+  }
+
+  .second {
+     right: 61vw;
+     bottom:11vw;
+  }
+
+  .third {
+     right: 21vw;
+     bottom: 6vw;
+  }
+
+  .drag-drop {
+    height: 7vw;
+    width: 10vw;
+  }
+
+}
