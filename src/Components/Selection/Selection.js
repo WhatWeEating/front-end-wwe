@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom'
 import Card from '../Card/Card';
 
 
-const Selection = ({ restaurantsData, storeSelections }) => {
+const Selection = ({ restaurantsData, storeSelections, eventId }) => {
   const [choices, setChoices] = useState([])
+  const [submitIsClicked, setSubmitIsClicked] = useState(false)
 
   const toggleChoice = (id) => {
     const currentChoices = Array.from(choices)
@@ -20,10 +21,6 @@ const Selection = ({ restaurantsData, storeSelections }) => {
     setChoices(currentChoices)
   }
 
-  // const handlePost = () => {
-
-  // }
-
   function renderCards(restaurantsData) {
     const hasMaxChoices = choices.length >= 3
       return restaurantsData?.map(restaurant => {
@@ -34,8 +31,6 @@ const Selection = ({ restaurantsData, storeSelections }) => {
             rating={restaurant.attributes.rating}
             price={restaurant.attributes.price}
             phone={restaurant.attributes.phone}
-            // api_id={restaurant.attributes.api_id}
-            // open={restaurant.attributes.open}
             name={restaurant.attributes.name}
             image_url={restaurant.attributes.image}
             full_address={restaurant.attributes.address}
@@ -47,7 +42,7 @@ const Selection = ({ restaurantsData, storeSelections }) => {
       })
     }
 
-    if (restaurantsData.length > 0) {
+    if (restaurantsData.length > 0 && !submitIsClicked) {
       const hasMaxChoices = choices.length >= 3
     return (
       <main className='selection'>
@@ -55,9 +50,17 @@ const Selection = ({ restaurantsData, storeSelections }) => {
         <div className='restaurants-container'>
             {renderCards(restaurantsData)}
         </div>
-        <Link className="selection-submit" to='/voting' ><button storeSelections={storeSelections(choices)} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit" : "Not Enough Selections"}</button></Link>
+          <button  onClick={() => {setSubmitIsClicked(true); storeSelections(choices)}} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit" : "Not Enough Selections"}</button>
       </main>
     )
+  } else {
+    return (
+      <main className='selection-gen-link'>
+          <Link className="selection-submit" to={`/voting/${eventId}`}>
+          <h3 className='copy-link'>TEST</h3>
+        </Link>
+        </main>
+      )
     }
 }
 
