@@ -47,9 +47,10 @@ const App = () => {
               }
             </>
           )}/>
-          <Route exact path='/voting' 
-            render={() => (
+          <Route exact path='/voting/:id'
+            render={({match}) => (
               <>
+              {console.log(match.params.id)}
               {restaurantSelections.length > 0 && 
                 <Form 
                   restaurantSelections={restaurantSelections}

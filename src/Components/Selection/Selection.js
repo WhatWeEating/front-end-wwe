@@ -50,7 +50,7 @@ const Selection = ({ restaurantsData, storeSelections, eventId }) => {
         <div className='restaurants-container'>
             {renderCards(restaurantsData)}
         </div>
-          <button  onClick={() => setSubmitIsClicked(true)} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit" : "Not Enough Selections"}</button>
+          <button  onClick={() => {setSubmitIsClicked(true); storeSelections(choices)}} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit" : "Not Enough Selections"}</button>
       </main>
     )
   } else {
