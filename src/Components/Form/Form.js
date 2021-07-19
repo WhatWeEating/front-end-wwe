@@ -49,7 +49,6 @@ const Form = ({ restaurantSelections }) => {
      event.relatedTarget.classList.remove('can-drop')
    },
    ondrop: function (event) {
-     setDropped(true)
      event.relatedTarget.classList.add('dropped')
      if (event.target.id === 'outer-first') {
        setFirstPlace(event.relatedTarget.innerHTML)
@@ -58,6 +57,10 @@ const Form = ({ restaurantSelections }) => {
      } else {
        setThirdPlace(event.relatedTarget.innerHTML)
      }
+
+    if (firstChoice.length && secondChoice.length && thirdChoice.length) {
+      setDropped(true);
+    }
    },
    ondropdeactivate: function (event) {
      event.target.classList.remove('drop-active')
