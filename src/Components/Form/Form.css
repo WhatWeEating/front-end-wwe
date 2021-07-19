@@ -1,19 +1,7 @@
-#outer-first, #outer-second, #outer-third {
-  height: 140px;
-}
 
-#inner-first, #inner-second, #inner-third{
-  height: 80px;
-}
-
-.dropzone {
-  background-color: #bfe4ff;
-  border: dashed 4px transparent;
-  border-radius: 4px;
-  margin: 10px auto 30px;
-  padding: 10px;
-  width: 20%;
-  transition: background-color 0.3s;
+.App {
+  height: 100%;
+  width:100%;
 }
 
 .drop-active {
@@ -26,27 +14,114 @@
   border-style: solid;
 }
 
+
+.podium-one {
+  height: 15vw;
+  width: 20vw;
+  background-color: #f0995b;
+}
+
+.podium-two {
+  height: 20vw;
+  width: 20vw;
+  background-color: #f0995b;
+}
+
+.podium-three {
+  height: 10vw;
+  width: 20vw;
+  background-color: #f0995b;
+}
+
+.first {
+   display: inline-block;
+   position: absolute;
+   z-index: -1;
+   right: 42vw;
+   bottom: 18vw;
+}
+
+.second {
+   display: inline-block;
+   position: absolute;
+   z-index: -1;
+   right: 62vw;
+   bottom:14vw;
+}
+
+.third {
+   display: inline-block;
+   position: absolute;
+   z-index: -1;
+   right: 22vw;
+   bottom: 9vw;
+}
+
+.podium-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: flex-end;
+  height: 0vw;
+  width: 60vw;
+  margin-left: 20vw;
+  margin-top: 18em;
+  padding-bottom: 0px;
+  background-color: #17283B;
+}
+
+.form {
+  height: 100%;
+  padding-bottom: 0px;
+}
+
+.dropzone {
+  background-color: #bfe4ff;
+  border: dashed 4px transparent;
+  border-radius: 4px;
+  margin: 10px auto 30px;
+  padding: 10px;
+  width: 20%;
+  transition: background-color 0.3s;
+}
+
+.first,
+.second,
+.third {
+  height: 10vw;
+  width:15vw;
+}
+
+#root {
+  height: 100%;
+  width: 100%
+}
+
 .drag-drop {
+  height: 8vw;
+  width: 12vw;
   display: inline-block;
-  min-width: 40px;
   padding: 2em 0.5em;
   margin: 1rem 0 0 1rem;
-
   color: #fff;
-  background-color: #29e;
+  background-color: #ff593d;
   border: solid 2px #fff;
-
   touch-action: none;
   transform: translate(0px, 0px);
-
   transition: background-color 0.3s;
+  position: relative;
+  z-index: 10;
+  padding-top: 0px;
 }
 
 .drag-drop.can-drop {
   color: #000;
-  background-color: #4e4;
+  background-color: #0190ac;
 }
 
 .droppped {
-  background-color: #4e4;
+  background-color: #0190ac;
+}
+
+.podium-text{
+  margin-left: 4vw;
 }
