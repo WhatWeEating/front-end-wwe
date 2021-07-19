@@ -8,6 +8,7 @@ const Form = ({ restaurantSelections }) => {
  const [firstChoice, setFirstPlace] = useState('')
  const [secondChoice, setSecondPlace] = useState('')
  const [thirdChoice, setThirdPlace] = useState('')
+ const [dropped, setDropped] = useState(false)
  const history = useHistory()
 
 
@@ -48,6 +49,7 @@ const Form = ({ restaurantSelections }) => {
      event.relatedTarget.classList.remove('can-drop')
    },
    ondrop: function (event) {
+     setDropped(true)
      event.relatedTarget.classList.add('dropped')
      if (event.target.id === 'outer-first') {
        setFirstPlace(event.relatedTarget.innerHTML)
@@ -76,9 +78,6 @@ const Form = ({ restaurantSelections }) => {
      listeners: { move: dragMoveListener }
    })
 
-   console.log(restaurantSelections[0])
-
-   // <button className='submit' onClick={event => submitVote(event)}>SUBMIT</button>
    return (
     <form className='form'>
     <div id="yes-drop" className="drag-drop">
@@ -90,7 +89,8 @@ const Form = ({ restaurantSelections }) => {
       <div id="yes-drop" className="drag-drop">
         <p>{restaurantSelections[2].attributes.name}</p>
       </div>
-    <h1 className='instruction'>Drag and Drop Your Choices</h1>
+    {!dropped ? <h1 className='instruction'>Drag and Drop Your Choices</h1>
+     : <button className='submit' onClick={event => submitVote(event)}>SUBMIT</button>}
     <div className='dropzone-container'>
       <div id="outer-second" className="second dropzone"></div>
       <div id="outer-first" className="first dropzone"></div>
