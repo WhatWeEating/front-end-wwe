@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { fetchWinnerData } from '../../apiCalls'
 import './Winner.css'
 import ribbon from '../../assets/ribbon.png'
+import LoadWheel from '../../Components/LoadWheel/LoadWheel'
 
 const Winner = ({ restaurantSelections, eventID }) => {
   const [winnerID, setWinnerID] = useState('')
