@@ -161,3 +161,30 @@
   }
 
 }
+
+@media screen and (min-width: 751px) and (max-width: 885px) {
+  .podium-container {
+    margin-left: 20vw;
+    margin-top: 25em;
+  }
+
+  .first {
+     right: 41vw;
+     bottom: 16vw;
+  }
+
+  .second {
+     right: 61vw;
+     bottom:11vw;
+  }
+
+  .third {
+     right: 21vw;
+     bottom: 6vw;
+  }
+
+  .drag-drop {
+    height: 6vw;
+    width: 13vw;
+  }
+}
