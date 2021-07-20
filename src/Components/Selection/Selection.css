@@ -5,10 +5,49 @@
   grid-gap: 20px;
 }
 
-h1 {
+.title {
   padding-left: 20px;
 }
 .selection-submit {
-  padding-left: 20px;
   padding-bottom: 20px;
+}
+
+.selection-gen-link-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 99vw;
+  height: 99%;
+  word-wrap: break-word;
+}
+
+.selection-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selection-copy-link-button {
+  margin-top: 20px;
+}
+
+.selection-copied-flag {
+  position: fixed;
+  border-radius: 5px;
+  left: 250px;
+  border: 1px solid black;
+  padding: 3px;
+  background-color: grey;
+}
+
+.selection-go-vote-button {
+  margin-top: 40px;
+}
+
+@media only screen and (min-width: 768px) {
+  .selection-copied-flag {
+    left: 51%;
+  } 
 }

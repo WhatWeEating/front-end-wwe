@@ -1,5 +1,5 @@
 import './Selection.css';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom'
 import Card from '../Card/Card';
@@ -8,7 +8,9 @@ import Card from '../Card/Card';
 const Selection = ({ restaurantsData, storeSelections, eventId }) => {
   const [choices, setChoices] = useState([])
   const [submitIsClicked, setSubmitIsClicked] = useState(false)
-
+  const [showCopiedTag, setShowCopiedTag] = useState(false)
+  const genLink = useRef()
+  
   const toggleChoice = (id) => {
     const currentChoices = Array.from(choices)
     const chosenRestaurant = restaurantsData.find(restaurant => restaurant.id === id)
@@ -19,6 +21,11 @@ const Selection = ({ restaurantsData, storeSelections, eventId }) => {
       currentChoices.push(chosenRestaurant)
     }
     setChoices(currentChoices)
+  }
+
+  const copiedTag = () => {
+    setShowCopiedTag(true);
+    setTimeout(function(){ setShowCopiedTag(false); }, 3000)
   }
 
   function renderCards(restaurantsData) {
@@ -46,7 +53,7 @@ const Selection = ({ restaurantsData, storeSelections, eventId }) => {
       const hasMaxChoices = choices.length >= 3
     return (
       <main className='selection'>
-        <h1>What We Eating?</h1>
+        <h1 className='title'>What We Eating?</h1>
         <div className='restaurants-container'>
             {renderCards(restaurantsData)}
         </div>
@@ -55,10 +62,20 @@ const Selection = ({ restaurantsData, storeSelections, eventId }) => {
     )
   } else {
     return (
-      <main className='selection-gen-link'>
-          <Link className="selection-submit" to={`/voting/${eventId}`}>
-          <h3 className='copy-link'>TEST</h3>
+      <main className='selection-gen-link-container'>
+        <div className='selection-gen-link'>
+        <h1>SHARE THIS LINK WITH YOUR FRIENDS</h1>
+          <h3 ref={genLink} className='copy-link'>http://localhost:3000/voting/{eventId}</h3>
+        <div className='selection-button-container'>
+          {showCopiedTag ? 
+          <span className='selection-copied-flag hidden'>COPIED!</span> : null
+          }
+          <button className='selection-copy-link-button button' onClick={() => {navigator.clipboard.writeText((genLink.current).textContent); copiedTag() }} >COPY LINK!</button>
+        <Link className="selection-submit" to={`/voting/${eventId}`}>
+          <button className='selection-go-vote-button button'>GO VOTE!</button>
         </Link>
+          </div>
+          </div>
         </main>
       )
     }

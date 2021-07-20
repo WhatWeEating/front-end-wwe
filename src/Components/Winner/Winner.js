@@ -22,7 +22,7 @@ const Winner = ({ restaurantSelections, eventID }) => {
     return `${winningRestaurantAddressSplit[0]} ${winningRestaurantAddressSplit[2]} ${winningRestaurantAddressSplit[3]}, ${winningRestaurantAddressSplit[4]} ${winningRestaurantAddressSplit[5]} ${winningRestaurantAddressSplit[6]}`
   }
    
-  if (!winnerID.length && !fetchEngaged) {
+  if (!fetchEngaged) {
     return(
       <main className='winner-container'>
         <div className='tally-votes-view'>
