@@ -49,7 +49,7 @@ const Selection = ({ restaurantsData, storeSelections, eventId }) => {
       const hasMaxChoices = choices.length >= 3
     return (
       <main className='selection'>
-        <h1>What We Eating?</h1>
+        <h1 className='title'>What We Eating?</h1>
         <div className='restaurants-container'>
             {renderCards(restaurantsData)}
         </div>
@@ -58,12 +58,14 @@ const Selection = ({ restaurantsData, storeSelections, eventId }) => {
     )
   } else {
     return (
-      <main className='selection-gen-link'>
+      <main className='selection-gen-link-container'>
+        <div className='selection-gen-link'>
         <h1>Copy this link and send to your friends</h1>
         <Link className="selection-submit" to={`/voting/${eventId}`}>
           <h3 ref={genLink} className='copy-link'>http://localhost:3000/voting/{eventId}</h3>
         </Link>
           <button onClick={() => {navigator.clipboard.writeText((genLink.current).textContent)}} >COPY LINK!</button>
+          </div>
         </main>
       )
     }

@@ -5,10 +5,21 @@
   grid-gap: 20px;
 }
 
-h1 {
+.title {
   padding-left: 20px;
 }
 .selection-submit {
-  padding-left: 20px;
   padding-bottom: 20px;
+}
+
+.selection-gen-link-container {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 99vw;
+  height: 99%;
+  word-wrap: break-word;
 }
