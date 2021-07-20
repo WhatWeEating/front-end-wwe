@@ -8,9 +8,8 @@ import Card from '../Card/Card';
 const Selection = ({ restaurantsData, storeSelections, eventId }) => {
   const [choices, setChoices] = useState([])
   const [submitIsClicked, setSubmitIsClicked] = useState(false)
-  
+
   const genLink = useRef()
-  // console.log((genLink.current).textContent)
   
   const toggleChoice = (id) => {
     const currentChoices = Array.from(choices)
@@ -63,7 +62,8 @@ const Selection = ({ restaurantsData, storeSelections, eventId }) => {
         <h1>SHARE THIS LINK WITH YOUR FRIENDS</h1>
           <h3 ref={genLink} className='copy-link'>http://localhost:3000/voting/{eventId}</h3>
         <div className='selection-button-container'>
-          <button onClick={() => {navigator.clipboard.writeText((genLink.current).textContent); alert('copied!')}} >COPY LINK!</button>
+          <span className='selection-copied-flag'>COPIED!</span>
+          <button onClick={() => {navigator.clipboard.writeText((genLink.current).textContent); }} >COPY LINK!</button>
         <Link className="selection-submit" to={`/voting/${eventId}`}>
           <button className='selection-go-vote-button button'>GO VOTE!</button>
         </Link>
