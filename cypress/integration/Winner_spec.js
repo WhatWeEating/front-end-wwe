@@ -16,5 +16,35 @@ describe('Winner Page', () => {
     })
     .get('.selection > :nth-child(3)').click()
     .get('.selection-go-vote-button').click()
+    cy.get('.form > :nth-child(1)')
+    .trigger('mousedown', { button: 0 })
+    .wait(1000)
+    // .trigger("dragstart")
+    .trigger("dragleave")
+    cy.get('.podium-two')
+    .trigger("dragenter")
+    .trigger("dragover")
+    .trigger("drop")
+    .trigger("dragend");
   })
 })
+
+
+// cy.get('.form > :nth-child(1)')
+//     .first()
+//     // .focus()
+//     .trigger('dragstart')
+//     .get('.podium-two')
+//     .eq(0)
+//     .trigger('drop')
+//     cy.get('.podium-two')
+//     .first()
+//     .trigger('dragend');
+
+// cy.get('.form > :nth-child(1)')
+//         .trigger('mousedown', { button: 0 })
+//         .wait(1000)
+//         .trigger('mousemove', { which: 1, pageX: 600, pageY: 100 })
+//          .trigger('mouseup'
+//         //  ,{ force: true }
+//          )
