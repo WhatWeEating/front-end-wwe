@@ -13,7 +13,6 @@
 }
 
 .selection-gen-link-container {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,4 +21,15 @@
   width: 99vw;
   height: 99%;
   word-wrap: break-word;
+}
+
+.selection-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.selection-go-vote-button {
+
 }
