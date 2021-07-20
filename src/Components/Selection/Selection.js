@@ -8,7 +8,7 @@ import Card from '../Card/Card';
 const Selection = ({ restaurantsData, storeSelections, eventId }) => {
   const [choices, setChoices] = useState([])
   const [submitIsClicked, setSubmitIsClicked] = useState(false)
-
+  const [showCopiedTag, setShowCopiedTag] = useState(false)
   const genLink = useRef()
   
   const toggleChoice = (id) => {
@@ -21,6 +21,12 @@ const Selection = ({ restaurantsData, storeSelections, eventId }) => {
       currentChoices.push(chosenRestaurant)
     }
     setChoices(currentChoices)
+  }
+
+  const copiedTag = () => {
+    setShowCopiedTag(true);
+    setTimeout(function(){ setShowCopiedTag(false); }, 3000)
+
   }
 
   function renderCards(restaurantsData) {
@@ -62,8 +68,10 @@ const Selection = ({ restaurantsData, storeSelections, eventId }) => {
         <h1>SHARE THIS LINK WITH YOUR FRIENDS</h1>
           <h3 ref={genLink} className='copy-link'>http://localhost:3000/voting/{eventId}</h3>
         <div className='selection-button-container'>
-          <span className='selection-copied-flag'>COPIED!</span>
-          <button onClick={() => {navigator.clipboard.writeText((genLink.current).textContent); }} >COPY LINK!</button>
+          {showCopiedTag ? 
+          <span className='selection-copied-flag hidden'>COPIED!</span> : null
+          }
+          <button className='selection-copy-link-button button' onClick={() => {navigator.clipboard.writeText((genLink.current).textContent); copiedTag() }} >COPY LINK!</button>
         <Link className="selection-submit" to={`/voting/${eventId}`}>
           <button className='selection-go-vote-button button'>GO VOTE!</button>
         </Link>

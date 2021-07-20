@@ -30,7 +30,6 @@
 }
 
 .selection-copied-flag {
-  /* visibility: hidden; */
   position: relative;
   border-radius: 5px;
   border: 1px solid black;
