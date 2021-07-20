@@ -60,10 +60,10 @@ const Selection = ({ restaurantsData, storeSelections, eventId }) => {
     return (
       <main className='selection-gen-link-container'>
         <div className='selection-gen-link'>
-        <h1>Copy this link and send to your friends</h1>
+        <h1>SHARE THIS LINK WITH YOUR FRIENDS</h1>
           <h3 ref={genLink} className='copy-link'>http://localhost:3000/voting/{eventId}</h3>
         <div className='selection-button-container'>
-          <button onClick={() => {navigator.clipboard.writeText((genLink.current).textContent)}} >COPY LINK!</button>
+          <button onClick={() => {navigator.clipboard.writeText((genLink.current).textContent); alert('copied!')}} >COPY LINK!</button>
         <Link className="selection-submit" to={`/voting/${eventId}`}>
           <button className='selection-go-vote-button button'>GO VOTE!</button>
         </Link>
