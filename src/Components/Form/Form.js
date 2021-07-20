@@ -1,6 +1,5 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Form.css';
-import Card from '../Card/Card';
 import { fetchThreeSelections, postRestaurantsData } from '../../apiCalls.js'
 import interact from 'interactjs';
 import { useHistory } from "react-router-dom";
