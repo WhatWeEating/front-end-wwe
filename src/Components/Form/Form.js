@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 import './Form.css';
 import Card from '../Card/Card';
-import { fetchThreeSelections } from '../../apiCalls.js'
+import { fetchThreeSelections, postRestaurantsData } from '../../apiCalls.js'
 import interact from 'interactjs';
 import { useHistory } from "react-router-dom";
 
@@ -29,11 +29,41 @@ const Form = ({ restaurantSelections }) => {
 
 
  const submitVote = event => {
- //Calculates score for individual and sends
- //post request to back end with restaurant and
- //number of points
- event.preventDefault();
- history.push('/winner')
+   event.preventDefault();
+   // const body = {
+   //   data: {
+   //     fetchEvent: {
+   //       uid: eventID,
+   //       restaurants:[
+   //         {
+   //           yelpId: 'restaurant1id',
+   //           vote: 3,
+   //           image: 'url',
+   //           address: 'djkfssj',
+   //           phone: 1234123,
+   //
+   //         },
+   //         {
+   //           yelpId: 'restaurant2id',
+   //           vote: 2,
+   //           image: 'url',
+   //           address: 'djkfssj',
+   //           phone: 1234123,
+   //         },
+   //         {
+   //           yelpId: 'restaurant3id',
+   //           vote: 1,
+   //           image: 'url',
+   //           address: 'djkfssj',
+   //           phone: 1234123,
+   //         }
+   //
+   //       ]
+   //     }
+   //   }
+   // }
+   // postRestaurantsData(body);
+   history.push('/winner')
 }
 
  const dragMoveListener = (event) => {
