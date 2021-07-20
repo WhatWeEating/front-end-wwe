@@ -1,6 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 import './Form.css';
 import Card from '../Card/Card';
+import { fetchThreeSelections } from '../../apiCalls.js'
 import interact from 'interactjs';
 import { useHistory } from "react-router-dom";
 
@@ -8,8 +9,23 @@ const Form = ({ restaurantSelections }) => {
  const [firstChoice, setFirstPlace] = useState('')
  const [secondChoice, setSecondPlace] = useState('')
  const [thirdChoice, setThirdPlace] = useState('')
+ const [error, setError] = useState('')
  const [dropped, setDropped] = useState(false)
  const history = useHistory()
+
+ useEffect(() => {
+  const url = window.location.href
+  const eventID = url.split('/').pop();
+  const fetchData = async() => {
+  try {
+    const response = await fetchThreeSelections(eventID)
+    const restaurants = await response.json()
+  } catch (e) {
+    setError(e.message)
+  }
+  }
+    fetchData();
+ }, [])
 
 
  const submitVote = event => {
