@@ -1,0 +1,46 @@
+{
+	"data": [
+		{
+			"id": 1,
+			"type": "restaurant",
+			"attributes": {
+				"rating": "2.5",
+				"price": "$$",
+				"phone": "215-620-8777",
+				"api_id": "1",
+				"open": false,
+				"name": "Pat's Pub",
+				"image_url": "https://static.wikia.nocookie.net/itsalwayssunny/images/1/10/PaddysPub.PNG/revision/latest/scale-to-width-down/621?cb=20100226001701",
+				"full_address": "Philadelphia, USA, PA, 1941 Mountain Street, 19145"
+			}
+		},
+		{
+			"id": 2,
+			"type": "restaurant",
+			"attributes": {
+				"rating": "4.75",
+				"price": "$$$",
+				"phone": "222-222-2222",
+				"api_id": "2",
+				"open": true,
+				"name": "Ashish's Apple Pie House",
+				"image_url": "https://www.momlovesbaking.com/wp-content/uploads/2020/08/Best-Ever-Apple-Pie.jpg",
+				"full_address": "Denver, USA, CO, 1331 17th Street, 80202"
+			}
+		},
+		{
+			"id": 3,
+			"type": "restaurant",
+			"attributes": {
+				"rating": "5",
+				"price": "$$$$",
+				"phone": "333-333-3333",
+				"api_id": "3",
+				"open": true,
+				"name": "Robbie's Ramen Rodeo",
+				"image_url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Shoyu_Ramen.jpg",
+				"full_address": "Boulder, USA, CO, 1138 Flagstaff Rd, 80302"
+			}
+		}
+	]
+}
