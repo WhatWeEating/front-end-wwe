@@ -1,6 +1,10 @@
 Cypress.Commands.add('interceptRestaurantsFetch', () => {
-	cy.intercept(
-		'https://back-end-wwe.herokuapp.com/restaurants?zip=11111',
-		'../fixtures/restaurants.json'
-	).visit('http://localhost:3000')
+  cy.fixture('restaurants.json')
+  .then(data => {
+    cy.intercept('GET', 'https://back-end-wwe.herokuapp.com/restaurants?zip=11111', {
+    statusCode: 201,
+    body: data
+  })
+  })
+  .visit('https://mysterious-cove-94790.herokuapp.com/')
 })
