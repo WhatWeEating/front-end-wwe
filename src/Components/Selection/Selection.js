@@ -1,5 +1,5 @@
 import './Selection.css';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom'
 import Card from '../Card/Card';
@@ -8,7 +8,10 @@ import Card from '../Card/Card';
 const Selection = ({ restaurantsData, storeSelections, eventId }) => {
   const [choices, setChoices] = useState([])
   const [submitIsClicked, setSubmitIsClicked] = useState(false)
-
+  
+  const genLink = useRef()
+  // console.log((genLink.current).textContent)
+  
   const toggleChoice = (id) => {
     const currentChoices = Array.from(choices)
     const chosenRestaurant = restaurantsData.find(restaurant => restaurant.id === id)
@@ -56,9 +59,11 @@ const Selection = ({ restaurantsData, storeSelections, eventId }) => {
   } else {
     return (
       <main className='selection-gen-link'>
-          <Link className="selection-submit" to={`/voting/${eventId}`}>
-          <h3 className='copy-link'>TEST</h3>
+        <h1>Copy this link and send to your friends</h1>
+        <Link className="selection-submit" to={`/voting/${eventId}`}>
+          <h3 ref={genLink} className='copy-link'>http://localhost:3000/voting/{eventId}</h3>
         </Link>
+          <button onClick={() => {navigator.clipboard.writeText((genLink.current).textContent)}} >COPY LINK!</button>
         </main>
       )
     }
