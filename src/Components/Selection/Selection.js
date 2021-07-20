@@ -26,7 +26,6 @@ const Selection = ({ restaurantsData, storeSelections, eventId }) => {
   const copiedTag = () => {
     setShowCopiedTag(true);
     setTimeout(function(){ setShowCopiedTag(false); }, 3000)
-
   }
 
   function renderCards(restaurantsData) {
