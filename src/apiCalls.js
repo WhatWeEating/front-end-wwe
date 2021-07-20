@@ -11,7 +11,7 @@ export const fetchRestaurantsData = async (zipCode, fetchId) => {
 	})
 }
 
-export const fetchWinnerData = async (eventID) => {
+export const fetchThreeSelections = async (eventID) => {
   console.log('triggered fetch winner')
   return await fetch()
 }
