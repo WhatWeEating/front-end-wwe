@@ -19,9 +19,20 @@ describe('Selection page and navigation to it', () => {
 			.should('have.text', 'What We Eating?')
 	})
 
-  it.only('should be able to see 6 results', () => {
+  it('should be able to see 6 results', () => {
+		cy
+			.get('input')
+			.type('11111')
+			.type('{enter}')
+			.get('.card')
+			.should('have.length', '6').get('[disabled=""]')
+	})
+
+  it.only('should be able to see a disabled button', () => {
 		cy.get('input')
 			.type('11111')
-			.type('{enter}').get('.card').should('have.length', '6')
+			.type('{enter}')
+			.get('[disabled=""]')
+			.should('have.text', 'Not Enough Selections')
 	})
 })
