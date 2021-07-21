@@ -56,28 +56,32 @@ describe('LandingPage', () => {
 		cy.get('.LandingPage').get('input[name="search"]').should('be.visible')
 	})
 
-  it('should have an empty search bar', () => {
-    cy.get('.LandingPage').get('input[name="search"]').should('have.value', '')
-  })
+	it('should have an empty search bar', () => {
+		cy.get('.LandingPage').get('input[name="search"]').should('have.value', '')
+	})
 
-  it('should be a controlled form', () => {
-    cy.get('.LandingPage')
+	it('should be a controlled form', () => {
+		cy.get('.LandingPage')
 			.get('input[name="search"]')
 			.type('a')
 			.should('have.value', 'a')
-  })
+	})
 
-  it('should not fetch data without pressing enter', () => {
-    cy.get('.LandingPage')
+	it('should not fetch data without pressing enter', () => {
+		cy.get('.LandingPage')
 			.get('input[name="search"]')
 			.type('a')
 			.url()
 			.should('eq', 'http://localhost:3000/')
-  })
+	})
 
-  it.only('should notify user when invalid zip code is entered', () => {
-    cy.get('.LandingPage').get('input[name="search"]').type('00000').get('.err-msg').should('have.text', 'Please enter a valid 5 digit zip code')
-  })
+	it('should display an error user when 00000 zip code is typed', () => {
+		cy.get('.LandingPage')
+			.get('input[name="search"]')
+			.type('00000')
+			.get('.err-msg')
+			.should('have.text', 'Please enter a valid 5 digit zip code')
+	})
 
 	it('should be able to see error for invalid zipcode', () => {
 		cy.get('input[name="search"]')
@@ -93,5 +97,17 @@ describe('LandingPage', () => {
 			.type('{enter}')
 			.url()
 			.should('eq', 'http://localhost:3000/selection')
+	})
+
+	it.only('should display an error for 400 status code', () => {
+		cy.get('.LandingPage')
+			.intercept('https://back-end-wwe.herokuapp.com/restaurants?zip=11111', {
+				statusCode: 400,
+			})
+			.get('input[name="search"]')
+			.type('11111')
+			.type('{enter}')
+			.get('.err-msg')
+			.should('have.text', 'Unexpected end of JSON input')
 	})
 })
