@@ -6,7 +6,7 @@ import Card from '../Card/Card';
 import { postRestaurantsData } from '../../apiCalls.js'
 
 
-const Selection = ({ restaurantsData, storeSelections, eventId }) => {
+const Selection = ({ restaurantsData, eventId }) => {
   const [choices, setChoices] = useState([])
   const [submitIsClicked, setSubmitIsClicked] = useState(false)
   const [showCopiedTag, setShowCopiedTag] = useState(false)
@@ -100,7 +100,7 @@ const Selection = ({ restaurantsData, storeSelections, eventId }) => {
         <div className='restaurants-container'>
             {renderCards(restaurantsData)}
         </div>
-          <button  onClick={() => {setSubmitIsClicked(true); storeSelections(choices); postRestaurantSelections();}} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit" : "Not Enough Selections"}</button>
+          <button  onClick={() => {setSubmitIsClicked(true);  postRestaurantSelections();}} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit" : "Not Enough Selections"}</button>
       </main>
     )
   } else {

@@ -18,13 +18,6 @@ const App = () => {
     setEventId(eId)
   }
 
-  const storeSelections = (selections) => {
-    setRestaurantSelections(selections)
-    console.log(selections);
-    postRestaurantsData(selections, eventId)
-
-  }
-
 	return (
 		<Router>
 			<div className='App'>
@@ -41,7 +34,6 @@ const App = () => {
               {restaurantsData.length > 0 &&
                 <Selection
                 restaurantsData={restaurantsData}
-                storeSelections={storeSelections}
                 eventId={eventId}
                 />
               }
@@ -50,22 +42,15 @@ const App = () => {
           <Route exact path='/voting/:id'
             render={({match}) => (
               <>
-              {console.log(match.params.id)}
-              {restaurantSelections.length > 0 &&
                 <Form
-                  restaurantSelections={restaurantSelections}
                 />
-              }
               </>
             )}/>
           <Route exact path='/winner/:id'
           render={({match}) => (
             <>
-              {restaurantSelections.length > 0 &&
                 <Winner
-                restaurantSelections={restaurantSelections}
                 />
-              }
               </>
             )}/>
 				</Switch>
