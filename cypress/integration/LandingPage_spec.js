@@ -39,21 +39,16 @@ describe('LandingPage', () => {
 		cy.get('.LandingPage').get('.question').should('be.visible')
 	})
 
-
 	it('should display an instruction on load', () => {
 		cy.get('.LandingPage')
 			.find('h1')
 			.should('have.text', 'Find a perf place to go eat')
 	})
 
-	it('should be able to see all the landing page contents', () => {
+	it('should be able to see search icon on load', () => {
 		cy.get('.LandingPage')
-			.find('h1')
-			.should('have.text', 'Find a perf place to go eat')
 			.get('.input-container > i')
 			.should('have.class', 'fas fa-search')
-			.should('be.visible')
-			.get('input[name="search"]')
 			.should('be.visible')
 	})
 
