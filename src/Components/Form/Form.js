@@ -49,9 +49,33 @@ const Form = () => {
 	}, [])
 
 	const submitVote = event => {
-		event.preventDefault()
-		// postRestaurantsData(body);
-		history.push('/winner')
+    const body = {
+  query : `mutation {
+    updateRestaurants(input: {
+      params: {
+        first: {
+          eventId: "${uid}",
+          yelpId: "${firstChoice}"
+        },
+        second: {
+          eventId: "${uid}",
+          yelpId: "${secondChoice}"
+        },
+        third: {
+          eventId: "${uid}",
+          yelpId: "${thirdChoice}"
+        }
+      }
+    }) {
+    restaurant {
+      yelpId
+    }
+    }
+  }`
+}
+		event.preventDefault();
+		postRestaurantsData(body);
+		history.push(`/winner/${uid}`);
 	}
 
 	const dragMoveListener = event => {
@@ -67,7 +91,7 @@ const Form = () => {
 
 	const dropzone = interact('.dropzone').dropzone({
 		accept: '#yes-drop',
-		overlap: 0.75,
+		overlap: 0.25,
 
 		ondragenter: function (event) {
 			let draggableElement = event.relatedTarget
@@ -85,13 +109,13 @@ const Form = () => {
 		ondrop: function (event) {
 			event.relatedTarget.classList.add('dropped')
 			if (event.target.id === 'outer-first') {
-				setFirstPlace(event.relatedTarget.innerHTML)
+				setFirstPlace(event.relatedTarget.dataset.yelpid)
 			} else if (event.target.id === 'outer-second') {
-				setSecondPlace(event.relatedTarget.innerHTML)
+				setSecondPlace(event.relatedTarget.dataset.yelpid)
 			} else {
-				setThirdPlace(event.relatedTarget.innerHTML)
+				setThirdPlace(event.relatedTarget.dataset.yelpid)
 			}
-
+       console.log(firstChoice);
 			if (firstChoice.length && secondChoice.length && thirdChoice.length) {
 				setDropped(true)
 			}
@@ -135,13 +159,13 @@ const Form = () => {
 		<form className='form'>
 			{restaurantSelections.length && (
 				<>
-					<div id='yes-drop' className='drag-drop'>
+					<div data-yelpid={restaurantSelections[0].yelpId} id='yes-drop' className='drag-drop'>
 						<p>{restaurantSelections[0].name}</p>
 					</div>
-					<div id='yes-drop' className='drag-drop'>
+					<div data-yelpid={restaurantSelections[1].yelpId} id='yes-drop' className='drag-drop'>
 						<p>{restaurantSelections[1].name}</p>
 					</div>
-					<div id='yes-drop' className='drag-drop'>
+					<div data-yelpid={restaurantSelections[2].yelpId} id='yes-drop' className='drag-drop'>
 						<p>{restaurantSelections[2].name}</p>
 					</div>
 				</>

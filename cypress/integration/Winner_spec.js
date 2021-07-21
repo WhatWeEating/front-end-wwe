@@ -21,40 +21,40 @@ describe('Winner Page', () => {
     cy.url().should('include', '/winner')
   })
 
-  it('Should display "Ready To View Results?', () => {
-    cy.get('h1')
-    .contains('Ready To View Results?')
-  })
-
-  it('Should have button that displays "TALLY VOTES!"', () => {
-    cy.get('.tally-votes-button')
-    .contains('TALLY VOTES!')
-  })
-
-  it('When "TALLY VOTES!" is clicked, a confirmation is displayed', () => {
-    cy.get('.tally-votes-button').click()
-    .get('h2')
-    .contains('ARE YOU SURE YOU WANT TO CLOSE VOTING?')
-  })
-
-  it('When "TALLY VOTES!" is clicked, "yes" & "no" buttons are displayed', () => {
-    cy.get('.tally-votes-button').click()
-    .get('.yes-button')
-    .get('.no-button')
-  })
-
-  it('if "no" button is clicked, user is navigated to previous view', () => {
-    cy.get('.tally-votes-button').click()
-    .get('.no-button').click()
-    .get('h1')
-    .contains('Ready To View Results?')
-  })
-
-  it('if "yes" button is clicked, loading ring is displayed', () => {
-    cy.get('.tally-votes-button').click()
-    .get('.yes-button').click()
-    .get('.load-ring')
-  })
+  // it('Should display "Ready To View Results?', () => {
+  //   cy.get('h1')
+  //   .contains('Ready To View Results?')
+  // })
+  //
+  // it('Should have button that displays "TALLY VOTES!"', () => {
+  //   cy.get('.tally-votes-button')
+  //   .contains('TALLY VOTES!')
+  // })
+  //
+  // it('When "TALLY VOTES!" is clicked, a confirmation is displayed', () => {
+  //   cy.get('.tally-votes-button').click()
+  //   .get('h2')
+  //   .contains('ARE YOU SURE YOU WANT TO CLOSE VOTING?')
+  // })
+  //
+  // it('When "TALLY VOTES!" is clicked, "yes" & "no" buttons are displayed', () => {
+  //   cy.get('.tally-votes-button').click()
+  //   .get('.yes-button')
+  //   .get('.no-button')
+  // })
+  //
+  // it('if "no" button is clicked, user is navigated to previous view', () => {
+  //   cy.get('.tally-votes-button').click()
+  //   .get('.no-button').click()
+  //   .get('h1')
+  //   .contains('Ready To View Results?')
+  // })
+  //
+  // it('if "yes" button is clicked, loading ring is displayed', () => {
+  //   cy.get('.tally-votes-button').click()
+  //   .get('.yes-button').click()
+  //   .get('.load-ring')
+  // })
 
   // it('Should display winner', () => {
   //   cy.get('.tally-votes-button').click()
@@ -74,4 +74,3 @@ describe('Winner Page', () => {
   // })
 
 })
-

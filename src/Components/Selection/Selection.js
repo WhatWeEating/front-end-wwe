@@ -109,7 +109,7 @@ const Selection = ({ restaurantsData, storeSelections, eventId }) => {
       <main className='selection-gen-link-container'>
         <div className='selection-gen-link'>
         <h1>SHARE THIS LINK WITH YOUR FRIENDS</h1>
-          <h3 ref={genLink} className='copy-link'>http://localhost:3000/voting/{eventId}</h3>
+          <h3 ref={genLink} className='copy-link'>https://mysterious-cove-94790.herokuapp.com/voting/{eventId}</h3>
         <div className='selection-button-container'>
           {showCopiedTag ?
           <span className='selection-copied-flag hidden'>COPIED!</span> : null
