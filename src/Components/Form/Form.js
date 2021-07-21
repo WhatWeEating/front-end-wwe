@@ -15,6 +15,7 @@ const Form = () => {
 	const [uid, setUid] = useState('')
 
 	useEffect(() => {
+    console.log('useEffect')
 		const url = window.location.href
 		const eventId = url.split('/').pop()
 		const body = {
@@ -36,11 +37,9 @@ const Form = () => {
 		const fetchData = async () => {
 			try {
 				const response = await postRestaurantsData(body)
-				console.log(response)
 				const restaurants = await response.json()
 				setRestaurantSelections(restaurants.data.fetchEvent.restaurants)
 				setUid(restaurants.data.fetchEvent.uid)
-				// console.log(restaurants.data.fetchEvent)
 			} catch (e) {
 				setError(e.message)
 			}
@@ -115,7 +114,6 @@ const Form = () => {
 			} else {
 				setThirdPlace(event.relatedTarget.dataset.yelpid)
 			}
-       console.log(firstChoice);
 			if (firstChoice.length && secondChoice.length && thirdChoice.length) {
 				setDropped(true)
 			}
@@ -126,7 +124,6 @@ const Form = () => {
 		},
 	})
 	useEffect(() => {
-		console.log(window.innerHeight)
 		if (
 			window.innerWidth < 150 ||
 			(window.innerWidth === 1000 && window.innerHeight === 660)
@@ -135,12 +132,6 @@ const Form = () => {
 			setSecondPlace(restaurantSelections[1])
 			setThirdPlace(restaurantSelections[2])
 			setDropped(true)
-			console.log(
-				firstChoice,
-				secondChoice,
-				thirdChoice,
-				window.innerWidth < 150
-			)
 		}
 	}, [])
 	const dragAndDrop = interact('.drag-drop').draggable({
@@ -154,7 +145,6 @@ const Form = () => {
 		autoScroll: true,
 		listeners: { move: dragMoveListener },
 	})
-	console.log(restaurantSelections)
 	return (
 		<form className='form'>
 			{restaurantSelections.length && (
