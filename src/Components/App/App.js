@@ -29,21 +29,21 @@ const App = () => {
 		<Router>
 			<div className='App'>
 				<Switch>
-          <Route exact path='/' 
+          <Route exact path='/'
             render={() => (
               <LandingPage
-              storeData={storeData} 
-              /> 
+              storeData={storeData}
+              />
             )}/>
-          <Route exact path='/selection' 
+          <Route exact path='/selection'
             render={() => (
               <>
-              {restaurantsData.length > 0 && 
+              {restaurantsData.length > 0 &&
                 <Selection
                 restaurantsData={restaurantsData}
-                storeSelections={storeSelections} 
+                storeSelections={storeSelections}
                 eventId={eventId}
-                /> 
+                />
               }
             </>
           )}/>
@@ -51,17 +51,17 @@ const App = () => {
             render={({match}) => (
               <>
               {console.log(match.params.id)}
-              {restaurantSelections.length > 0 && 
-                <Form 
+              {restaurantSelections.length > 0 &&
+                <Form
                   restaurantSelections={restaurantSelections}
                 />
               }
               </>
             )}/>
-          <Route exact path='/winner'  
-            render={() => (
-              <>
-              {restaurantSelections.length > 0 && 
+          <Route exact path='/winner/:id'
+          render={({match}) => (
+            <>
+              {restaurantSelections.length > 0 &&
                 <Winner
                 restaurantSelections={restaurantSelections}
                 />
