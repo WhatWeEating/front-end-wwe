@@ -54,16 +54,16 @@ const Form = () => {
     updateRestaurants(input: {
       params: {
         first: {
-          eventId: "${eventId}",
-          yelpId: "${choices[0].id}"
+          eventId: "${uid}",
+          yelpId: "${firstChoice}"
         },
         second: {
           eventId: "${eventId}",
-          yelpId: "${choices[1].id}"
+          yelpId: "${secondChoice}"
         },
         third: {
           eventId: "${eventId}",
-          yelpId: "${choices[2].id}"
+          yelpId: "${thirdChoice}"
         }
       }
     }) {
@@ -72,6 +72,7 @@ const Form = () => {
     }
     }
   }`
+}
 		event.preventDefault();
 		postRestaurantsData(body);
 		history.push('/winner');
@@ -108,11 +109,11 @@ const Form = () => {
 		ondrop: function (event) {
 			event.relatedTarget.classList.add('dropped')
 			if (event.target.id === 'outer-first') {
-				setFirstPlace(event.relatedTarget.innerHTML)
+				setFirstPlace(event.relatedTarget.data)
 			} else if (event.target.id === 'outer-second') {
-				setSecondPlace(event.relatedTarget.innerHTML)
+				setSecondPlace(event.relatedTarget.data)
 			} else {
-				setThirdPlace(event.relatedTarget.innerHTML)
+				setThirdPlace(event.relatedTarget.data)
 			}
 
 			if (firstChoice.length && secondChoice.length && thirdChoice.length) {
