@@ -1,6 +1,6 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Form.css';
-import Card from '../Card/Card';
+import {  postRestaurantsData } from '../../apiCalls.js'
 import interact from 'interactjs';
 import { useHistory } from "react-router-dom";
 
@@ -8,16 +8,47 @@ const Form = ({ restaurantSelections }) => {
  const [firstChoice, setFirstPlace] = useState('')
  const [secondChoice, setSecondPlace] = useState('')
  const [thirdChoice, setThirdPlace] = useState('')
+ const [error, setError] = useState('')
  const [dropped, setDropped] = useState(false)
  const history = useHistory()
 
+ useEffect(() => {
+   const url = window.location.href
+   const eventId = url.split('/').pop();
+   const body = {
+         query:`query {
+          fetchEvent(uid: "${eventId}") {
+          uid
+          restaurants {
+            yelpId
+            votes
+            image
+            address
+            phone
+            name
+        }
+      }
+    }`
+  }
+
+  const fetchData = async() => {
+  try {
+    const response = await postRestaurantsData(body)
+    console.log(response)
+    const restaurants = await response.json()
+    console.log(restaurants)
+  } catch (e) {
+    setError(e.message)
+  }
+  }
+    fetchData();
+ }, [])
+
 
  const submitVote = event => {
- //Calculates score for individual and sends
- //post request to back end with restaurant and
- //number of points
- event.preventDefault();
- history.push('/winner')
+   event.preventDefault();
+   // postRestaurantsData(body);
+   history.push('/winner')
 }
 
  const dragMoveListener = (event) => {
