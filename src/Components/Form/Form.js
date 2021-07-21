@@ -67,10 +67,9 @@ const Form = ({ restaurantSelections }) => {
      event.target.classList.remove('drop-target')
    }
  })
- console.log('hello test!')
  useEffect(() => {
-   console.log(window.innerWidth)
-   if (window.innerWidth < 150) {
+   console.log(window.innerHeight)
+   if (window.innerWidth < 150 || window.innerWidth === 1000 && window.innerHeight === 660) {
     setFirstPlace(restaurantSelections[0])
     setSecondPlace(restaurantSelections[1])
     setThirdPlace(restaurantSelections[2])

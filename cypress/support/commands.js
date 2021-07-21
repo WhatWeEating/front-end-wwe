@@ -5,7 +5,8 @@ Cypress.Commands.add('interceptRestaurantsFetch', () => {
     body: data
   })
   })
-  .visit('https://mysterious-cove-94790.herokuapp.com/')
+  // .visit('https://mysterious-cove-94790.herokuapp.com/')
+  .visit('localhost:3000')
 })
 
 Cypress.Commands.add('interceptSelectionsFetch', () => {
@@ -15,4 +16,10 @@ Cypress.Commands.add('interceptSelectionsFetch', () => {
     body: data
   })
   })
+})
+
+Cypress.Commands.add('testPodium', () => {
+  cy.viewport(100, 812)
+    .get('.submit').click()
+    .viewport(1000, 660)
 })

@@ -1,9 +1,6 @@
 describe('Winner Page', () => {
   beforeEach(() => {
     cy.interceptRestaurantsFetch()
-  })
-
-  it('should navigate to winner page', () => {
     cy.get('.input-container').type('11111').type('{enter}')
     .get(':nth-child(1) > .select').click()
     .get(':nth-child(2) > .select').click()
@@ -17,22 +14,13 @@ describe('Winner Page', () => {
     .get('.selection > :nth-child(3)').click()
     .get('.selection-go-vote-button').click()
     .get('.podium-two')
-    // cy.viewport(100, 812)
-    // cy.get('.form > :nth-child(1)')
-    // .trigger('mousedown', { button: 0 })
-    // .wait(1000)
-    // // .trigger("dragstart")
-    // .trigger("dragleave")
-    // cy.get('.podium-two')
-    // .trigger("dragenter")
-    // .trigger("dragover")
-    // .trigger("drop")
-    // .trigger("dragend");
+    cy.testPodium()
   })
-  it('should land on winner page', () => {
-    cy.visit('https://mysterious-cove-94790.herokuapp.com//winner')
+
+  it('should navigate to winner page', () => {
+    cy.url().should('include', '/winner')
   })
-  
+
 })
 
 // cy.get('.form > :nth-child(1)')
