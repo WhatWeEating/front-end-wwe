@@ -132,4 +132,14 @@ describe('Selection page and navigation to it', () => {
 			.get(':nth-child(1) > .select')
 			.click()
 	})
+
+  it.only('should be able to unselect a restaurant', () => {
+    cy.get('input')
+      .type('11111')
+      .type('{enter}')
+      .get('.card')
+      .get(':nth-child(1) > .select')
+      .click()
+      .should('have.text', 'Unselect').click()
+  })
 })
