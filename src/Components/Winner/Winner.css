@@ -76,6 +76,9 @@ a:hover {
   color: #FF553D;
 }
 
+.tally-votes-button, .yes-button {
+  background-color: #0190AC;
+}
 
 
 .winner-button {
