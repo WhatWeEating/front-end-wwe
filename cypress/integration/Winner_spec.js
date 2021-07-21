@@ -66,6 +66,12 @@ describe('Winner Page', () => {
     .get('.winner-address')
   })
 
+  it('Should allow user to interact with winner phone number', () => {
+    cy.get('.tally-votes-button').click()
+    .get('.yes-button').click()
+    .wait(3000)
+    .get('.winner-phone').click()
+  })
 
 })
 
