@@ -70,7 +70,7 @@ describe('Winner Page', () => {
     cy.get('.tally-votes-button').click()
     .get('.yes-button').click()
     .wait(3000)
-    .get('.winner-phone').click()
+    .get('.winner-phone')
   })
 
 })
