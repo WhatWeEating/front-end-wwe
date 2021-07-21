@@ -11,11 +11,17 @@ describe('Selection page and navigation to it', () => {
 			.should('include', '/selection')
 	})
 
-	it.only('should be able to see sleections page title', () => {
+	it('should be able to see sleections page title', () => {
 		cy.get('input')
 			.type('11111')
 			.type('{enter}')
 			.get('.title')
 			.should('have.text', 'What We Eating?')
+	})
+
+  it.only('should be able to see 6 results', () => {
+		cy.get('input')
+			.type('11111')
+			.type('{enter}').get('.card').should('have.length', '6')
 	})
 })
