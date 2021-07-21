@@ -192,7 +192,7 @@ describe('Selection page and navigation to it', () => {
 			.get('h1')
 			.should('have.text', 'SHARE THIS LINK WITH YOUR FRIENDS')
 			.get('.copy-link')
-			.contains('http://localhost:3000/voting/')
+			.contains('https://mysterious-cove-94790.herokuapp.com/voting/')
 			.get('.selection-copy-link-button')
 			.should('have.text', 'COPY LINK!')
 			.get('.selection-go-vote-button')
