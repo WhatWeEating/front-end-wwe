@@ -49,9 +49,32 @@ const Form = () => {
 	}, [])
 
 	const submitVote = event => {
-		event.preventDefault()
-		// postRestaurantsData(body);
-		history.push('/winner')
+    const body = {
+  query : `mutation {
+    updateRestaurants(input: {
+      params: {
+        first: {
+          eventId: "${eventId}",
+          yelpId: "${choices[0].id}"
+        },
+        second: {
+          eventId: "${eventId}",
+          yelpId: "${choices[1].id}"
+        },
+        third: {
+          eventId: "${eventId}",
+          yelpId: "${choices[2].id}"
+        }
+      }
+    }) {
+    restaurant {
+      yelpId
+    }
+    }
+  }`
+		event.preventDefault();
+		postRestaurantsData(body);
+		history.push('/winner');
 	}
 
 	const dragMoveListener = event => {
@@ -67,7 +90,7 @@ const Form = () => {
 
 	const dropzone = interact('.dropzone').dropzone({
 		accept: '#yes-drop',
-		overlap: 0.75,
+		overlap: 0.25,
 
 		ondragenter: function (event) {
 			let draggableElement = event.relatedTarget
@@ -135,13 +158,13 @@ const Form = () => {
 		<form className='form'>
 			{restaurantSelections.length && (
 				<>
-					<div id='yes-drop' className='drag-drop'>
+					<div data={restaurantSelections[0].yelpId} id='yes-drop' className='drag-drop'>
 						<p>{restaurantSelections[0].name}</p>
 					</div>
-					<div id='yes-drop' className='drag-drop'>
+					<div data={restaurantSelections[0].yelpId} id='yes-drop' className='drag-drop'>
 						<p>{restaurantSelections[1].name}</p>
 					</div>
-					<div id='yes-drop' className='drag-drop'>
+					<div data={restaurantSelections[0].yelpId} id='yes-drop' className='drag-drop'>
 						<p>{restaurantSelections[2].name}</p>
 					</div>
 				</>
