@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Form.css';
-import { fetchThreeSelections, postRestaurantsData } from '../../apiCalls.js'
+import {  postRestaurantsData } from '../../apiCalls.js'
 import interact from 'interactjs';
 import { useHistory } from "react-router-dom";
 
@@ -13,12 +13,30 @@ const Form = ({ restaurantSelections }) => {
  const history = useHistory()
 
  useEffect(() => {
-  const url = window.location.href
-  const eventID = url.split('/').pop();
+   const url = window.location.href
+   const eventId = url.split('/').pop();
+   const body = {
+         query:`query {
+          fetchEvent(uid: "${eventId}") {
+          uid
+          restaurants {
+            yelpId
+            votes
+            image
+            address
+            phone
+            name
+        }
+      }
+    }`
+  }
+
   const fetchData = async() => {
   try {
-    const response = await fetchThreeSelections(eventID)
+    const response = await postRestaurantsData(body)
+    console.log(response)
     const restaurants = await response.json()
+    console.log(restaurants)
   } catch (e) {
     setError(e.message)
   }
