@@ -21,6 +21,20 @@ describe('Winner Page', () => {
     cy.url().should('include', '/winner')
   })
 
+  it('Should display "Ready To View Results?', () => {
+    cy.get('h1')
+    .contains('Ready To View Results?')
+  })
+
+  it('Should have button that displays "TALLY VOTES!"', () => {
+    cy.get('.tally-votes-button')
+    .contains('TALLY VOTES!')
+  })
+
+  it('When "TALLY VOTES!" is clicked, a confirmation is displayed', () => {
+    
+  })
+
 })
 
 // cy.get('.form > :nth-child(1)')
