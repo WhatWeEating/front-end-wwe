@@ -3,6 +3,12 @@ describe('LandingPage', () => {
 		cy.visit('http://localhost:3000')
 	})
 
+	it('should display an instruction on load', () => {
+		cy.get('.LandingPage')
+			.find('h1')
+			.should('have.text', 'Find a perf place to go eat')
+	})
+
 	it('should be able to see all the landing page contents', () => {
 		cy.get('.LandingPage')
 			.find('h1')
@@ -39,14 +45,14 @@ describe('LandingPage', () => {
 			.should('have.value', 'a')
 			.type('{enter}')
 			.get('.err-msg')
-			.should('have.text', 'Please enter 5 digit zip code')
+			.should('have.text', 'Please enter a valid 5 digit zip code')
 	})
 
-  it('should display selection page after a valid zipcode', () => {
-    	cy.get('input[name="search"]')
-				.type('11111')
-				.type('{enter}')
-				.url()
-				.should('eq', 'http://localhost:3000/selection')
-  })
+	it('should display selection page after a valid zipcode', () => {
+		cy.get('input[name="search"]')
+			.type('11111')
+			.type('{enter}')
+			.url()
+			.should('eq', 'http://localhost:3000/selection')
+	})
 })
