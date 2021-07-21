@@ -37,32 +37,34 @@ const Selection = ({ restaurantsData, storeSelections, eventId }) => {
     createRestaurants(input: {
       params: {
         first: {
-          eventId: ${eventId},
-          yelpId: ${choices[0].id}
-          image: ${choices[0].attributes.image},
-          address: ${choices[0].attributes.address},
-          phone: ${choices[0].attributes.phone},
-          name: ${choices[0].attributes.name}
+          eventId: "${eventId}",
+          yelpId: "${choices[0].id}",
+          image: "${choices[0].attributes.image}",
+          address: "${choices[0].attributes.address}",
+          phone: "${choices[0].attributes.phone}",
+          name: "${choices[0].attributes.name}"
         },
         second: {
-          eventId: ${eventId},
-          yelpId: ${choices[1].id},
-          image: ${choices[1].attributes.image},
-          address: ${choices[1].attributes.address},
-          phone: ${choices[1].attributes.phone},
-          name: ${choices[1].attributes.name}
+          eventId: "${eventId}",
+          yelpId: "${choices[1].id}",
+          image: "${choices[1].attributes.image}",
+          address: "${choices[1].attributes.address}",
+          phone: "${choices[1].attributes.phone}",
+          name: "${choices[1].attributes.name}"
         },
         third: {
-          eventId: ${eventId},
-          yelpId: ${choices[2].id},
-          image: ${choices[2].attributes.image},
-          address: ${choices[2].attributes.address},
-          phone: ${choices[2].attributes.phone},
-          name: ${choices[2].attributes.name}
+          eventId: "${eventId}",
+          yelpId: "${choices[2].id}",
+          image: "${choices[2].attributes.image}",
+          address: "${choices[2].attributes.address}",
+          phone: "${choices[2].attributes.phone}",
+          name: "${choices[2].attributes.name}"
         }
       }
     }) {
-    clientMutationId
+    restaurant {
+      yelpId
+    }
     }
   }`
 }
