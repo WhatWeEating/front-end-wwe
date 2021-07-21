@@ -75,11 +75,13 @@ describe('LandingPage', () => {
 			.should('eq', 'http://localhost:3000/')
   })
 
+  it.only('should notify user when invalid zip code is entered', () => {
+    cy.get('.LandingPage').get('input[name="search"]').type('00000').get('.err-msg').should('have.text', 'Please enter a valid 5 digit zip code')
+  })
+
 	it('should be able to see error for invalid zipcode', () => {
 		cy.get('input[name="search"]')
-			.should('have.value', '')
 			.type('a')
-			.should('have.value', 'a')
 			.type('{enter}')
 			.get('.err-msg')
 			.should('have.text', 'Please enter a valid 5 digit zip code')
