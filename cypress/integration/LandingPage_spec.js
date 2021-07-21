@@ -99,10 +99,22 @@ describe('LandingPage', () => {
 			.should('eq', 'http://localhost:3000/selection')
 	})
 
-	it.only('should display an error for 400 status code', () => {
+	it('should display an error for 400 status code', () => {
 		cy.get('.LandingPage')
 			.intercept('https://back-end-wwe.herokuapp.com/restaurants?zip=11111', {
 				statusCode: 400,
+			})
+			.get('input[name="search"]')
+			.type('11111')
+			.type('{enter}')
+			.get('.err-msg')
+			.should('have.text', 'Unexpected end of JSON input')
+	})
+
+  it.only('should display an error for 404 status code', () => {
+		cy.get('.LandingPage')
+			.intercept('https://back-end-wwe.herokuapp.com/restaurants?zip=11111', {
+				statusCode: 404,
 			})
 			.get('input[name="search"]')
 			.type('11111')
