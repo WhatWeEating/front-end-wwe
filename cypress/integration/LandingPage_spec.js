@@ -6,36 +6,36 @@ describe('LandingPage', () => {
 	it('should be able to see burger after animation', () => {
 		cy.get('.LandingPage').get('.burger').should('be.visible')
 	})
-  
-  it('should be able to see chips after animation', () => {
+
+	it('should be able to see chips after animation', () => {
 		cy.get('.LandingPage').get('.chips').should('be.visible')
 	})
 
-  it('should be able to see eggs after animation', () => {
+	it('should be able to see eggs after animation', () => {
 		cy.get('.LandingPage').get('.eggs').should('be.visible')
 	})
 
-  it('should be able to see drinks after animation', () => {
+	it('should be able to see drinks after animation', () => {
 		cy.get('.LandingPage').get('.drinks').should('be.visible')
 	})
 
-  it('should be able to see tomatoes after animation', () => {
+	it('should be able to see tomatoes after animation', () => {
 		cy.get('.LandingPage').get('.tomatoes').should('be.visible')
 	})
 
-  it('should be able to see "what" word after animation', () => {
+	it('should be able to see "what" word after animation', () => {
 		cy.get('.LandingPage').get('.what').should('be.visible')
 	})
 
-  it('should be able to see "we" after animation', () => {
+	it('should be able to see "we" after animation', () => {
 		cy.get('.LandingPage').get('.we').should('be.visible')
 	})
 
-  it('should be able to see "eatin" after animation', () => {
+	it('should be able to see "eatin" after animation', () => {
 		cy.get('.LandingPage').get('.eatin').should('be.visible')
 	})
 
-  it('should be able to see "question mark" after animation', () => {
+	it('should be able to see "question mark" after animation', () => {
 		cy.get('.LandingPage').get('.question').should('be.visible')
 	})
 
@@ -50,6 +50,10 @@ describe('LandingPage', () => {
 			.get('.input-container > i')
 			.should('have.class', 'fas fa-search')
 			.should('be.visible')
+	})
+
+	it('should be able to see a search bar', () => {
+		cy.get('.LandingPage').get('input[name="search"]').should('be.visible')
 	})
 
 	it('should be able to see error for invalid zipcode', () => {
