@@ -58,11 +58,11 @@ const Form = () => {
           yelpId: "${firstChoice}"
         },
         second: {
-          eventId: "${eventId}",
+          eventId: "${uid}",
           yelpId: "${secondChoice}"
         },
         third: {
-          eventId: "${eventId}",
+          eventId: "${uid}",
           yelpId: "${thirdChoice}"
         }
       }
@@ -109,13 +109,13 @@ const Form = () => {
 		ondrop: function (event) {
 			event.relatedTarget.classList.add('dropped')
 			if (event.target.id === 'outer-first') {
-				setFirstPlace(event.relatedTarget.data)
+				setFirstPlace(event.relatedTarget.dataset.yelpid)
 			} else if (event.target.id === 'outer-second') {
-				setSecondPlace(event.relatedTarget.data)
+				setSecondPlace(event.relatedTarget.dataset.yelpid)
 			} else {
-				setThirdPlace(event.relatedTarget.data)
+				setThirdPlace(event.relatedTarget.dataset.yelpid)
 			}
-
+       console.log(firstChoice);
 			if (firstChoice.length && secondChoice.length && thirdChoice.length) {
 				setDropped(true)
 			}
@@ -159,13 +159,13 @@ const Form = () => {
 		<form className='form'>
 			{restaurantSelections.length && (
 				<>
-					<div data={restaurantSelections[0].yelpId} id='yes-drop' className='drag-drop'>
+					<div data-yelpid={restaurantSelections[0].yelpId} id='yes-drop' className='drag-drop'>
 						<p>{restaurantSelections[0].name}</p>
 					</div>
-					<div data={restaurantSelections[0].yelpId} id='yes-drop' className='drag-drop'>
+					<div data-yelpid={restaurantSelections[1].yelpId} id='yes-drop' className='drag-drop'>
 						<p>{restaurantSelections[1].name}</p>
 					</div>
-					<div data={restaurantSelections[0].yelpId} id='yes-drop' className='drag-drop'>
+					<div data-yelpid={restaurantSelections[2].yelpId} id='yes-drop' className='drag-drop'>
 						<p>{restaurantSelections[2].name}</p>
 					</div>
 				</>
