@@ -27,6 +27,10 @@ describe('LandingPage', () => {
 		cy.get('.LandingPage').get('.what').should('be.visible')
 	})
 
+  it('should be able to see "we" after animation', () => {
+		cy.get('.LandingPage').get('.we').should('be.visible')
+	})
+
 	it('should display an instruction on load', () => {
 		cy.get('.LandingPage')
 			.find('h1')
