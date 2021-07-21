@@ -67,6 +67,14 @@ describe('LandingPage', () => {
 			.should('have.value', 'a')
   })
 
+  it('should not fetch data without pressing enter', () => {
+    cy.get('.LandingPage')
+			.get('input[name="search"]')
+			.type('a')
+			.url()
+			.should('eq', 'http://localhost:3000/')
+  })
+
 	it('should be able to see error for invalid zipcode', () => {
 		cy.get('input[name="search"]')
 			.should('have.value', '')
