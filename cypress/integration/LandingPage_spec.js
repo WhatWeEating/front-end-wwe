@@ -24,7 +24,7 @@ describe('LandingPage', () => {
 	})
 
   it('should be able to see "what" word after animation', () => {
-		cy.get('.LandingPage').get('.word').should('be.visible')
+		cy.get('.LandingPage').get('.what').should('be.visible')
 	})
 
 	it('should display an instruction on load', () => {
