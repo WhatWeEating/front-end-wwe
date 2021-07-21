@@ -37,23 +37,20 @@ describe('Winner Page', () => {
     .contains('ARE YOU SURE YOU WANT TO CLOSE VOTING?')
   })
 
+  it('When "TALLY VOTES!" is clicked, "yes" & "no" buttons are displayed', () => {
+    cy.get('.tally-votes-button').click()
+    .get('.yes-button')
+    .get('.no-button')
+  })
+
+  it('if "no" button is clicked, user is navigated to previous view', () => {
+    cy.get('.tally-votes-button').click()
+    .get('.no-button').click()
+    .get('h1')
+    .contains('Ready To View Results?')
+  })
+
+  
+
 })
 
-// cy.get('.form > :nth-child(1)')
-//     .first()
-//     // .focus()
-//     .trigger('dragstart')
-//     .get('.podium-two')
-//     .eq(0)
-//     .trigger('drop')
-//     cy.get('.podium-two')
-//     .first()
-//     .trigger('dragend');
-
-// cy.get('.form > :nth-child(1)')
-//         .trigger('mousedown', { button: 0 })
-//         .wait(1000)
-//         .trigger('mousemove', { which: 1, pageX: 600, pageY: 100 })
-//          .trigger('mouseup'
-//         //  ,{ force: true }
-//          )
