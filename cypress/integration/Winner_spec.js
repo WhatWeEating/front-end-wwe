@@ -50,7 +50,13 @@ describe('Winner Page', () => {
     .contains('Ready To View Results?')
   })
 
-  
+  it('if "yes" button is clicked, loading ring is displayed', () => {
+    cy.get('.tally-votes-button').click()
+    .get('.yes-button').click()
+    .get('.load-ring')
+  })
+
+
 
 })
 
