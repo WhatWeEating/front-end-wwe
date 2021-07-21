@@ -36,7 +36,7 @@ describe('Selection page and navigation to it', () => {
 			.should('have.text', 'Not Enough Selections')
 	})
 
-	it.only('should be pats restaurant on index 0', () => {
+	it('should be pats restaurant img on index 0', () => {
 		cy.get('input')
 			.type('11111')
 			.type('{enter}')
@@ -47,5 +47,14 @@ describe('Selection page and navigation to it', () => {
 				'include',
 				'https://i.pinimg.com/564x/4d/72/02/4d7202eaef303577c46ec703f9f2a2db.jpg'
 			)
+	})
+
+  it.only('should be pats restaurant name on index 0', () => {
+		cy.get('input')
+			.type('11111')
+			.type('{enter}')
+			.get('.card')
+			.get(':nth-child(1) > .image')
+      .get(':nth-child(1) > h3').should('have.text', 'Pat\'s Pub')
 	})
 })
