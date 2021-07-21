@@ -17,6 +17,7 @@ const Winner = ({ restaurantSelections, eventID }) => {
   const fetchWinnerButton = async () => {
     const url = window.location.href
 		const eventId = url.split('/').pop()
+    console.log(eventId)
     const body = {
 			query: `query {
           fetchEvent(uid: "${eventId}") {
@@ -39,23 +40,24 @@ const Winner = ({ restaurantSelections, eventID }) => {
   }
 
   const fetchData = async (body) => {
-    console.log('hello')
     try {
-      console.log('hello2')
       const response = await postRestaurantsData(body)
       const restaurants = await response.json()
-      setResults(restaurants.data.fetchEvent.restaurants)
       console.log(restaurants.data.fetchEvent.restaurants)
-      // console.log(restaurants.data.fetchEvent)
+      setResults(restaurants.data.fetchEvent.restaurants)
+      const sorted = restaurants.data.fetchEvent.restaurants.sort((a , b) =>
+      b.votes - a.votes
+    )[0]
+    setWinnerID(sorted)
     } catch (e) {
       setError(e.message)
     }
   }
 
-  const addressTrim = (address) => {
-    const winningRestaurantAddressSplit = address.attributes.full_address.split(' ')
-    return `${winningRestaurantAddressSplit[0]} ${winningRestaurantAddressSplit[2]} ${winningRestaurantAddressSplit[3]}, ${winningRestaurantAddressSplit[4]} ${winningRestaurantAddressSplit[5]} ${winningRestaurantAddressSplit[6]}`
-  }
+  // const addressTrim = (address) => {
+  //   const winningRestaurantAddressSplit = address.attributes.full_address.split(' ')
+  //   return `${winningRestaurantAddressSplit[0]} ${winningRestaurantAddressSplit[2]} ${winningRestaurantAddressSplit[3]}, ${winningRestaurantAddressSplit[4]} ${winningRestaurantAddressSplit[5]} ${winningRestaurantAddressSplit[6]}`
+  // }
 
   if (!fetchEngaged) {
     return(
@@ -75,7 +77,7 @@ const Winner = ({ restaurantSelections, eventID }) => {
         </div>
       </main>
     )
-  } else if (!winnerID.length && fetchEngaged) {
+  } else if (!Object.keys(winnerID).length && fetchEngaged) {
     return (
       <>
       <main className='winner-container'>
@@ -84,21 +86,21 @@ const Winner = ({ restaurantSelections, eventID }) => {
       </main>
       </>
     )
-  } else if (winnerID.length && fetchEngaged) {
+  } else if (Object.keys(winnerID).length && fetchEngaged) {
     console.log(winnerID, 'winnerID')
-    const winningRestaurant  = restaurantSelections.find(selection => Number(selection.id) === Number(winnerID))
-    const winningRestaurantAddress = addressTrim(winningRestaurant)
+    // const winningRestaurant  = restaurantSelections.find(selection => Number(selection.id) === Number(winnerID))
+    // const winningRestaurantAddress = addressTrim(winningRestaurant)
     return (
       <main className='winner-container'>
         <div className='winner'>
           <h1 className='winner-text'>WINNER!</h1>
         <img className='winner-ribbon' src={ribbon} alt='ribbon' />
         <div className='winner-info-wrap'>
-        <img className='winner-image' src={winningRestaurant.attributes.image_url} alt='ribbon' />
+        <img className='winner-image' src={winnerID.image} alt='ribbon' />
           <div className='winner-info-container'>
-          <h3 className='winner-name'>{winningRestaurant.attributes.name}</h3>
-          <a className='winner-phone' href='tel:1111111111'>{winningRestaurant.attributes.phone}</a>
-          <h4 className='winner-address'>{winningRestaurantAddress}</h4>
+          <h3 className='winner-name'>{winnerID.name}</h3>
+          <a className='winner-phone' href='tel:1111111111'>{winnerID.phone}</a>
+          <h4 className='winner-address'>{winnerID.address}</h4>
           </div>
         </div>
         </div>
