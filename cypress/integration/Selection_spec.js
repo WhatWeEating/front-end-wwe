@@ -144,7 +144,7 @@ describe('Selection page and navigation to it', () => {
 			.click()
 	})
 
-	it.only('should be able to select only three restaurants', () => {
+	it('should be able to select only three restaurants', () => {
 		cy.get('input')
 			.type('11111')
 			.type('{enter}')
@@ -157,5 +157,21 @@ describe('Selection page and navigation to it', () => {
 			.click()
 			.get(':nth-child(4) > .select')
 			.should('be.disabled')
+	})
+
+	it.only('should be able to submit all the selection', () => {
+		cy.get('input')
+			.type('11111')
+			.type('{enter}')
+			.get('.card')
+			.get(':nth-child(1) > .select')
+			.click()
+			.get(':nth-child(2) > .select')
+			.click()
+			.get(':nth-child(3) > .select')
+			.click()
+			.get('.selection > :nth-child(3)')
+			.should('have.text', 'Submit')
+			.click()
 	})
 })
