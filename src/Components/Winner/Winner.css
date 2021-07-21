@@ -80,6 +80,9 @@ a:hover {
   background-color: #0190AC;
 }
 
+.no-button {
+  background-color: #FF553D;
+}
 
 .winner-button {
   border-radius: 4px;
