@@ -16,6 +16,7 @@ describe('Winner Page', () => {
     })
     .get('.selection > :nth-child(3)').click()
     .get('.selection-go-vote-button').click()
+    cy.viewport(100, 812)
     cy.get('.form > :nth-child(1)')
     .trigger('mousedown', { button: 0 })
     .wait(1000)

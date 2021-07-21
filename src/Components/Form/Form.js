@@ -67,7 +67,14 @@ const Form = ({ restaurantSelections }) => {
      event.target.classList.remove('drop-target')
    }
  })
-
+ useEffect(() => {
+   if (window.innerWidth <= 150) {
+    setFirstPlace(restaurantSelections[0])
+    setSecondPlace(restaurantSelections[1])
+    setThirdPlace(restaurantSelections[2])
+    setDropped(true)
+   }
+ }, [])
  const dragAndDrop = interact('.drag-drop')
    .draggable({
      inertia: true,
