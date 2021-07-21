@@ -124,7 +124,7 @@ describe('Selection page and navigation to it', () => {
 			.should('have.text', 'Select')
 	})
 
-	it.only('should be able to select a restaurant', () => {
+	it('should be able to select a restaurant', () => {
 		cy.get('input')
 			.type('11111')
 			.type('{enter}')
@@ -133,13 +133,29 @@ describe('Selection page and navigation to it', () => {
 			.click()
 	})
 
-  it.only('should be able to unselect a restaurant', () => {
-    cy.get('input')
-      .type('11111')
-      .type('{enter}')
-      .get('.card')
-      .get(':nth-child(1) > .select')
-      .click()
-      .should('have.text', 'Unselect').click()
-  })
+	it('should be able to unselect a restaurant', () => {
+		cy.get('input')
+			.type('11111')
+			.type('{enter}')
+			.get('.card')
+			.get(':nth-child(1) > .select')
+			.click()
+			.should('have.text', 'Unselect')
+			.click()
+	})
+
+	it.only('should be able to select only three restaurants', () => {
+		cy.get('input')
+			.type('11111')
+			.type('{enter}')
+			.get('.card')
+			.get(':nth-child(1) > .select')
+			.click()
+			.get(':nth-child(2) > .select')
+			.click()
+			.get(':nth-child(3) > .select')
+			.click()
+			.get(':nth-child(4) > .select')
+			.should('be.disabled')
+	})
 })
