@@ -49,12 +49,24 @@ describe('Selection page and navigation to it', () => {
 			)
 	})
 
-  it.only('should be pats restaurant name on index 0', () => {
+	it('should be pats restaurant name on index 0', () => {
 		cy.get('input')
 			.type('11111')
 			.type('{enter}')
 			.get('.card')
 			.get(':nth-child(1) > .image')
-      .get(':nth-child(1) > h3').should('have.text', 'Pat\'s Pub')
+			.get(':nth-child(1) > h3')
+			.should('have.text', "Pat's Pub")
+	})
+
+	it.only('should be pats restaurant price on index 0', () => {
+		cy.get('input')
+			.type('11111')
+			.type('{enter}')
+			.get('.card')
+			.get(':nth-child(1) > .image')
+			.get(':nth-child(1) > h3')
+			.get('.restaurants-container > :nth-child(1) > :nth-child(4)')
+			.should('have.text', '$$')
 	})
 })
