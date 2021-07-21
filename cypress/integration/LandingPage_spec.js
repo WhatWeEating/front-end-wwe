@@ -111,7 +111,7 @@ describe('LandingPage', () => {
 			.should('have.text', 'Unexpected end of JSON input')
 	})
 
-  it.only('should display an error for 404 status code', () => {
+  it('should display an error for 404 status code', () => {
 		cy.get('.LandingPage')
 			.intercept('https://back-end-wwe.herokuapp.com/restaurants?zip=11111', {
 				statusCode: 404,
@@ -122,4 +122,17 @@ describe('LandingPage', () => {
 			.get('.err-msg')
 			.should('have.text', 'Unexpected end of JSON input')
 	})
+
+  it('should display an error for server', () => {
+		cy.get('.LandingPage')
+			.intercept('https://back-end-wwe.herokuapp.com/restaurants?zip=11111', {
+				statusCode: 500,
+			})
+			.get('input[name="search"]')
+			.type('11111')
+			.type('{enter}')
+			.get('.err-msg')
+			.should('have.text', 'Unexpected end of JSON input')
+	})
+
 })
