@@ -159,7 +159,7 @@ describe('Selection page and navigation to it', () => {
 			.should('be.disabled')
 	})
 
-	it.only('should be able to submit all the selection', () => {
+	it('should be able to submit all the selection', () => {
 		cy.get('input')
 			.type('11111')
 			.type('{enter}')
@@ -173,5 +173,29 @@ describe('Selection page and navigation to it', () => {
 			.get('.selection > :nth-child(3)')
 			.should('have.text', 'Submit')
 			.click()
+	})
+
+	it('should be able to see the link page', () => {
+		cy.get('input')
+			.type('11111')
+			.type('{enter}')
+			.get('.card')
+			.get(':nth-child(1) > .select')
+			.click()
+			.get(':nth-child(2) > .select')
+			.click()
+			.get(':nth-child(3) > .select')
+			.click()
+			.get('.selection > :nth-child(3)')
+			.should('have.text', 'Submit')
+			.click()
+			.get('h1')
+			.should('have.text', 'SHARE THIS LINK WITH YOUR FRIENDS')
+			.get('.copy-link')
+			.contains('http://localhost:3000/voting/')
+			.get('.selection-copy-link-button')
+			.should('have.text', 'COPY LINK!')
+			.get('.selection-go-vote-button')
+			.should('have.text', 'GO VOTE!')
 	})
 })
