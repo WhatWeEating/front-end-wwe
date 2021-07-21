@@ -7,7 +7,9 @@ describe('LandingPage', () => {
 		cy.get('.LandingPage').get('.burger').should('be.visible')
 	})
   
-
+  it('should be able to see chips after animation', () => {
+		cy.get('.LandingPage').get('.chips').should('be.visible')
+	})
 	it('should display an instruction on load', () => {
 		cy.get('.LandingPage')
 			.find('h1')
