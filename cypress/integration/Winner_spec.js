@@ -32,7 +32,9 @@ describe('Winner Page', () => {
   })
 
   it('When "TALLY VOTES!" is clicked, a confirmation is displayed', () => {
-    
+    cy.get('.tally-votes-button').click()
+    .get('h2')
+    .contains('ARE YOU SURE YOU WANT TO CLOSE VOTING?')
   })
 
 })
