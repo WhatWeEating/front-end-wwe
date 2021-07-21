@@ -29,38 +29,6 @@ const Form = ({ restaurantSelections }) => {
 
  const submitVote = event => {
    event.preventDefault();
-   // const body = {
-   //   data: {
-   //     fetchEvent: {
-   //       uid: eventID,
-   //       restaurants:[
-   //         {
-   //           yelpId: 'restaurant1id',
-   //           vote: 3,
-   //           image: 'url',
-   //           address: 'djkfssj',
-   //           phone: 1234123,
-   //
-   //         },
-   //         {
-   //           yelpId: 'restaurant2id',
-   //           vote: 2,
-   //           image: 'url',
-   //           address: 'djkfssj',
-   //           phone: 1234123,
-   //         },
-   //         {
-   //           yelpId: 'restaurant3id',
-   //           vote: 1,
-   //           image: 'url',
-   //           address: 'djkfssj',
-   //           phone: 1234123,
-   //         }
-   //
-   //       ]
-   //     }
-   //   }
-   // }
    // postRestaurantsData(body);
    history.push('/winner')
 }
