@@ -3,6 +3,11 @@ describe('LandingPage', () => {
 		cy.visit('http://localhost:3000')
 	})
 
+	it('should be able to see burger after animation', () => {
+		cy.get('.LandingPage').get('.burger').should('be.visible')
+	})
+  
+
 	it('should display an instruction on load', () => {
 		cy.get('.LandingPage')
 			.find('h1')
