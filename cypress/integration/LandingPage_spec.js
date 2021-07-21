@@ -35,6 +35,10 @@ describe('LandingPage', () => {
 		cy.get('.LandingPage').get('.eatin').should('be.visible')
 	})
 
+  it('should be able to see "question mark" after animation', () => {
+		cy.get('.LandingPage').get('.question').should('be.visible')
+	})
+
 
 	it('should display an instruction on load', () => {
 		cy.get('.LandingPage')
@@ -50,15 +54,6 @@ describe('LandingPage', () => {
 			.should('have.class', 'fas fa-search')
 			.should('be.visible')
 			.get('input[name="search"]')
-			.should('be.visible')
-
-			.get('.what')
-			.should('be.visible')
-			.get('.we')
-			.should('be.visible')
-			.get('.question')
-			.should('be.visible')
-			.get('.eatin')
 			.should('be.visible')
 	})
 
