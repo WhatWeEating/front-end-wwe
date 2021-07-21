@@ -75,7 +75,7 @@ const Form = () => {
 }
 		event.preventDefault();
 		postRestaurantsData(body);
-		history.push('/winner');
+		history.push(`/winner/${uid}`);
 	}
 
 	const dragMoveListener = event => {
