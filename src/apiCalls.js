@@ -11,14 +11,8 @@ export const fetchRestaurantsData = async (zipCode, fetchId) => {
 	})
 }
 
-export const fetchThreeSelections = async (eventID) => {
-  console.log('triggered fetch winner')
-  return await fetch(`https://back-end-wwe.herokuapp.com/grapghql`, {
-
-	})
-}
-
 export const postRestaurantsData = async (body) => {
+	console.log(body)
 	return await fetch(`https://back-end-wwe.herokuapp.com/graphql`, {
 		method: 'POST',
 		body: JSON.stringify(body),
