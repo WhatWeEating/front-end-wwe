@@ -32,7 +32,7 @@ const Winner = ({ restaurantSelections, eventID }) => {
         <button className='tally-votes-button winner-button' onClick={(e) => setVoteButtonIsEngaged(!voteButtonIsEngaged)}> TALLY VOTES!</button>
         </> : 
         (<>
-        <h2>ARE YOU SURE YOU WANT TO CLOSE VOTING? </h2>
+        <h2>ARE YOU SURE YOU WANT TO CLOSE VOTING?</h2>
         <button className='yes-button winner-button' onClick={(e) => fetchWinnerButton(eventID)} >YES!</button>
         <button className='no-button winner-button'onClick={(e) => setVoteButtonIsEngaged(!voteButtonIsEngaged)} >NOT YET!</button>
         </>
