@@ -60,6 +60,13 @@ describe('LandingPage', () => {
     cy.get('.LandingPage').get('input[name="search"]').should('have.value', '')
   })
 
+  it('should be a controlled form', () => {
+    cy.get('.LandingPage')
+			.get('input[name="search"]')
+			.type('a')
+			.should('have.value', 'a')
+  })
+
 	it('should be able to see error for invalid zipcode', () => {
 		cy.get('input[name="search"]')
 			.should('have.value', '')
