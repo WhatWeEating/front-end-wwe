@@ -82,7 +82,7 @@ describe('Selection page and navigation to it', () => {
 			.should('have.text', '2.5')
 	})
 
-	it.only('should be pats restaurant phone number on index 0', () => {
+	it('should be pats restaurant phone number on index 0', () => {
 		cy.get('input')
 			.type('11111')
 			.type('{enter}')
@@ -93,5 +93,19 @@ describe('Selection page and navigation to it', () => {
 			.get('.restaurants-container > :nth-child(1) > :nth-child(5)')
 			.get(':nth-child(1) > a')
 			.should('have.text', '215-620-8777')
+	})
+
+	it.only('should be pats restaurants address on index 0', () => {
+		cy.get('input')
+			.type('11111')
+			.type('{enter}')
+			.get('.card')
+			.get(':nth-child(1) > .image')
+			.get(':nth-child(1) > h3')
+			.get('.restaurants-container > :nth-child(1) > :nth-child(4)')
+			.get('.restaurants-container > :nth-child(1) > :nth-child(5)')
+			.get(':nth-child(1) > a')
+			.get(':nth-child(1) > address')
+			.should('have.text', 'Philadelphia, USA, PA, 1941 Mountain Street, 19145')
 	})
 })
