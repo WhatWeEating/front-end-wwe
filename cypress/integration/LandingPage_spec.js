@@ -15,6 +15,10 @@ describe('LandingPage', () => {
 		cy.get('.LandingPage').get('.eggs').should('be.visible')
 	})
 
+  it('should be able to see drinks after animation', () => {
+		cy.get('.LandingPage').get('.drinks').should('be.visible')
+	})
+
 	it('should display an instruction on load', () => {
 		cy.get('.LandingPage')
 			.find('h1')
@@ -30,9 +34,7 @@ describe('LandingPage', () => {
 			.should('be.visible')
 			.get('input[name="search"]')
 			.should('be.visible')
-			
-			.get('.eggs')
-			.should('be.visible')
+
 			.get('.drinks')
 			.should('be.visible')
 			.get('.tomatoes')
