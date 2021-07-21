@@ -56,6 +56,10 @@ describe('LandingPage', () => {
 		cy.get('.LandingPage').get('input[name="search"]').should('be.visible')
 	})
 
+  it('should have an empty search bar', () => {
+    cy.get('.LandingPage').get('input[name="search"]').should('have.value', '')
+  })
+
 	it('should be able to see error for invalid zipcode', () => {
 		cy.get('input[name="search"]')
 			.should('have.value', '')
