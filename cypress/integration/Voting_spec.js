@@ -9,11 +9,11 @@ describe('Selection page and navigation to it', () => {
       .get('.selection-go-vote-button').click()
 	})
 
-  it('Should allow the user to drag and drop to vote', () => {
-    .get('.form > :nth-child(2)')
-      .trigger('mousedown', { which: 1 })
-      .trigger('mousemove', { clientX: 400, clientY: 600 })
-      .trigger('mouseup', { force: true })
+  // it('Should allow the user to drag and drop to vote', () => {
+  //   cy.get('.form > :nth-child(2)')
+  //     .trigger('mousedown', { which: 1 })
+  //     .trigger('mousemove', { clientX: 400, clientY: 600 })
+  //     .trigger('mouseup', { force: true })
 
-  })
+  // })
 })
