@@ -109,7 +109,7 @@ describe('Selection page and navigation to it', () => {
 			.should('have.text', 'Philadelphia, USA, PA, 1941 Mountain Street, 19145')
 	})
 
-	it.only('should be able to select restaurant on index 0', () => {
+	it('should be able to see select button on index 0', () => {
 		cy.get('input')
 			.type('11111')
 			.type('{enter}')
@@ -122,5 +122,14 @@ describe('Selection page and navigation to it', () => {
 			.get(':nth-child(1) > address')
 			.get(':nth-child(1) > .select')
 			.should('have.text', 'Select')
+	})
+
+	it.only('should be able to select a restaurant', () => {
+		cy.get('input')
+			.type('11111')
+			.type('{enter}')
+			.get('.card')
+			.get(':nth-child(1) > .select')
+			.click()
 	})
 })
