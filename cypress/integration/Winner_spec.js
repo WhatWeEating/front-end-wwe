@@ -56,22 +56,22 @@ describe('Winner Page', () => {
     .get('.load-ring')
   })
 
-  it('Should display winner', () => {
-    cy.get('.tally-votes-button').click()
-    .get('.yes-button').click()
-    .wait(3000)
-    .get('.winner-text')
-    .get('.winner-name')
-    .get('.winner-phone')
-    .get('.winner-address')
-  })
+  // it('Should display winner', () => {
+  //   cy.get('.tally-votes-button').click()
+  //   .get('.yes-button').click()
+  //   .wait(3000)
+  //   .get('.winner-text')
+  //   .get('.winner-name')
+  //   .get('.winner-phone')
+  //   .get('.winner-address')
+  // })
 
-  it('Should allow user to interact with winner phone number', () => {
-    cy.get('.tally-votes-button').click()
-    .get('.yes-button').click()
-    .wait(3000)
-    .get('.winner-phone')
-  })
+  // it('Should allow user to interact with winner phone number', () => {
+  //   cy.get('.tally-votes-button').click()
+  //   .get('.yes-button').click()
+  //   .wait(3000)
+  //   .get('.winner-phone')
+  // })
 
 })
 

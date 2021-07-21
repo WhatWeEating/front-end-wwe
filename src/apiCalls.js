@@ -15,6 +15,9 @@ export const postRestaurantsData = async (body) => {
 	console.log(body)
 	return await fetch(`https://back-end-wwe.herokuapp.com/graphql`, {
 		method: 'POST',
-		body: JSON.stringify(body),
+		body: JSON.stringify(body), 
+    headers: {
+      'Content-Type' : 'Application/JSON'
+    },
 	})
 }
