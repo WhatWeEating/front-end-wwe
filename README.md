@@ -19,7 +19,7 @@
 
 ## Overview
 
-You've struggled to decide where you and your friends or partner want to eat. 'What We Eatin?' is the perfect solution for it! With this app you will be able to search enter a zip-code and instantly receive 15 restaurants to then vote on. The best part about this app is only one person from the group needs to have access to it. Friends, partners, & family will be able to vote for restaurants and make a decision within minutes!
+You've struggled to decide where you and your friends or partner want to eat. 'What We Eatin?' is the perfect solution for it! With this app you will be able to enter a zip-code and instantly receive 15 restaurants to then vote on. The best part about this app is only one person from the group needs to have access to it. Friends, partners, & family will be able to vote for restaurants and make a decision within minutes!
 
 - GitHub Repo [LINK](https://github.com/WhatWeEating/front-end-wwe.git)
 - Deployed [LINK](https://mysterious-cove-94790.herokuapp.com/)
