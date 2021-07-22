@@ -12,7 +12,7 @@ Cypress.Commands.add('interceptRestaurantsFetch', () => {
 Cypress.Commands.add('interceptSelectionsFetch', () => {
   cy.fixture('selections.json')
   .then(data => {
-    cy.intercept('GET', 'https://back-end-wwe.herokuapp.com/restaurants?zip=11111', {
+    cy.intercept('POST', 'https://back-end-wwe.herokuapp.com/graphql', {
     body: data
   })
   })

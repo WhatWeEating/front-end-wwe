@@ -461,51 +461,71 @@
   }
 }
 
-@media screen and (min-width: 350px) and (max-width: 375px) {
-  .podium-container {
-    margin-left: 2vw;
-    margin-top: 26em;
-  }
+@media screen and (max-width: 375px),
+       screen and (max-height: 812px) {
+         .instruction {
+          position: absolute;
+          top: 60vw;
+          left: 25vw;
+          font-size: 8vw;
+          width: 70vw;
+         }
 
-  .first {
-     right: 35vw;
-     bottom: 39vw;
-  }
+         .submit{
+           background-color: #0aa169;
+           position: absolute;
+           top: 60vw;
+           left: 16vw;
+           font-size: 8vw;
+           width: 70vw;
+           border-radius: 5px;
+         }
 
-  .second {
-     right: 67vw;
-     bottom: 25vw;
-  }
+         .podium-container {
+           margin-left: 2vw;
+           margin-top: 30em;
+         }
 
-  .third {
-     right: 3vw;
-     bottom: 17vw;
-  }
+         .first {
+            right: 35vw;
+            bottom: 39vw;
+         }
 
-  .drag-drop {
-    height: 19vw;
-    width: 23vw;
-  }
+         .second {
+            right: 67vw;
+            bottom: 25vw;
+         }
 
-  .podium-one {
-    height: 31vw;
-    width: 32vw;
-  }
+         .third {
+            right: 3vw;
+            bottom: 17vw;
+         }
 
-  .podium-two {
-    height: 45vw;
-    width: 32vw;
-  }
+         .drag-drop {
+           border-radius: 5px;
+           height: 18vw;
+           width: 23vw;
+         }
 
-  .podium-three {
-    height: 23vw;
-    width: 32vw;
-  }
+         .podium-one {
+           height: 31vw;
+           width: 32vw;
+         }
 
-  .first,
-  .second,
-  .third {
-    height: 20vw;
-    width: 23vw;
-  }
-}
+         .podium-two {
+           height: 45vw;
+           width: 32vw;
+         }
+
+         .podium-three {
+           height: 23vw;
+           width: 32vw;
+         }
+
+         .first,
+         .second,
+         .third {
+           height: 20vw;
+           width: 23vw;
+         }
+   }
