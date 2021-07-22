@@ -1,19 +1,19 @@
 describe('Selection page and navigation to it', () => {
 	beforeEach(() => {
-		cy.visit('http://localhost:3000')
+    cy.interceptRestaurantsFetch()
+		  .visit('http://localhost:3000')
       .get('input').type('11111').type('{enter}')
       .get(':nth-child(1) > .select').click()
       .get(':nth-child(2) > .select').click()
       .get(':nth-child(3) > .select').click()
       .get('.selection > :nth-child(3)').click()
+      .viewport(375, 812)
       .get('.selection-go-vote-button').click()
 	})
 
-  // it('Should allow the user to drag and drop to vote', () => {
-  //   cy.get('.form > :nth-child(2)')
-  //     .trigger('mousedown', { which: 1 })
-  //     .trigger('mousemove', { clientX: 400, clientY: 600 })
-  //     .trigger('mouseup', { force: true })
-
-  // })
+  it('Should display podium', () => {
+    cy.get('.podium-one').contains('2nd')
+      .get('.podium-two').contains('1st')
+      .get('.podium-three').contains('3rd')
+  })
 })
