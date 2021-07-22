@@ -38,5 +38,9 @@ describe('Voting page submit button', () => {
     cy.get('.submit').contains('SUBMIT')
   })
 
+  it('Should switch to /winner url when submit is clicked', () => {
+    cy.get('.submit').click()
+    cy.location('href').should('include', '/winner')
+  })
 
 })
