@@ -1,4 +1,4 @@
-describe('Selection page and navigation to it', () => {
+describe('Voting page and navigation to it', () => {
 	beforeEach(() => {
     cy.interceptRestaurantsFetch()
 		  .visit('http://localhost:3000')
@@ -16,4 +16,12 @@ describe('Selection page and navigation to it', () => {
       .get('.podium-two').contains('1st')
       .get('.podium-three').contains('3rd')
   })
+
+  it('Should display instructions', () => {
+    cy.get('.instruction').contains('Drag and Drop')
+  })
+
+})
+
+
 })
