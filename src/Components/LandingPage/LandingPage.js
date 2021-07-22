@@ -12,7 +12,7 @@ export const LandingPage = ({ storeData }) => {
 		setError('')
 		const zipCode = e.target.value
 		const zipCodeValidation = /[0-9]{5}/.test(zipCode)
-		if (zipCodeValidation && e.key === 'Enter') {
+		if (zipCodeValidation && e.key === 'Enter' && zipCode !== '00000') {
       const fetchId = new Date().valueOf()
 			try {
 				const response = await fetchRestaurantsData(zipCode, fetchId)
@@ -23,8 +23,8 @@ export const LandingPage = ({ storeData }) => {
 			} catch (e) {
 				setError(e.message)
 			}
-		} else if (!zipCodeValidation && e.key === 'Enter') {
-			setError('Please enter 5 digit zip code')
+		} else if (!zipCodeValidation && e.key === 'Enter' || zipCode === '00000') {
+			setError('Please enter a valid 5 digit zip code')
 		}
 	}
 
