@@ -29,9 +29,9 @@
 
 .winner-text {
   position: fixed;
-  top: 92px;
-  left: 110px;
-  font-size: 50px;
+  top: 75px;
+  left: 82px;
+  font-size: 62px;
 }
 
 .winner-info-wrap {
@@ -99,7 +99,7 @@ a:hover {
 @media only screen and (min-width: 768px) {
   .winner-text {
     top: 8px;
-    left: 36%;
+    left: 35.5%;
     font-size: 100px;
   }
 
@@ -107,7 +107,10 @@ a:hover {
     left: 36%;
   }
   .winner-info-wrap {
-    left: 41%;
+    left: 40.45%;
+    top: 234.5px;
+    height: 252px;
+    width: 252px;
   }
   
   .winner-info-container {

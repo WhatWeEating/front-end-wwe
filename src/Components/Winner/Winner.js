@@ -54,10 +54,11 @@ const Winner = ({ restaurantSelections, eventID }) => {
     }
   }
 
-  // const addressTrim = (address) => {
-  //   const winningRestaurantAddressSplit = address.attributes.full_address.split(' ')
-  //   return `${winningRestaurantAddressSplit[0]} ${winningRestaurantAddressSplit[2]} ${winningRestaurantAddressSplit[3]}, ${winningRestaurantAddressSplit[4]} ${winningRestaurantAddressSplit[5]} ${winningRestaurantAddressSplit[6]}`
-  // }
+  const phoneTrim = (phoneNumber) => {
+    const splitPhone = phoneNumber.split('')
+    const remove = ['(', ')', '-', ' ']
+    return splitPhone.filter(i => !remove.includes(i)).join('')
+  }
 
   if (!fetchEngaged) {
     return(
@@ -99,7 +100,7 @@ const Winner = ({ restaurantSelections, eventID }) => {
         <img className='winner-image' src={winnerID.image} alt='ribbon' />
           <div className='winner-info-container'>
           <h3 className='winner-name'>{winnerID.name}</h3>
-          <a className='winner-phone' href='tel:1111111111'>{winnerID.phone}</a>
+          <a className='winner-phone' href={`tel:${phoneTrim(winnerID.phone)}`}>{winnerID.phone}</a>
           <h4 className='winner-address'>{winnerID.address}</h4>
           </div>
         </div>
