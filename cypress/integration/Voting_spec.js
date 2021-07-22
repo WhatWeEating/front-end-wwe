@@ -22,6 +22,21 @@ describe('Voting page and navigation to it', () => {
   })
 
 })
+describe('Voting page submit button', () => {
+	beforeEach(() => {
+    cy.interceptRestaurantsFetch()
+		  .visit('http://localhost:3000')
+      .get('input').type('11111').type('{enter}')
+      .get(':nth-child(1) > .select').click()
+      .get(':nth-child(2) > .select').click()
+      .get(':nth-child(3) > .select').click()
+      .get('.selection > :nth-child(3)').click()
+      .get('.selection-go-vote-button').click()
+	})
+
+  it('Should display submit button when all states are filled', () => {
+    cy.get('.submit').contains('SUBMIT')
+  })
 
 
 })
