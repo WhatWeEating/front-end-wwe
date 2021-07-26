@@ -37,6 +37,12 @@ const Card = ({id, rating, price, phone, name, image_url, full_address, toggleCh
     }
     }
 
+    const phoneTrim = (phoneNumber) => {
+      const splitPhone = phoneNumber.split('')
+      const remove = ['(', ')', '-', ' ']
+      return splitPhone.filter(i => !remove.includes(i)).join('')
+    }
+
   return (
     <div key={id} className='card'>
       <img className='restaurant-image' src={image_url}/>
@@ -47,7 +53,7 @@ const Card = ({id, rating, price, phone, name, image_url, full_address, toggleCh
         </div>
           <span className='restaurant-empty-stars'>{printEmptyStars()}</span>
           <span className='restaurant-full-stars'>{printFullStars()}</span>
-        <a href={phone}>{phone}</a>
+        <a className='restaurant-phone' href={`tel:${phoneTrim(phone)}`}>{phone}</a>
         <address>{full_address}</address>
       </div>
       {/* <button className='select' disabled={disabled && !isSelected} onClick={() => toggleChoice(id)}>{!isSelected ? "Select" : "Unselect"}</button>     */}
