@@ -11,6 +11,7 @@ const Selection = ({ restaurantsData, eventId }) => {
   const [submitIsClicked, setSubmitIsClicked] = useState(false)
   const [showCopiedTag, setShowCopiedTag] = useState(false)
   const genLink = useRef()
+  console.log(restaurantsData)
 
   const toggleChoice = (id) => {
     const currentChoices = Array.from(choices)
@@ -77,7 +78,6 @@ const Selection = ({ restaurantsData, eventId }) => {
         return (
           <Card
             id={restaurant.id}
-            key={restaurant.id}
             rating={restaurant.attributes.rating}
             price={restaurant.attributes.price}
             phone={restaurant.attributes.phone}
@@ -95,12 +95,13 @@ const Selection = ({ restaurantsData, eventId }) => {
     if (restaurantsData.length > 0 && !submitIsClicked) {
       const hasMaxChoices = choices.length >= 3
     return (
-      <main className='selection'>
+      <main className='restaurant-selection'>
         <h1 className='title'>What We Eating?</h1>
+        <button className='submit-votes' onClick={() => {setSubmitIsClicked(true);  postRestaurantSelections();}} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit" : "Not Enough Selections"}</button>
         <div className='restaurants-container'>
             {renderCards(restaurantsData)}
         </div>
-          <button  onClick={() => {setSubmitIsClicked(true);  postRestaurantSelections();}} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit" : "Not Enough Selections"}</button>
+          <button className='submit-votes' onClick={() => {setSubmitIsClicked(true);  postRestaurantSelections();}} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit" : "Not Enough Selections"}</button>
       </main>
     )
   } else {
