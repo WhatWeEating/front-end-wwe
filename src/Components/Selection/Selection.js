@@ -11,7 +11,7 @@ const Selection = ({ restaurantsData, eventId }) => {
   const [submitIsClicked, setSubmitIsClicked] = useState(false)
   const [showCopiedTag, setShowCopiedTag] = useState(false)
   const genLink = useRef()
-  console.log(restaurantsData)
+  console.log(restaurantsData, 'hi')
 
   const toggleChoice = (id) => {
     const currentChoices = Array.from(choices)
