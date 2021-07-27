@@ -50,4 +50,15 @@
   .selection-copied-flag {
     left: 51%;
   } 
+
+  .restaurants-container {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+}
+}
+
+@media only screen and (min-width: 1024px) {
+  .restaurants-container {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+}
+
 }
