@@ -1,10 +1,8 @@
+import React from 'react';
 import './Card.css';
 import starOutline from '../../assets/star_outline.png'
 import starFill from '../../assets/star_fill.svg'
 import starHalf from '../../assets/star_half.svg'
-
-import React from 'react';
-import { indexOf } from 'lodash';
 
 const Card = ({id, rating, price, phone, name, image_url, full_address, toggleChoice, isSelected, disabled}) => {
 
@@ -12,14 +10,6 @@ const Card = ({id, rating, price, phone, name, image_url, full_address, toggleCh
     const fiveEmpty = Array(5).fill(starOutline)
     return fiveEmpty.map((image, index) => <img className="empty-star" src={image} alt='empty star' key={`empty-star${id}${index}`}/>)
   }
-
-  // const printFullStars = () => {
-  //   const restRating = Math.floor(rating);
-  //   const hasHalfStar = (rating - Math.floor(rating)) !== 0;
-  //   console.log(rating, Math.floor(rating))
-  //   const stars = Array(restRating).fill(starFill)
-  //     return stars.map((image, index) => <img className="full-star" src={image} alt='star' key={`full-star${id}${index}`}/>)
-  //   }
 
   const printFullStars = () => {
     const restRating = Math.floor(rating);
@@ -44,7 +34,9 @@ const Card = ({id, rating, price, phone, name, image_url, full_address, toggleCh
     }
 
   return (
-    <div key={id} className='card'>
+    <div key={id} className='card' disabled={disabled && !isSelected} onClick={() => toggleChoice(id)}>
+      <div className={isSelected ? "selected-restaurant" : "hidden"}>
+      </div>
       <img className='restaurant-image' src={image_url}/>
       <div className='restaurant-details'>
         <div className='name-price'>
