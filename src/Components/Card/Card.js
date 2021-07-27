@@ -14,7 +14,6 @@ const Card = ({id, rating, price, phone, name, image_url, full_address, toggleCh
   const printFullStars = () => {
     const restRating = Math.floor(rating);
     const hasHalfStar = (rating - Math.floor(rating)) !== 0;
-    console.log(rating, Math.floor(rating))
     const stars = Array(restRating).fill(starFill)
     if (!hasHalfStar) {
       return stars.map((image, index) => <img className="full-star" src={image} alt='star' key={`full-star${id}${index}`}/>)
@@ -37,7 +36,7 @@ const Card = ({id, rating, price, phone, name, image_url, full_address, toggleCh
     <div key={id} className='card' disabled={disabled && !isSelected} onClick={() => toggleChoice(id)}>
       <div className={isSelected ? "selected-restaurant" : "hidden"}>
       </div>
-      <img className='restaurant-image' src={image_url}/>
+      <img className='restaurant-image' src={image_url} alt={name}/>
       <div className='restaurant-details'>
         <div className='name-price'>
           <h3 className='restaurant-name'>{name}</h3>

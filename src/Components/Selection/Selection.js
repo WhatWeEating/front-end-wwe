@@ -11,7 +11,6 @@ const Selection = ({ restaurantsData, eventId }) => {
   const [submitIsClicked, setSubmitIsClicked] = useState(false)
   const [showCopiedTag, setShowCopiedTag] = useState(false)
   const genLink = useRef()
-  console.log(restaurantsData, 'hi')
 
   const toggleChoice = (id) => {
     const currentChoices = Array.from(choices)
@@ -26,13 +25,12 @@ const Selection = ({ restaurantsData, eventId }) => {
   }
 
   const copiedTag = () => {
+    console.log(showCopiedTag, 'showcopiedtag')
     setShowCopiedTag(true);
     setTimeout(function(){ setShowCopiedTag(false); }, 3000)
   }
 
   const postRestaurantSelections = () => {
-    console.log('invoke')
-    console.log(eventId)
     const body = {
   query : `mutation {
     createRestaurants(input: {
