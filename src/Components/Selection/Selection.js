@@ -92,12 +92,20 @@ const Selection = ({ restaurantsData, eventId }) => {
       })
     }
 
+    const choicesRemaining = () => {
+      if (choices.length <= 1) {
+        return `Select ${3 - choices.length} Restaurants`
+      } else {
+        return `Select 1 Restaurant`
+      }
+    }
+
     if (restaurantsData.length > 0 && !submitIsClicked) {
       const hasMaxChoices = choices.length >= 3
     return (
       <main className='restaurant-selection'>
         <h1 className='title'>What We Eatin?</h1>
-        <button className='submit-votes' onClick={() => {setSubmitIsClicked(true);  postRestaurantSelections();}} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit" : "Select 3 Restaurants"}</button>
+        <button className='submit-votes' onClick={() => {setSubmitIsClicked(true);  postRestaurantSelections();}} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit" : choicesRemaining()}</button>
         <div className='restaurants-container'>
             {renderCards(restaurantsData)}
         </div>
