@@ -37,18 +37,24 @@
   position: fixed;
   border-radius: 5px;
   left: 250px;
-  border: 1px solid black;
+  border: 1px solid #1D1827;
   padding: 3px;
-  background-color: grey;
+  background-color: #17283B;
 }
 
 .selection-go-vote-button {
   margin-top: 40px;
 }
 
+@media only screen and (max-width: 375px) {
+  .selection-copied-flag {
+    left: 56.5%;
+  }
+} 
+
 @media only screen and (min-width: 768px) {
   .selection-copied-flag {
-    left: 51%;
+    left: 51.5%;
   } 
 
   .restaurants-container {

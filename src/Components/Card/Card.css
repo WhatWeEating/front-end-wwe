@@ -91,10 +91,6 @@
   border: 3px solid #d68914;
 }
 
-.hidden {
-  visibility: hidden;
-}
-
 .restaurant-image {
   position: absolute;
   top: -8px;

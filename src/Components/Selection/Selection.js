@@ -24,10 +24,11 @@ const Selection = ({ restaurantsData, eventId }) => {
     setChoices(currentChoices)
   }
 
-  const copiedTag = () => {
-    console.log(showCopiedTag, 'showcopiedtag')
+  const copyLink = () => {
+    navigator.clipboard.writeText((genLink.current).textContent)
     setShowCopiedTag(true);
-    setTimeout(function(){ setShowCopiedTag(false); }, 3000)
+    console.log(showCopiedTag, 'showcopiedtag')
+    // setTimeout(function(){ setShowCopiedTag(false); }, 3000)
   }
 
   const postRestaurantSelections = () => {
@@ -119,9 +120,9 @@ const Selection = ({ restaurantsData, eventId }) => {
           <h3 ref={genLink} className='copy-link'>https://mysterious-cove-94790.herokuapp.com/voting/{eventId}</h3>
         <div className='selection-button-container'>
           {showCopiedTag ?
-          <span className='selection-copied-flag hidden'>COPIED!</span> : null
+          <span className='selection-copied-flag'>COPIED!</span> : null
           }
-          <button className='selection-copy-link-button button' onClick={() => {navigator.clipboard.writeText((genLink.current).textContent); copiedTag() }} >COPY LINK!</button>
+          <button className='selection-copy-link-button button' onClick={() => copyLink()} >COPY LINK!</button>
         <Link className="selection-submit" to={`/voting/${eventId}`}>
           <button className='selection-go-vote-button button'>GO VOTE!</button>
         </Link>
