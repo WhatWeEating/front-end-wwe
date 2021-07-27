@@ -50,9 +50,15 @@
   .selection-copied-flag {
     left: 56.5%;
   }
+
+  .selection-gen-link {
+    font-size: 13px;
+    margin: 25px;
+  }
 } 
 
 @media only screen and (min-width: 768px) {
+
   .selection-copied-flag {
     left: 51.5%;
   } 

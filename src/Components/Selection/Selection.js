@@ -27,8 +27,7 @@ const Selection = ({ restaurantsData, eventId }) => {
   const copyLink = () => {
     navigator.clipboard.writeText((genLink.current).textContent)
     setShowCopiedTag(true);
-    console.log(showCopiedTag, 'showcopiedtag')
-    // setTimeout(function(){ setShowCopiedTag(false); }, 3000)
+    setTimeout(function(){ setShowCopiedTag(false); }, 3000)
   }
 
   const postRestaurantSelections = () => {
