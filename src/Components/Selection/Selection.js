@@ -109,7 +109,7 @@ const Selection = ({ restaurantsData, eventId }) => {
         <div className='restaurants-container'>
             {renderCards(restaurantsData)}
         </div>
-          <button className='submit-votes' onClick={() => {setSubmitIsClicked(true);  postRestaurantSelections();}} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit" : "Select 3 Restaurants"}</button>
+        <button className='submit-votes' onClick={() => {setSubmitIsClicked(true);  postRestaurantSelections();}} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit" : choicesRemaining()}</button>
       </main>
     )
   } else {
