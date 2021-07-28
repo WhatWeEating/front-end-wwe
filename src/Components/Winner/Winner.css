@@ -96,6 +96,10 @@ a:hover {
   cursor: pointer;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 @media only screen and (min-width: 768px) {
   .winner-text {
     top: 8px;

@@ -24,14 +24,13 @@ const Selection = ({ restaurantsData, eventId }) => {
     setChoices(currentChoices)
   }
 
-  const copiedTag = () => {
+  const copyLink = () => {
+    navigator.clipboard.writeText((genLink.current).textContent)
     setShowCopiedTag(true);
     setTimeout(function(){ setShowCopiedTag(false); }, 3000)
   }
 
   const postRestaurantSelections = () => {
-    console.log('invoke')
-    console.log(eventId)
     const body = {
   query : `mutation {
     createRestaurants(input: {
@@ -76,8 +75,8 @@ const Selection = ({ restaurantsData, eventId }) => {
       return restaurantsData?.map(restaurant => {
         return (
           <Card
+            choices={choices}
             id={restaurant.id}
-            key={restaurant.id}
             rating={restaurant.attributes.rating}
             price={restaurant.attributes.price}
             phone={restaurant.attributes.phone}
@@ -92,15 +91,24 @@ const Selection = ({ restaurantsData, eventId }) => {
       })
     }
 
+    const choicesRemaining = () => {
+      if (choices.length <= 1) {
+        return `Select ${3 - choices.length} Restaurants`
+      } else {
+        return `Select 1 Restaurant`
+      }
+    }
+
     if (restaurantsData.length > 0 && !submitIsClicked) {
       const hasMaxChoices = choices.length >= 3
     return (
-      <main className='selection'>
-        <h1 className='title'>What We Eating?</h1>
+      <main className='restaurant-selection'>
+        <h1 className='title'>What We Eatin?</h1>
+        <button className='submit-votes' onClick={() => {setSubmitIsClicked(true);  postRestaurantSelections();}} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit" : choicesRemaining()}</button>
         <div className='restaurants-container'>
             {renderCards(restaurantsData)}
         </div>
-          <button  onClick={() => {setSubmitIsClicked(true);  postRestaurantSelections();}} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit" : "Not Enough Selections"}</button>
+        <button className='submit-votes' onClick={() => {setSubmitIsClicked(true);  postRestaurantSelections();}} disabled={!hasMaxChoices}>{hasMaxChoices ? "Submit" : choicesRemaining()}</button>
       </main>
     )
   } else {
@@ -112,9 +120,9 @@ const Selection = ({ restaurantsData, eventId }) => {
           <h3 ref={genLink} className='copy-link'>https://mysterious-cove-94790.herokuapp.com/voting/{eventId}</h3>
         <div className='selection-button-container'>
           {showCopiedTag ?
-          <span className='selection-copied-flag hidden'>COPIED!</span> : null
+          <span className='selection-copied-flag'>COPIED!</span> : null
           }
-          <button className='selection-copy-link-button button' onClick={() => {navigator.clipboard.writeText((genLink.current).textContent); copiedTag() }} >COPY LINK!</button>
+          <button className='selection-copy-link-button button' onClick={() => copyLink()} >COPY LINK!</button>
         <Link className="selection-submit" to={`/voting/${eventId}`}>
           <button className='selection-go-vote-button button'>GO VOTE!</button>
         </Link>
