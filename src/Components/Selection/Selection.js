@@ -75,6 +75,7 @@ const Selection = ({ restaurantsData, eventId }) => {
       return restaurantsData?.map(restaurant => {
         return (
           <Card
+            choices={choices}
             id={restaurant.id}
             rating={restaurant.attributes.rating}
             price={restaurant.attributes.price}

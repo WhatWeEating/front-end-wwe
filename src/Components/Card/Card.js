@@ -4,8 +4,8 @@ import starOutline from '../../assets/star_outline.png'
 import starFill from '../../assets/star_fill.svg'
 import starHalf from '../../assets/star_half.svg'
 
-const Card = ({id, rating, price, phone, name, image_url, full_address, toggleChoice, isSelected, disabled}) => {
-
+const Card = ({choices, id, rating, price, phone, name, image_url, full_address, toggleChoice, isSelected, disabled}) => {
+  console.log(choices)
   const printEmptyStars = () => {
     const fiveEmpty = Array(5).fill(starOutline)
     return fiveEmpty.map((image, index) => <img className="empty-star" src={image} alt='empty star' key={`empty-star${id}${index}`}/>)
@@ -33,7 +33,7 @@ const Card = ({id, rating, price, phone, name, image_url, full_address, toggleCh
     }
 
   return (
-    <div key={id} className='card' disabled={disabled && !isSelected} onClick={() => toggleChoice(id)}>
+    <div key={id} className='card' disabled={disabled && !isSelected} onClick={() => choices.length < 3 ? toggleChoice(id) : null}>
       <div className={isSelected ? "selected-restaurant" : "hidden"}>
       </div>
       <img className='restaurant-image' src={image_url} alt={name}/>
@@ -47,7 +47,6 @@ const Card = ({id, rating, price, phone, name, image_url, full_address, toggleCh
         <a className='restaurant-phone' href={`tel:${phoneTrim(phone)}`}>{phone}</a>
         <address>{full_address}</address>
       </div>
-      {/* <button className='select' disabled={disabled && !isSelected} onClick={() => toggleChoice(id)}>{!isSelected ? "Select" : "Unselect"}</button>     */}
     </div>
   )
 }
