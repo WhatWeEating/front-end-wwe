@@ -114,5 +114,14 @@ a:hover {
   position: unset; 
 }
 
+.winner-info-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 194px;
+  left: auto;
+}
+
 }
 
