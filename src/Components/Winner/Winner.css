@@ -110,5 +110,9 @@ a:hover {
   position: unset;
 }
 
+.winner-ribbon {
+  position: unset; 
+}
+
 }
 
