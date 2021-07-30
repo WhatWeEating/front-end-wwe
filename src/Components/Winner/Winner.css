@@ -5,7 +5,6 @@
   text-align: center;
   height: 100%;
   align-items: center;
-  /* margin-top: 55px; */
 }
 
 .tally-votes-view {
@@ -36,7 +35,6 @@
 
 .winner-info-wrap {
   position: fixed;
-  /* border: 1px solid red; */
   height: 242px;
   width: 240px;
   left: 91px;
@@ -53,7 +51,6 @@
 }
 
 .winner-info-container {
-  /* border: 1px solid blue; */
   position: fixed;
   width: 210px;
   left: 106px;
@@ -101,28 +98,14 @@ a:hover {
 }
 
 @media only screen and (min-width: 768px) {
-  .winner-text {
-    top: 8px;
-    left: 35.5%;
-    font-size: 100px;
-  }
+  .winner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
 
-  .winner-ribbon {
-    left: 36%;
-  }
-  .winner-info-wrap {
-    left: 40.45%;
-    top: 234.5px;
-    height: 252px;
-    width: 252px;
-  }
-  
-  .winner-info-container {
-    left: 42%;
-  }
 
 }
 
-@media only screen and (min-width: 1000) {
-
-}
