@@ -122,6 +122,10 @@ a:hover {
   top: 194px;
   left: auto;
 }
+.winner-info-container {
+  left: auto;
+  top: auto;
+}
 
 }
 
