@@ -106,26 +106,26 @@ a:hover {
     height: 100%;
 }
 
-.winner-text {
-  position: unset;
-}
+  .winner-text {
+    position: unset;
+  }
 
-.winner-ribbon {
-  position: unset; 
-}
+  .winner-ribbon {
+    position: unset; 
+  }
 
-.winner-info-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  top: 194px;
-  left: auto;
-}
-.winner-info-container {
-  left: auto;
-  top: auto;
-}
+  .winner-info-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 194px;
+    left: auto;
+  }
+  .winner-info-container {
+    left: auto;
+    top: auto;
+  }
 
 }
 
