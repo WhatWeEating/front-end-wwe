@@ -89,21 +89,22 @@ const Winner = ({ restaurantSelections, eventID }) => {
     )
   } else if (Object.keys(winnerID).length && fetchEngaged) {
     console.log(winnerID, 'winnerID')
-    // const winningRestaurant  = restaurantSelections.find(selection => Number(selection.id) === Number(winnerID))
-    // const winningRestaurantAddress = addressTrim(winningRestaurant)
+  
     return (
       <main className='winner-container'>
         <div className='winner'>
           <h1 className='winner-text'>WINNER!</h1>
-        <img className='winner-ribbon' src={ribbon} alt='ribbon' />
-        <div className='winner-info-wrap'>
-        <img className='winner-image' src={winnerID.image} alt='ribbon' />
-          <div className='winner-info-container'>
-          <h3 className='winner-name'>{winnerID.name}</h3>
-          <a className='winner-phone' href={`tel:${phoneTrim(winnerID.phone)}`}>{winnerID.phone}</a>
-          <h4 className='winner-address'>{winnerID.address}</h4>
+          <img className='winner-ribbon' src={ribbon} alt='ribbon' />
+          <div className='winner-image-wrap'>
+            <img className='winner-image' src={winnerID.image} alt='ribbon' />
           </div>
-        </div>
+          {/* <div className='winner-info-wrap'> */}
+          <div className='winner-info-details'>
+            <h3 className='winner-name'>{winnerID.name}</h3>
+            <a classNamse='winner-phone' href={`tel:${phoneTrim(winnerID.phone)}`}>{winnerID.phone}</a>
+            <h4 className='winner-address'>{winnerID.address}</h4>
+          </div>
+        {/* </div> */}
         </div>
       </main>
     )
