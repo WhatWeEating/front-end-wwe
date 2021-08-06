@@ -1,5 +1,6 @@
 .tally-container {
   display:flex;
+  justify-content: center;
   align-items: center;
   height: 99%;
   text-align: center;
@@ -73,7 +74,8 @@ a:hover {
 }
 
 .winner-ribbon {
-  height: 255px
+  height: 255px;
+  filter: invert(70%) sepia(43%) saturate(763%) hue-rotate(328deg) brightness(97%) contrast(93%);
 }
 
 .winner-image-wrap {
