@@ -50,13 +50,11 @@ a:hover {
 }
 
 .winner-container {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  /* height: 99%; */
 }
 
 .winner-text {
@@ -65,8 +63,6 @@ a:hover {
 }
 
 .winner {
-  /* margin-top: 75px; */
-  border: 1px solid orange;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -79,7 +75,6 @@ a:hover {
 }
 
 .winner-image-wrap {
-  border: 1px solid yellow;
   position: relative;
   bottom: 231px;
   height: 207px;
@@ -94,7 +89,6 @@ a:hover {
 }
 
 .winner-info-details {
-  border: 1px solid green;
   width: 175px;
   position: relative;
   bottom: 422px;
