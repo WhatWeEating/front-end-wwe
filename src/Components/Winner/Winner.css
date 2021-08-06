@@ -98,6 +98,34 @@ a:hover {
   bottom: 422px;
 }
 
+@media only screen and (min-width: 768px) {
+  .winner-text {
+    font-size: 75px;
+  }
+
+  .winner-ribbon {
+    height: 355px
+  }
+
+  .winner-image-wrap {
+    bottom: 321px;
+    height: 286px;
+    width: 286px;
+  }
+
+  .winner-image {
+    width: 286px;
+  }
+
+  .winner-info-details {
+    width: 231px;
+    bottom: 588px;
+    font-size: 22px;
+}
+
+}
+
+
 
 
 /* .winner-container {
