@@ -3,6 +3,7 @@ import { postRestaurantsData } from '../../apiCalls'
 import './Winner.css'
 import ribbon from '../../assets/ribbon.png'
 import LoadWheel from '../../Components/LoadWheel/LoadWheel'
+import confetti from 'canvas-confetti'
 
 const Winner = ({ restaurantSelections, eventID }) => {
   const [winnerID, setWinnerID] = useState('')
@@ -62,7 +63,7 @@ const Winner = ({ restaurantSelections, eventID }) => {
 
   if (!fetchEngaged) {
     return(
-      <main className='winner-container'>
+      <main className='tally-container'>
         <div className='tally-votes-view'>
         {!voteButtonIsEngaged ?
         <>
@@ -89,7 +90,7 @@ const Winner = ({ restaurantSelections, eventID }) => {
     )
   } else if (Object.keys(winnerID).length && fetchEngaged) {
     console.log(winnerID, 'winnerID')
-  
+    confetti()
     return (
       <main className='winner-container'>
         <div className='winner'>

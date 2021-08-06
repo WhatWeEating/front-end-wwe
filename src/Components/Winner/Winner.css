@@ -1,3 +1,10 @@
+.tally-container {
+  display:flex;
+  align-items: center;
+  height: 99%;
+  text-align: center;
+}
+
 .tally-votes-view {
   display: flex;
   flex-direction: column;
@@ -45,23 +52,24 @@ a:hover {
   border: 1px solid red;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  height: 99%;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* height: 99%; */
 }
 
 .winner-text {
-  font-size: 64px;
+  font-size: 56px;
   font-weight: 500;
 }
 
 .winner {
+  /* margin-top: 75px; */
   border: 1px solid orange;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  height: 100%;
 }
 
 .winner-ribbon {
@@ -71,7 +79,6 @@ a:hover {
 .winner-image-wrap {
   border: 1px solid yellow;
   position: relative;
-  /* top: 343px; */
   bottom: 231px;
   height: 207px;
   width: 207px;
