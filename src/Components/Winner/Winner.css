@@ -45,17 +45,21 @@ a:hover {
   border: 1px solid red;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   text-align: center;
-  height: 100%;
+  height: 99%;
   align-items: center;
+}
+
+.winner-text {
+  font-size: 64px;
+  font-weight: 500;
 }
 
 .winner {
   border: 1px solid orange;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   height: 100%;
 }
@@ -82,9 +86,9 @@ a:hover {
 
 .winner-info-details {
   border: 1px solid green;
-  width: 207px;
+  width: 175px;
   position: relative;
-  bottom: 231px;
+  bottom: 422px;
 }
 
 
