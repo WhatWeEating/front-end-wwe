@@ -149,7 +149,7 @@ const Form = () => {
 		<form className='form'>
 			{restaurantSelections.length && (
 				<>
-        <div className='drag-drop-start'>
+        {/* <div className='drag-drop-start'> */}
 					<div data-yelpid={restaurantSelections[0].yelpId} id='yes-drop' className='drag-drop'>
             <img src={restaurantSelections[0].image} className='drag-drop-image'></img>
 						<p className='drag-drop-name'>{restaurantSelections[0].name}</p>
@@ -162,7 +162,7 @@ const Form = () => {
           <img src={restaurantSelections[0].image} className='drag-drop-image'></img>
 						<p className='drag-drop-name' >{restaurantSelections[2].name}</p>
 					</div>
-          </div>
+          {/* </div> */}
 				</>
 			)}
 			{!dropped ? (
