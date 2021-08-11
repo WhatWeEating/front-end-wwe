@@ -149,15 +149,20 @@ const Form = () => {
 		<form className='form'>
 			{restaurantSelections.length && (
 				<>
+        <div className='drag-drop-start'>
 					<div data-yelpid={restaurantSelections[0].yelpId} id='yes-drop' className='drag-drop'>
-						<p>{restaurantSelections[0].name}</p>
+            <img src={restaurantSelections[0].image} className='drag-drop-image'></img>
+						<p className='drag-drop-name'>{restaurantSelections[0].name}</p>
 					</div>
 					<div data-yelpid={restaurantSelections[1].yelpId} id='yes-drop' className='drag-drop'>
-						<p>{restaurantSelections[1].name}</p>
+          <img src={restaurantSelections[1].image} className='drag-drop-image'></img>
+						<p className='drag-drop-name' >{restaurantSelections[1].name}</p>
 					</div>
 					<div data-yelpid={restaurantSelections[2].yelpId} id='yes-drop' className='drag-drop'>
-						<p>{restaurantSelections[2].name}</p>
+          <img src={restaurantSelections[0].image} className='drag-drop-image'></img>
+						<p className='drag-drop-name' >{restaurantSelections[2].name}</p>
 					</div>
+          </div>
 				</>
 			)}
 			{!dropped ? (
@@ -167,20 +172,26 @@ const Form = () => {
 					SUBMIT
 				</button>
 			)}
-			<div className='dropzone-container'>
+			{/* <div className='dropzone-container'>
+			</div> */}
+			<div className='podiums-wrap'>
+				<div className='podium-container podium-container-two'>
 				<div id='outer-second' className='second dropzone'></div>
-				<div id='outer-first' className='first dropzone'></div>
-				<div id='outer-third' className='third dropzone'></div>
-			</div>
-			<div className='podium-container'>
-				<div className='podium-one'>
+        <div className='podium podium-two'>
 					<h1 className='podium-text'>2nd</h1>
+        </div>
 				</div>
-				<div className='podium-two'>
+				<div className='podium-container podium-container-one'>
+				<div id='outer-first' className='first dropzone'></div>
+        <div className='podium podium-one'>
 					<h1 className='podium-text'>1st</h1>
+        </div>
 				</div>
-				<div className='podium-three'>
+				<div className='podium-container podium-container-three'>
+				<div id='outer-third' className='third dropzone'></div>
+        <div className='podium podium-three'>
 					<h1 className='podium-text'>3rd</h1>
+        </div>
 				</div>
 			</div>
 		</form>

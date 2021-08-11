@@ -1,4 +1,143 @@
+form {
+  border: 1px solid red;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.drag-drop-start {
+  border: 1px solid turquoise;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.drop-active {
+  border-color: #aaa;
+}
+
+.drop-target {
+  background-color: #29e;
+  border-color: #fff;
+  border-style: solid;
+}
+
+.droppped {
+  background-color: #0190ac;
+}
+
+.drag-drop {
+  
+  border: 1px solid orange;
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  overflow:hidden;
+  touch-action: none;
+  transform: translate(0px, 0px);
+  transition: background-color 0.3s;
+  z-index: 10;
+}
+
+.drag-drop-image {
+  position: relative;
+  object-fit: fill;
+  width: 200px;
+  filter: opacity(0.8) grayscale(75%)
+}
+
+.drag-drop-name {
+  position: fixed;
+  top:0px;
+}
+
+.instruction {
+  border: 1px solid yellow;
+  text-align: center;
+}
+
+.submit {
+  border: 1px solid green;
+}
+
+.dropzone-container {
+  border: 1px solid blue;
+}
+
+.dropzone {
+  border: 1px solid indigo;
+}
+
+.first,
+.second,
+.third {
+  height: 15px;
+  width:15px;
+}
+
+.second {
+  border: 1px solid violet;
+}
+
+.first {
+  border: 1px dotted red;
+  /* display: inline-block;
+  position: absolute;
+  z-index: -1;
+  right: 42px;
+  bottom: 18px; */
+}
+
+.third {
+  border: 1px dotted orange;
+}
+
+.podiums-wrap {
+  border: 1px dotted yellow;
+
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
+  display: flex;
+  align-items: flex-end;
+  height: 0vw;
+  width: 300px;
+  margin-top: 15em;
+  padding-bottom: 0px;
+  background-color: #17283B;
+}
+
+.podium {
+  display: flex;
+  flex-direction: column;
+  width: 75px;
+}
+
+.podium-one {
+  border: 1px dotted green;
+  /* height: 15px; */
+  /* width: 20px; */
+  background-color: #f0995b;
+}
+
+.podium-two {
+  border: 1px dotted blue;
+  /* height: 20px; */
+  /* width: 20px; */
+  background-color: #f0995b;
+}
+
+.podium-three {
+  border: 1px dotted indigo;
+  /* height: 10px; */
+  /* width: 20px; */
+  background-color: #f0995b;
+}
+
+.podium-text {
+  border: 1px dotted violet;
+}
+/* 
 .App {
   height: 100%;
   width:100%;
@@ -13,7 +152,6 @@
   border-color: #fff;
   border-style: solid;
 }
-
 
 .podium-one {
   height: 15vw;
@@ -103,7 +241,6 @@
   padding: 2em 0.5em;
   margin: 1rem 0 0 1rem;
   color: #fff;
-  background-color: #ff593d;
   border: solid 2px #fff;
   touch-action: none;
   transform: translate(0px, 0px);
@@ -111,11 +248,19 @@
   position: relative;
   z-index: 10;
   padding-top: 0px;
+  overflow:hidden;
 }
 
 .drag-drop.can-drop {
   color: #000;
   background-color: #0190ac;
+}
+
+.drag-drop-image {
+  position: relative;
+  object-fit: fill;
+  width: 289px;
+  filter: opacity(0.2) grayscale(75%)
 }
 
 .droppped {
@@ -528,4 +673,4 @@
            height: 20vw;
            width: 23vw;
          }
-   }
+   } */
