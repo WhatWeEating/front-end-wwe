@@ -27,8 +27,6 @@ form {
   background-color: #0190ac;
 }
 
-
-
 .drag-drop {
   border: 1px solid orange;
   margin-top: 16px;
@@ -73,7 +71,7 @@ form {
   justify-content: center;
   align-items: center;
   /* margin: 54px 0; */
-  margin: 25% 0;
+  margin: 4% 0;
   height: 7em;
   width: 90%;
 }
@@ -101,6 +99,7 @@ form {
   width: 350px;
   padding-bottom: 0px;
   background-color: #17283B;
+  margin-bottom: 16px;
 }
 
 .podium-container {
