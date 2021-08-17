@@ -150,15 +150,15 @@ const Form = () => {
 			{restaurantSelections.length && (
 				<>
         {/* <div className='drag-drop-start'> */}
-					<div data-yelpid={restaurantSelections[0].yelpId} id='yes-drop' className='drag-drop'>
+					<div data-yelpid={restaurantSelections[0].yelpId} id='yes-drop' className='drag-drop drag-drop-one'>
             <img src={restaurantSelections[0].image} className='drag-drop-image'></img>
 						<p className='drag-drop-name'>{restaurantSelections[0].name}</p>
 					</div>
-					<div data-yelpid={restaurantSelections[1].yelpId} id='yes-drop' className='drag-drop'>
+					<div data-yelpid={restaurantSelections[1].yelpId} id='yes-drop' className='drag-drop drag-drop-two'>
           <img src={restaurantSelections[1].image} className='drag-drop-image'></img>
 						<p className='drag-drop-name' >{restaurantSelections[1].name}</p>
 					</div>
-					<div data-yelpid={restaurantSelections[2].yelpId} id='yes-drop' className='drag-drop'>
+					<div data-yelpid={restaurantSelections[2].yelpId} id='yes-drop' className='drag-drop drag-drop-three'>
           <img src={restaurantSelections[0].image} className='drag-drop-image'></img>
 						<p className='drag-drop-name' >{restaurantSelections[2].name}</p>
 					</div>
@@ -170,7 +170,7 @@ const Form = () => {
 				<h1 className='instruction'>Drag and Drop Your Choices</h1>
 			) : (
 				<button className='submit' onClick={event => submitVote(event)}>
-					SUBMIT
+					SUBMIT SELECTIONS
 				</button>
 			)}
       </div>

@@ -27,8 +27,11 @@ form {
   background-color: #0190ac;
 }
 
+
+
 .drag-drop {
   border: 1px solid orange;
+  margin-top: 16px;
   text-align: center;
   height: 100px;
   width: 100px;
@@ -37,6 +40,18 @@ form {
   transform: translate(0px, 0px);
   transition: background-color 0.3s;
   z-index: 10;
+}
+
+.drag-drop-one {
+  position: absolute;
+  left: 20px;
+  top: 0px;
+}
+
+.drag-drop-three {
+  position: absolute;
+    right: 20px;
+    top: 0px;
 }
 
 .drag-drop-image {
@@ -53,30 +68,37 @@ form {
 
 .dropped-status {
   border: 1px dotted white;
-  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin: 54px 0; */
+  margin: 25% 0;
+  height: 7em;
+  width: 90%;
 }
 
 .instruction {
   border: 1px solid yellow;
+  font-size: 32px;
   text-align: center;
 }
 
 .submit {
   border: 1px solid green;
+  font-size: 20px;
+  border-radius: 5px;
 }
 
 /* ****************** PODIUMS ****************** */
 
 .podiums-wrap {
   border: 1px dotted yellow;
-  /* display: grid;
-  grid-template-columns: repeat(3, 1fr); */
   display: flex;
   align-items: flex-end;
   justify-self: end;
   height: 350px;
   width: 350px;
-  /* margin-top: 15em; */
   padding-bottom: 0px;
   background-color: #17283B;
 }
@@ -95,10 +117,6 @@ form {
   flex-direction: column;
   width: 100%;
 }
-
-/* .dropzone-container {
-  border: 1px solid blue;
-} */
 
 .dropzone {
   border: 1px solid indigo;
