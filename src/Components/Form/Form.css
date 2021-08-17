@@ -153,20 +153,20 @@ form {
 }
 
 .first-dropzone {
-  border: 1px dotted red;
+  /* border: 1px dotted red; */
   height: 45%;
 }
 
 /* **************** PODIUM THREE **************** */
 
 .podium-three {
-  border: 1px dotted indigo;
+  /* border: 1px dotted indigo; */
   height: 28%;
   background-color: #f0995b;
 }
 
 .third-dropzone {
-  border: 1px dotted orange;
+  /* border: 1px dotted orange; */
   height: 50%;
 }
 
