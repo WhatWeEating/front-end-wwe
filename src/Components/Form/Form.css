@@ -104,7 +104,7 @@ form {
 }
 
 .podium-container {
-  border: 1px dotted cyan;
+  /* border: 1px dotted cyan; */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -119,12 +119,12 @@ form {
 }
 
 .dropzone {
-  border: 1px solid indigo;
+  /* border: 1px solid indigo; */
   width: 100%;
 }
 
 .podium-text {
-  border: 1px dotted violet;
+  /* border: 1px dotted violet; */
   text-align: center;
 }
 
@@ -134,20 +134,20 @@ form {
 }
 
 .podium-two {
-  border: 1px dotted blue;
+  /* border: 1px dotted blue; */
   height: 41%;
   background-color: #f0995b;
 }
 
 .second-dropzone {
-  border: 1px solid violet;
+  /* border: 1px solid violet; */
   height: 45%;
 }
 
 /* **************** PODIUM ONE **************** */
 
 .podium-one {
-  border: 1px dotted green;
+  /* border: 1px dotted green; */
   height: 55%;
   background-color: #f0995b;
 }
