@@ -28,7 +28,7 @@ form {
 }
 
 .drag-drop {
-  /* border: 1px solid orange; */
+  border: 2px solid #fff;
   margin-top: 16px;
   text-align: center;
   height: 100px;
@@ -98,7 +98,7 @@ form {
   height: 350px;
   width: 350px;
   padding-bottom: 0px;
-  background-color: #17283B;
+  /* background-color: #17283B; */
   margin-top: auto;
   margin-bottom: 16px;
 }
@@ -109,7 +109,7 @@ form {
   flex-direction: column;
   justify-content: flex-end;
   width: 33%;
-  height: 100%
+  height: 100%;
 }
 
 .podium {
