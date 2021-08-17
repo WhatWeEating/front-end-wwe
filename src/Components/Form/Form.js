@@ -156,11 +156,11 @@ const Form = () => {
 					</div>
 					<div data-yelpid={restaurantSelections[1].yelpId} id='yes-drop' className='drag-drop drag-drop-two'>
           <img src={restaurantSelections[1].image} className='drag-drop-image'></img>
-						<p className='drag-drop-name' >{restaurantSelections[1].name}</p>
+						<p className='drag-drop-name'>{restaurantSelections[1].name}</p>
 					</div>
 					<div data-yelpid={restaurantSelections[2].yelpId} id='yes-drop' className='drag-drop drag-drop-three'>
-          <img src={restaurantSelections[0].image} className='drag-drop-image'></img>
-						<p className='drag-drop-name' >{restaurantSelections[2].name}</p>
+          <img src={restaurantSelections[2].image} className='drag-drop-image'></img>
+						<p className='drag-drop-name'>{restaurantSelections[2].name}</p>
 					</div>
           {/* </div> */}
 				</>

@@ -55,13 +55,20 @@ form {
 .drag-drop-image {
   position: relative;
   object-fit: fill;
-  width: 200px;
+  width: 102px;
   filter: opacity(0.8) grayscale(75%)
 }
 
 .drag-drop-name {
   position: fixed;
   top:0px;
+  text-shadow: 1px 1px 3px black;  
+  text-align: center;
+  display: block;
+    margin-block-start: none;
+    margin-block-end: none;
+    margin-inline-start: none;
+    margin-inline-end: none;
 }
 
 .dropped-status {
