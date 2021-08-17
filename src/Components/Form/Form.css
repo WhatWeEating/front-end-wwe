@@ -28,7 +28,6 @@ form {
 }
 
 .drag-drop {
-  
   border: 1px solid orange;
   text-align: center;
   height: 100px;
@@ -52,6 +51,11 @@ form {
   top:0px;
 }
 
+.dropped-status {
+  border: 1px dotted white;
+  height: 100px;
+}
+
 .instruction {
   border: 1px solid yellow;
   text-align: center;
@@ -61,82 +65,93 @@ form {
   border: 1px solid green;
 }
 
-.dropzone-container {
-  border: 1px solid blue;
-}
-
-.dropzone {
-  border: 1px solid indigo;
-}
-
-.first,
-.second,
-.third {
-  height: 15px;
-  width:15px;
-}
-
-.second {
-  border: 1px solid violet;
-}
-
-.first {
-  border: 1px dotted red;
-  /* display: inline-block;
-  position: absolute;
-  z-index: -1;
-  right: 42px;
-  bottom: 18px; */
-}
-
-.third {
-  border: 1px dotted orange;
-}
+/* ****************** PODIUMS ****************** */
 
 .podiums-wrap {
   border: 1px dotted yellow;
-
   /* display: grid;
   grid-template-columns: repeat(3, 1fr); */
   display: flex;
   align-items: flex-end;
-  height: 0vw;
-  width: 300px;
-  margin-top: 15em;
+  justify-self: end;
+  height: 350px;
+  width: 350px;
+  /* margin-top: 15em; */
   padding-bottom: 0px;
   background-color: #17283B;
+}
+
+.podium-container {
+  border: 1px dotted cyan;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 33%;
+  height: 100%
 }
 
 .podium {
   display: flex;
   flex-direction: column;
-  width: 75px;
+  width: 100%;
 }
 
-.podium-one {
-  border: 1px dotted green;
-  /* height: 15px; */
-  /* width: 20px; */
-  background-color: #f0995b;
-}
+/* .dropzone-container {
+  border: 1px solid blue;
+} */
 
-.podium-two {
-  border: 1px dotted blue;
-  /* height: 20px; */
-  /* width: 20px; */
-  background-color: #f0995b;
-}
-
-.podium-three {
-  border: 1px dotted indigo;
-  /* height: 10px; */
-  /* width: 20px; */
-  background-color: #f0995b;
+.dropzone {
+  border: 1px solid indigo;
+  width: 100%;
 }
 
 .podium-text {
   border: 1px dotted violet;
+  text-align: center;
 }
+
+/* **************** PODIUM TWO **************** */
+
+.podium-container-two {
+}
+
+.podium-two {
+  border: 1px dotted blue;
+  height: 41%;
+  background-color: #f0995b;
+}
+
+.second-dropzone {
+  border: 1px solid violet;
+  height: 45%;
+}
+
+/* **************** PODIUM ONE **************** */
+
+.podium-one {
+  border: 1px dotted green;
+  height: 55%;
+  background-color: #f0995b;
+}
+
+.first-dropzone {
+  border: 1px dotted red;
+  height: 45%;
+}
+
+/* **************** PODIUM THREE **************** */
+
+.podium-three {
+  border: 1px dotted indigo;
+  height: 28%;
+  background-color: #f0995b;
+}
+
+.third-dropzone {
+  border: 1px dotted orange;
+  height: 50%;
+}
+
 /* 
 .App {
   height: 100%;

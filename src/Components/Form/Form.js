@@ -165,6 +165,7 @@ const Form = () => {
           {/* </div> */}
 				</>
 			)}
+      <div className='dropped-status'>
 			{!dropped ? (
 				<h1 className='instruction'>Drag and Drop Your Choices</h1>
 			) : (
@@ -172,26 +173,27 @@ const Form = () => {
 					SUBMIT
 				</button>
 			)}
+      </div>
 			{/* <div className='dropzone-container'>
 			</div> */}
 			<div className='podiums-wrap'>
 				<div className='podium-container podium-container-two'>
-				<div id='outer-second' className='second dropzone'></div>
-        <div className='podium podium-two'>
-					<h1 className='podium-text'>2nd</h1>
-        </div>
+				  <div id='outer-second' className='second-dropzone dropzone'></div>
+          <div className='podium podium-two'>
+					  <h1 className='podium-text'>2nd</h1>
+          </div>
 				</div>
 				<div className='podium-container podium-container-one'>
-				<div id='outer-first' className='first dropzone'></div>
-        <div className='podium podium-one'>
-					<h1 className='podium-text'>1st</h1>
-        </div>
+				  <div id='outer-first' className='first-dropzone dropzone'></div>
+          <div className='podium podium-one'>
+					  <h1 className='podium-text'>1st</h1>
+          </div>
 				</div>
 				<div className='podium-container podium-container-three'>
-				<div id='outer-third' className='third dropzone'></div>
-        <div className='podium podium-three'>
-					<h1 className='podium-text'>3rd</h1>
-        </div>
+				  <div id='outer-third' className='third-dropzone dropzone'></div>
+          <div className='podium podium-three'>
+					  <h1 className='podium-text'>3rd</h1>
+          </div>
 				</div>
 			</div>
 		</form>
