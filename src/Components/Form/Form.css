@@ -1,4 +1,214 @@
+form {
+  /* border: 1px solid red; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.drag-drop-start {
+  /* border: 1px solid turquoise; */
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.drop-active {
+  border-color: #aaa;
+}
+
+.drop-target {
+  background-color: #29e;
+  border-color: #fff;
+  border-style: solid;
+}
+
+.droppped {
+  background-color: #0190ac;
+}
+
+.drag-drop {
+  border: 2px solid #fff;
+  margin-top: 16px;
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  overflow:hidden;
+  touch-action: none;
+  transform: translate(0px, 0px);
+  transition: background-color 0.3s;
+  z-index: 10;
+  border-radius: 5px;
+}
+
+.drag-drop-one {
+  position: absolute;
+  left: 20px;
+  top: 0px;
+}
+
+.drag-drop-three {
+  position: absolute;
+    right: 20px;
+    top: 0px;
+}
+
+.drag-drop-image {
+  position: relative;
+  object-fit: fill;
+  width: 102px;
+  filter: opacity(0.8) grayscale(75%)
+}
+
+.drag-drop-name {
+  position: fixed;
+  top:0px;
+  width: inherit;
+  text-shadow: 1px 1px 3px black;  
+}
+
+.dropped-status {
+  /* border: 1px dotted white; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin: 54px 0; */
+  margin: 4% 0;
+  height: 7em;
+  width: 350px;
+}
+
+.dropped > .drag-drop-image {
+  filter: opacity(1) grayscale(0%)
+}
+
+.dropped {
+  border: 3px solid #d68914;
+}
+
+.instruction {
+  /* border: 1px solid yellow; */
+  font-size: 32px;
+  text-align: center;
+}
+
+.submit {
+  /* border: 1px solid green; */
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+/* ****************** PODIUMS ****************** */
+
+.podiums-wrap {
+  /* border: 1px dotted yellow; */
+  display: flex;
+  align-items: flex-end;
+  justify-self: end;
+  height: 350px;
+  width: 350px;
+  padding-bottom: 0px;
+  /* background-color: #17283B; */
+  margin-top: auto;
+  margin-bottom: 16px;
+}
+
+.podium-container {
+  /* border: 1px dotted cyan; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 33%;
+  height: 100%;
+}
+
+.podium {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.dropzone {
+  /* border: 1px solid indigo; */
+  width: 100%;
+}
+
+.podium-text {
+  /* border: 1px dotted violet; */
+  text-align: center;
+}
+
+/* **************** PODIUM TWO **************** */
+
+.podium-container-two {
+}
+
+.podium-two {
+  /* border: 1px dotted blue; */
+  height: 41%;
+  background-color: #f0995b;
+}
+
+.second-dropzone {
+  /* border: 1px solid violet; */
+  height: 45%;
+}
+
+/* **************** PODIUM ONE **************** */
+
+.podium-one {
+  /* border: 1px dotted green; */
+  height: 55%;
+  background-color: #f0995b;
+}
+
+.first-dropzone {
+  /* border: 1px dotted red; */
+  height: 45%;
+}
+
+/* **************** PODIUM THREE **************** */
+
+.podium-three {
+  /* border: 1px dotted indigo; */
+  height: 28%;
+  background-color: #f0995b;
+}
+
+.third-dropzone {
+  /* border: 1px dotted orange; */
+  height: 50%;
+}
+
+@media only screen and (max-width: 320px) {
+  .drag-drop {
+    width: 90px;
+    height: 90px;
+  }
+
+  .podiums-wrap {
+    width: 290px;
+  }
+
+  .dropped-status {
+    width: 290px;
+  }
+}
+
+@media only screen and (min-width: 512px) {
+  .drag-drop-one {
+    left: 20%;
+  }
+
+  .drag-drop-three {
+    right: 20%;
+  }
+}
+
+
+/* 
 .App {
   height: 100%;
   width:100%;
@@ -13,7 +223,6 @@
   border-color: #fff;
   border-style: solid;
 }
-
 
 .podium-one {
   height: 15vw;
@@ -103,7 +312,6 @@
   padding: 2em 0.5em;
   margin: 1rem 0 0 1rem;
   color: #fff;
-  background-color: #ff593d;
   border: solid 2px #fff;
   touch-action: none;
   transform: translate(0px, 0px);
@@ -111,11 +319,19 @@
   position: relative;
   z-index: 10;
   padding-top: 0px;
+  overflow:hidden;
 }
 
 .drag-drop.can-drop {
   color: #000;
   background-color: #0190ac;
+}
+
+.drag-drop-image {
+  position: relative;
+  object-fit: fill;
+  width: 289px;
+  filter: opacity(0.2) grayscale(75%)
 }
 
 .droppped {
@@ -528,4 +744,4 @@
            height: 20vw;
            width: 23vw;
          }
-   }
+   } */
