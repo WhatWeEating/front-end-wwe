@@ -94,6 +94,10 @@ a:hover {
   bottom: 422px;
 }
 
+.winner-name {
+  font-size: 15px;
+}
+
 @media only screen and (min-width: 768px) {
   .winner-text {
     font-size: 75px;
