@@ -57,6 +57,13 @@
   }
 } 
 
+@media only screen and (min-width: 1024px) {
+  .restaurants-container {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+}
+
 @media only screen and (min-width: 768px) {
 
   .selection-copied-flag {
@@ -65,12 +72,17 @@
 
   .restaurants-container {
     grid-template-columns: repeat(2, minmax(300px, 1fr));
-}
+  }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (max-width: 425px) {
   .restaurants-container {
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .card {
+    width: 90%;
+  }
 }
