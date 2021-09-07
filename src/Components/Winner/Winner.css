@@ -84,8 +84,11 @@ a:hover {
 }
 
 .winner-image {
-  width: 195px;
-  filter: opacity(0.2) grayscale(75%)
+  position: relative;
+  object-fit: fill;
+  top: 7px;
+  width: 272px;
+  filter: opacity(0.2) grayscale(75%);
 }
 
 .winner-info-details {
