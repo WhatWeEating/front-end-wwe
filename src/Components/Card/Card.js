@@ -45,7 +45,7 @@ const Card = ({choices, id, rating, price, phone, name, image_url, full_address,
           <span className='restaurant-empty-stars'>{printEmptyStars()}</span>
           <span className='restaurant-full-stars'>{printFullStars()}</span>
         <a className='restaurant-phone' href={`tel:${phoneTrim(phone)}`}>{phone}</a>
-        <address>{full_address}</address>
+        <address className='restaurant-address'>{full_address}</address>
       </div>
     </div>
   )

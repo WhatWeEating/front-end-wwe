@@ -1,4 +1,5 @@
 .restaurants-container {
+  width: 100%;
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -18,9 +19,14 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 99vw;
   height: 99%;
   word-wrap: break-word;
+}
+
+.selection-gen-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .selection-button-container {
@@ -46,6 +52,43 @@
   margin-top: 40px;
 }
 
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .restaurants-container {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+  
+}
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  
+  .selection-copied-flag {
+    left: 51.5%;
+  } 
+  
+  .restaurants-container {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 425px) {
+  .restaurants-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card {
+    width: 90%;
+  }
+  
+  .copy-link {
+    max-width: 67%;
+    display: inline;
+    font-size: 16px;
+  }
+}
+
 @media only screen and (max-width: 375px) {
   .selection-copied-flag {
     left: 56.5%;
@@ -56,33 +99,3 @@
     margin: 25px;
   }
 } 
-
-@media only screen and (min-width: 1024px) {
-  .restaurants-container {
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
-  }
-
-}
-
-@media only screen and (min-width: 768px) {
-
-  .selection-copied-flag {
-    left: 51.5%;
-  } 
-
-  .restaurants-container {
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-  }
-}
-
-@media only screen and (max-width: 425px) {
-  .restaurants-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 90%;
-  }
-}
