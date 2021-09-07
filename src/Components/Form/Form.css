@@ -1,5 +1,4 @@
 form {
-  border: 1px solid red;
   height: 90%;
   display: flex;
   flex-direction: column;
@@ -182,6 +181,21 @@ form {
   height: 50%;
 }
 
+
+@media only screen and (max-width: 512px) {
+  /* .form {
+    width: 94%;
+  } */
+
+  .drag-drop-one {
+    left: 10%;
+  }
+  
+  .drag-drop-three {
+    right: 10%;
+  }
+}
+
 @media only screen and (max-width: 320px) {
   .drag-drop {
     width: 90px;
@@ -194,15 +208,5 @@ form {
 
   .dropped-status {
     width: 290px;
-  }
-}
-
-@media only screen and (min-width: 512px) {
-  .drag-drop-one {
-    left: 20%;
-  }
-
-  .drag-drop-three {
-    right: 20%;
   }
 }
