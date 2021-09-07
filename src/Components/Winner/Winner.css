@@ -86,7 +86,6 @@ a:hover {
 .winner-image {
   position: relative;
   object-fit: fill;
-  top: 7px;
   width: 272px;
   filter: opacity(0.2) grayscale(75%);
 }
