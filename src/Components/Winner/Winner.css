@@ -84,14 +84,20 @@ a:hover {
 }
 
 .winner-image {
-  width: 195px;
-  filter: opacity(0.2) grayscale(75%)
+  position: relative;
+  object-fit: fill;
+  width: 272px;
+  filter: opacity(0.2) grayscale(75%);
 }
 
 .winner-info-details {
   width: 175px;
   position: relative;
-  bottom: 422px;
+  bottom: 410px;
+}
+
+.winner-name {
+  font-size: 15px;
 }
 
 @media only screen and (min-width: 768px) {

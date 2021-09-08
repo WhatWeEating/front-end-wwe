@@ -40,6 +40,9 @@
 .restaurant-name { 
   text-shadow: 0px 1px 6px black;
   font-size: 17px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .restaurant-empty-stars {
@@ -56,6 +59,12 @@
 .restaurant-phone:visited,
 .restaurant-phone:link {
   color: white;
+}
+
+.restaurant-address {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .card:hover {
