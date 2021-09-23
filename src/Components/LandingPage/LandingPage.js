@@ -28,6 +28,14 @@ export const LandingPage = ({ storeData }) => {
 		}
 	}
 
+  const changeSlide = (n) => {
+
+  }
+
+  const currentSlide = (n) => {
+
+  }
+
 	return (
 		<div className='LandingPage'>
 			<AnimatedTitle />
@@ -48,6 +56,41 @@ export const LandingPage = ({ storeData }) => {
 					// onKeyUp={validateRestaurantData}
 				/>
 			</div>
+      <div className='slideshow-container'>
+        <div className='slides fade'>
+          <div className='slide-number'></div>
+          <h1>slide-1</h1>
+          <div className='caption'></div>
+        </div>
+        <div className='slides fade'>
+          <div className='slide-number'></div>
+          <h1>slide-2</h1>
+          <div className='caption'></div>
+        </div>
+        <div className='slides fade'>
+          <div className='slide-number'></div>
+          <h1>slide-3</h1>
+          <div className='caption'></div>
+        </div>
+        <div className='slides fade'>
+          <div className='slide-number'></div>
+          <h1>slide-4</h1>
+          <div className='caption'></div>
+        </div>
+        <div className='slides fade'>
+          <div className='slide-number'></div>
+          <h1>slide-5</h1>
+          <div className='caption'></div>
+        </div>
+      <a className='prev' onClick={() => changeSlide(-1)}></a>
+      <a className='prev' onClick={() => changeSlide(1)}></a>
+      </div>
+      <div className='slide-dots'>
+        <span className='dot' onClick={() => currentSlide(1)}></span>
+        <span className='dot' onClick={() => currentSlide(2)}></span>
+        <span className='dot' onClick={() => currentSlide(3)}></span>
+        <span className='dot' onClick={() => currentSlide(4)}></span>
+      </div>
 		</div>
 	)
 }
