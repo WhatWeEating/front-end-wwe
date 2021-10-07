@@ -8,6 +8,7 @@ export const LandingPage = ({ storeData }) => {
 	const [error, setError] = useState('')
 	const history = useHistory()
   const [slideIndex, setSlideIndex] = useState(1)
+  const [showTutorial, setShowTutorial] = useState(false)
 
   useEffect(() => {
     showSlides(slideIndex)
@@ -28,17 +29,23 @@ export const LandingPage = ({ storeData }) => {
 			} catch (e) {
 				setError(e.message)
 			}
-		} else if (!zipCodeValidation && e.key === 'Enter' || zipCode === '00000') {
+		} else if (!zipCodeValidation && e.key === 'Enter' || zipCode === '00000' ) {
 			setError('Please enter a valid 5 digit zip code')
 		}
 	}
 
   const changeSlide = (n) => {
-    showSlides(setSlideIndex(n));
+    if (slideIndex === 5 && n === +1) {
+      setSlideIndex(1)
+    } else if (slideIndex === 1 && n === -1) {
+      setSlideIndex(5)
+    } else {
+    showSlides(setSlideIndex(slideIndex + n));
+    }
   }
 
   const currentSlide = (n) => {
-    showSlides(setSlideIndex(slideIndex + n));
+    showSlides(setSlideIndex(n));
   }
 
   const showSlides = (n) => {
@@ -48,11 +55,11 @@ export const LandingPage = ({ storeData }) => {
   if (n < 1) {setSlideIndex(slides.length)}
   for (let i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
-  }
+    }
   for (let i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
-  }
-  console.log(slides, 'slides', slides[0])
+    }
+
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
   }
@@ -77,6 +84,7 @@ export const LandingPage = ({ storeData }) => {
 					// onKeyUp={validateRestaurantData}
 				/>
 			</div>
+      <h2 className='how-to'> How to: </h2>
       <div className='slideshow-container'>
         <div className='slides fade'>
           <div className='slide-number'>1 / 5</div>
@@ -105,8 +113,8 @@ export const LandingPage = ({ storeData }) => {
           <img src="https://media4.giphy.com/media/X58cXJNMeJ6aC53hyJ/giphy.gif?cid=790b761166a2d38043b03ca5408cb88f0658a85bdb1b4b64&amp;rid=giphy.gif&amp;ct=g" alt='instructions step 5'/>
           <div className='caption'></div>
         </div>
-      <a className='prev' onClick={() => changeSlide(-1)}>&#10094;</a>
-      <a className='next' onClick={() => changeSlide(+1)}>&#10095;</a>
+      <button className='prev' onClick={() => changeSlide(-1)}>&#10094;</button>
+      <button className='next' onClick={() => changeSlide(+1)}>&#10095;</button>
       </div>
       <div className='slide-dots'>
         <span className='dot' onClick={() => currentSlide(1)}></span>
@@ -114,7 +122,7 @@ export const LandingPage = ({ storeData }) => {
         <span className='dot' onClick={() => currentSlide(3)}></span>
         <span className='dot' onClick={() => currentSlide(4)}></span>
         <span className='dot' onClick={() => currentSlide(5)}></span>
-      </div>
+      </div> 
 		</div>
 	)
 }

@@ -65,12 +65,20 @@
 	margin: 5px 0;
 }
 
+.how-to {
+  margin: 20px 0;
+  color: #d68914;
+  font-family: 'Risque', cursive;
+}
+
 /* -------------Carousel -------------------- */
 
 .slideshow-container {
   max-width: 1000px;
   position: relative;
   margin: auto;
+  -webkit-box-shadow: 0px 0px 24px 6px rgba(0,0,0,0.48); 
+box-shadow: 0px 0px 24px 6px rgba(0,0,0,0.48);
 }
 
 .slides {
@@ -85,11 +93,13 @@
   margin-top: -22px;
   padding: 16px;
   color: white;
+  background: none;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
+  border: none;
 }
 
 .next {
@@ -98,7 +108,7 @@
 }
 
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+  color: #e53a0f;
 }
 
 .caption {
@@ -112,18 +122,24 @@
 }
 
 .slide-number {
-  color: #f2f2f2;
-  font-size: 12px;
+  color: #e53a0f;
+  font-size: 13px;
+  font-weight: 700;
   padding: 8px 12px;
   position: absolute;
   top: 0;
+  text-shadow: 3px 0px 9px rgba(0, 0, 0, 1);
+}
+
+.slide-dots {
+  margin-bottom: 16px;
 }
 
 .dot {
   cursor: pointer;
   height: 15px;
   width: 15px;
-  margin: 0 2px;
+  margin: 5px 2px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
@@ -199,6 +215,10 @@
 		font-size: 18px;
 		margin: 3px 0;
 	}
+
+  .dot {
+    margin: 10px 5px;
+  }
 }
 
 @media only screen and (max-width: 415px) {
