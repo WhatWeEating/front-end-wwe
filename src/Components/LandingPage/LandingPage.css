@@ -152,6 +152,27 @@
   to {opacity: 1}
 }
 
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  left: 83%;
+  border-radius: 3px 0 0 3px;
+}
+
 
 /* ------------- responsiveness -------------------- */
 
